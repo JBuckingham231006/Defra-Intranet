@@ -75,7 +75,7 @@ if($null -ne $ct -and $ct.Count -eq 1)
         if($null -ne $fieldExistsOnCT)
         {
             Remove-PnPFieldFromContentType -Field $fieldName -ContentType $ct -ErrorAction SilentlyContinue
-            Write-Host "SITE COLUMN '$fieldName' REMOVED FROM THE CONTENT TYPE '$ctSPDisplayName'" -ForegroundColor Green
+            Write-Host "SITE COLUMN '$fieldName' REMOVED FROM THE CONTENT TYPE '$ctDisplayName'" -ForegroundColor Green
         }
     }
 }

@@ -12,7 +12,7 @@
 #>
 
 # GLOBAL SETTINGS
-$global:environment = "preprod" # Which environment are we targetting?
+$global:environment = "dev" # Which environment are we targetting?
 
 # GLOBAL VARIABLES
 $global:placeholderSitePageName = "Intranet Optimisation Deployment Site Page"
