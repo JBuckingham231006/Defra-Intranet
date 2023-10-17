@@ -47,7 +47,7 @@ $sites = $global:sites | Where-Object { $_.SiteType -eq "ALB" -or $_.SiteType -e
 
 if($sites.Count -gt 0)
 {
-    Connect-PnPOnline -Url $global:adminURL -UseWebLogin
+    SharePointPnPPowerShellOnline\Connect-PnPOnline -Url $global:adminURL -UseWebLogin
     Write-Host "SCRIPT EXECUTED BY '$(Get-CurrentUser)' AT $(get-date -f "HH:mm:ss") ON $(get-date -f "dd/MM/yyyy")" -ForegroundColor Cyan
     Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.RelativeURL)" -ForegroundColor Cyan
 }
