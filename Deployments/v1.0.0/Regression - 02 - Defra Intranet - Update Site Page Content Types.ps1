@@ -50,7 +50,7 @@ if($null -eq $site)
     throw "An entry in the configuration could not be found for the 'Defra Intranet' or is not configured correctly"
 }
 
-Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
+SharePointPnPPowerShellOnline\Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
 Write-Host "SCRIPT EXECUTED BY '$(Get-CurrentUser)' AT $(get-date -f "HH:mm:ss") ON $(get-date -f "dd/MM/yyyy")" -ForegroundColor Cyan
 Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.RelativeURL)" -ForegroundColor Cyan
 
