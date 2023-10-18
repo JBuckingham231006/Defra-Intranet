@@ -1,0 +1,33 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20231018160154
+Username: DESKTOP-RFKGI3A\neill
+RunAs User: DESKTOP-RFKGI3A\neill
+Configuration Name: 
+Machine: DESKTOP-RFKGI3A (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 31056
+PSVersion: 5.1.19041.3570
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.3570
+BuildVersion: 10.0.19041.3570
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'SA-Intranet-001@defradev.onmicrosoft.com' AT 16:03:53 ON 18/10/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/
+SITE COLUMN INSTALLED: Alternative Contact
+SITE COLUMN INSTALLED: Content Relevant To
+SITE COLUMN INSTALLED: Content Types
+SITE COLUMN INSTALLED: Line Manager
+SITE COLUMN INSTALLED: Preferred Timing
+SITE COLUMN INSTALLED: Stakeholders Informed
+SITE COLUMN INSTALLED: Status
+SITE COLUMN INSTALLED: Text
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231018160401
+**********************
