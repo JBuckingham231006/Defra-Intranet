@@ -1,0 +1,37 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20231020141916
+Username: DESKTOP-RFKGI3A\neill
+RunAs User: DESKTOP-RFKGI3A\neill
+Configuration Name: 
+Machine: DESKTOP-RFKGI3A (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 31056
+PSVersion: 5.1.19041.3570
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.3570
+BuildVersion: 10.0.19041.3570
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'neill.mison@defradev.onmicrosoft.com' AT 14:19:43 ON 20/10/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/
+PS>TerminatingError(Add-PnPField): "Cannot bind parameter 'Type'. Cannot convert value "Hyperlink" to type "Microsoft.SharePoint.Client.FieldType". Error: "Unable to match the identifier name Hyperlink to a valid enumerator name. Specify one of the following enumerator names and try again:
+Invalid, Integer, Text, Note, DateTime, Counter, Choice, Lookup, Boolean, Number, Currency, URL, Computed, Threading, Guid, MultiChoice, GridChoice, Calculated, File, Attachments, User, Recurrence, CrossProjectLink, ModStat, Error, ContentTypeId, PageSeparator, ThreadIndex, WorkflowStatus, AllDayEvent, WorkflowEventType, Geolocation, OutcomeChoice, Location, Thumbnail, MaxItems""
+>> TerminatingError(Add-PnPField): "Cannot bind parameter 'Type'. Cannot convert value "Hyperlink" to type "Microsoft.SharePoint.Client.FieldType". Error: "Unable to match the identifier name Hyperlink to a valid enumerator name. Specify one of the following enumerator names and try again:
+Invalid, Integer, Text, Note, DateTime, Counter, Choice, Lookup, Boolean, Number, Currency, URL, Computed, Threading, Guid, MultiChoice, GridChoice, Calculated, File, Attachments, User, Recurrence, CrossProjectLink, ModStat, Error, ContentTypeId, PageSeparator, ThreadIndex, WorkflowStatus, AllDayEvent, WorkflowEventType, Geolocation, OutcomeChoice, Location, Thumbnail, MaxItems""
+>> TerminatingError(Add-PnPField): "Cannot bind parameter 'Type'. Cannot convert value "Hyperlink" to type "Microsoft.SharePoint.Client.FieldType". Error: "Unable to match the identifier name Hyperlink to a valid enumerator name. Specify one of the following enumerator names and try again:
+Invalid, Integer, Text, Note, DateTime, Counter, Choice, Lookup, Boolean, Number, Currency, URL, Computed, Threading, Guid, MultiChoice, GridChoice, Calculated, File, Attachments, User, Recurrence, CrossProjectLink, ModStat, Error, ContentTypeId, PageSeparator, ThreadIndex, WorkflowStatus, AllDayEvent, WorkflowEventType, Geolocation, OutcomeChoice, Location, Thumbnail, MaxItems""
+Cannot bind parameter 'Type'. Cannot convert value "Hyperlink" to type "Microsoft.SharePoint.Client.FieldType". Error: "Unable to match the identifier name Hyperlink to a valid enumerator name. Specify one of the following enumerator names and try again:
+Invalid, Integer, Text, Note, DateTime, Counter, Choice, Lookup, Boolean, Number, Currency, URL, Computed, Threading, Guid, MultiChoice, GridChoice, Calculated, File, Attachments, User, Recurrence, CrossProjectLink, ModStat, Error, ContentTypeId, PageSeparator, ThreadIndex, WorkflowStatus, AllDayEvent, WorkflowEventType, Geolocation, OutcomeChoice, Location, Thumbnail, MaxItems"
+Add-PnPField : Cannot bind parameter 'Type'. Cannot convert value "Hyperlink" to type "Microsoft.SharePoint.Client.FieldType". Error: "Unable to match the identifier name Hyperlink to a valid enumerator name. Specify one of the following enumerator names and try again:
+Invalid, Integer, Text, Note, DateTime, Counter, Choice, Lookup, Boolean, Number, Currency, URL, Computed, Threading, Guid, MultiChoice, GridChoice, Calculated, File, Attachments, User, Recurrence, CrossProjectLink, ModStat, Error, ContentTypeId, PageSeparator,
+ThreadIndex, WorkflowStatus, AllDayEvent, WorkflowEventType, Geolocation, OutcomeChoice, Location, Thumbnail, MaxItems"
+At C:\Methods\Defra-Intranet\Deployments\v1.1.0\03 - DEFRA Intranet - Create Site Column - SitePages.ps1:64 char:33
++     $field = Add-PnPField -Type "Hyperlink" -InternalName "" -Display ...
++                                 ~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Add-PnPField], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : CannotConvertArgumentNoMessage,SharePointPnP.PowerShell.Commands.Fields.AddField
+
