@@ -15,21 +15,15 @@
 $global:environment = "dev" # Which environment are we targetting?
 
 # GLOBAL VARIABLES
-$global:placeholderSitePageName = "Intranet Optimisation Deployment Site Page"
-
-$global:ctDisplayName = "Base Site Page Content Type Hub"
-$global:ctID = "0x0101009D1CB255DA76424F860D91F20E6C411800C78751CF7906E04285CB8A413FE2791F"
 
 # GLOBAL SCRIPT SETTINGS
 if($global:PSScriptRoot.Length -gt 0)
 {
     New-Item -ItemType Directory -Force -Path "$global:PSScriptRoot\Logs" | Out-Null
-    $global:assetFilePath = "$global:PSScriptRoot\Assets"
 }
 else
 {
     New-Item -ItemType Directory -Force -Path "./Logs" | Out-Null
-    $global:assetFilePath = "$PSScriptRoot\..\Assets"
 }
 
 function Invoke-Configuration
