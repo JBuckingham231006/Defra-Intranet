@@ -35,3 +35,573 @@ At C:\Methods\Defra-Intranet\Deployments\v1.1.0\03 - DEFRA Intranet - Create Sit
     + CategoryInfo          : InvalidArgument: (:) [Add-PnPField], ParentContainsErrorRecordException
     + FullyQualifiedErrorId : CannotConvertArgumentNoMessage,SharePointPnP.PowerShell.Commands.Fields.AddField
 
+PS C:\Methods\Defra-Intranet\Deployments\v1.1.0> ./'03 - DEFRA Intranet - Create Site Column - SitePages.ps1'
+**********************
+Windows PowerShell transcript end
+End time: 20231023133954
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231023133954
+Username: DESKTOP-RFKGI3A\neill
+RunAs User: DESKTOP-RFKGI3A\neill
+Configuration Name: 
+Machine: DESKTOP-RFKGI3A (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 31056
+PSVersion: 5.1.19041.3570
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.3570
+BuildVersion: 10.0.19041.3570
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Exception calling "ExecuteQuery" with "0" argument(s): "The remote server returned an error: (403) Forbidden."
+At C:\Methods\Defra-Intranet\Deployments\v1.1.0\PSModules\Helper.psm1:24 char:5
++     $Ctx.ExecuteQuery()
++     ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : WebException
+Exception calling "ExecuteQuery" with "0" argument(s): "The remote server returned an error: (403) Forbidden."
+At C:\Methods\Defra-Intranet\Deployments\v1.1.0\PSModules\Helper.psm1:24 char:5
++     $Ctx.ExecuteQuery()
++     ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : WebException
+
+SCRIPT EXECUTED BY '' AT 13:40:15 ON 23/10/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/
+PS C:\Methods\Defra-Intranet\Deployments\v1.1.0> TerminatingError(Get-PnPField): "A parameter cannot be found that matches parameter name 'Choices'."
+>> TerminatingError(Get-PnPField): "A parameter cannot be found that matches parameter name 'Choices'."
+>> TerminatingError(Get-PnPField): "A parameter cannot be found that matches parameter name 'Choices'."
+A parameter cannot be found that matches parameter name 'Choices'.
+Get-PnPField : A parameter cannot be found that matches parameter name 'Choices'.
+At C:\Methods\Defra-Intranet\Deployments\v1.1.0\03 - DEFRA Intranet - Create Site Column - SitePages.ps1:61 char:78
++ ... dentity "ContentOwner" -ErrorAction SilentlyContinue -Choices "ownr1@ ...
++                                                          ~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-PnPField], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : NamedParameterNotFound,SharePointPnP.PowerShell.Commands.Fields.GetField
+
+PS C:\Methods\Defra-Intranet\Deployments\v1.1.0> neill@nhmsolutions.com
+neill@nhmsolutions.com : The term 'neill@nhmsolutions.com' is not recognized as the name of a cmdlet, function, script 
+file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct 
+and try again.
+At line:1 char:1
++ neill@nhmsolutions.com
++ ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (neill@nhmsolutions.com:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+neill@nhmsolutions.com : The term 'neill@nhmsolutions.com' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ neill@nhmsolutions.com
++ ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (neill@nhmsolutions.com:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Methods\Defra-Intranet\Deployments\v1.1.0> ./'03 - DEFRA Intranet - Create Site Column - SitePages.ps1'
+**********************
+Windows PowerShell transcript end
+End time: 20231023135353
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231023135354
+Username: DESKTOP-RFKGI3A\neill
+RunAs User: DESKTOP-RFKGI3A\neill
+Configuration Name: 
+Machine: DESKTOP-RFKGI3A (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 31056
+PSVersion: 5.1.19041.3570
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.3570
+BuildVersion: 10.0.19041.3570
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'neill.mison@defradev.onmicrosoft.com' AT 13:54:18 ON 23/10/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/
+PS C:\Methods\Defra-Intranet\Deployments\v1.1.0> TerminatingError(Get-PnPField): "A parameter cannot be found that matches parameter name 'Choices'."
+>> TerminatingError(Get-PnPField): "A parameter cannot be found that matches parameter name 'Choices'."
+>> TerminatingError(Get-PnPField): "A parameter cannot be found that matches parameter name 'Choices'."
+A parameter cannot be found that matches parameter name 'Choices'.
+Get-PnPField : A parameter cannot be found that matches parameter name 'Choices'.
+At C:\Methods\Defra-Intranet\Deployments\v1.1.0\03 - DEFRA Intranet - Create Site Column - SitePages.ps1:61 char:78
++ ... dentity "ContentOwner" -ErrorAction SilentlyContinue -Choices "ownr1@ ...
++                                                          ~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-PnPField], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : NamedParameterNotFound,SharePointPnP.PowerShell.Commands.Fields.GetField
+
+PS C:\Methods\Defra-Intranet\Deployments\v1.1.0> ./'03 - DEFRA Intranet - Create Site Column - SitePages.ps1'
+**********************
+Windows PowerShell transcript end
+End time: 20231023135432
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231023135432
+Username: DESKTOP-RFKGI3A\neill
+RunAs User: DESKTOP-RFKGI3A\neill
+Configuration Name: 
+Machine: DESKTOP-RFKGI3A (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 31056
+PSVersion: 5.1.19041.3570
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.3570
+BuildVersion: 10.0.19041.3570
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'neill.mison@defradev.onmicrosoft.com' AT 13:54:33 ON 23/10/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/
+PS C:\Methods\Defra-Intranet\Deployments\v1.1.0> TerminatingError(Get-PnPField): "A parameter cannot be found that matches parameter name 'Choices'."
+>> TerminatingError(Get-PnPField): "A parameter cannot be found that matches parameter name 'Choices'."
+>> TerminatingError(Get-PnPField): "A parameter cannot be found that matches parameter name 'Choices'."
+A parameter cannot be found that matches parameter name 'Choices'.
+Get-PnPField : A parameter cannot be found that matches parameter name 'Choices'.
+At C:\Methods\Defra-Intranet\Deployments\v1.1.0\03 - DEFRA Intranet - Create Site Column - SitePages.ps1:61 char:78
++ ... dentity "ContentOwner" -ErrorAction SilentlyContinue -Choices "ownr1@ ...
++                                                          ~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-PnPField], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : NamedParameterNotFound,SharePointPnP.PowerShell.Commands.Fields.GetField
+
+PS C:\Methods\Defra-Intranet\Deployments\v1.1.0> ./'03 - DEFRA Intranet - Create Site Column - SitePages.ps1'
+**********************
+Windows PowerShell transcript end
+End time: 20231023135437
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231023135437
+Username: DESKTOP-RFKGI3A\neill
+RunAs User: DESKTOP-RFKGI3A\neill
+Configuration Name: 
+Machine: DESKTOP-RFKGI3A (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 31056
+PSVersion: 5.1.19041.3570
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.3570
+BuildVersion: 10.0.19041.3570
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'neill.mison@defradev.onmicrosoft.com' AT 13:54:37 ON 23/10/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/
+PS C:\Methods\Defra-Intranet\Deployments\v1.1.0> TerminatingError(Get-PnPField): "A parameter cannot be found that matches parameter name 'Choices'."
+>> TerminatingError(Get-PnPField): "A parameter cannot be found that matches parameter name 'Choices'."
+>> TerminatingError(Get-PnPField): "A parameter cannot be found that matches parameter name 'Choices'."
+A parameter cannot be found that matches parameter name 'Choices'.
+Get-PnPField : A parameter cannot be found that matches parameter name 'Choices'.
+At C:\Methods\Defra-Intranet\Deployments\v1.1.0\03 - DEFRA Intranet - Create Site Column - SitePages.ps1:61 char:78
++ ... dentity "ContentOwner" -ErrorAction SilentlyContinue -Choices "ownr1@ ...
++                                                          ~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-PnPField], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : NamedParameterNotFound,SharePointPnP.PowerShell.Commands.Fields.GetField
+
+PS C:\Methods\Defra-Intranet\Deployments\v1.1.0> ./'03 - DEFRA Intranet - Create Site Column - SitePages.ps1'
+At C:\Methods\Defra-Intranet\Deployments\v1.1.0\03 - DEFRA Intranet - Create Site Column - SitePages.ps1:64 char:24
++     if($null -eq $field)
++                        ~
+Missing statement block after if ( condition ).
+    + CategoryInfo          : ParserError: (:) [], ParseException
+    + FullyQualifiedErrorId : MissingStatementBlock
+At C:\Methods\Defra-Intranet\Deployments\v1.1.0\03 - DEFRA Intranet - Create Site Column - SitePages.ps1:64 char:24
++     if($null -eq $field)
++                        ~
+Missing statement block after if ( condition ).
+    + CategoryInfo          : ParserError: (:) [], ParseException
+    + FullyQualifiedErrorId : MissingStatementBlock
+
+PS C:\Methods\Defra-Intranet\Deployments\v1.1.0> ./'03 - DEFRA Intranet - Create Site Column - SitePages.ps1'
+**********************
+Windows PowerShell transcript end
+End time: 20231023135831
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231023135831
+Username: DESKTOP-RFKGI3A\neill
+RunAs User: DESKTOP-RFKGI3A\neill
+Configuration Name: 
+Machine: DESKTOP-RFKGI3A (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 31056
+PSVersion: 5.1.19041.3570
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.3570
+BuildVersion: 10.0.19041.3570
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'neill.mison@defradev.onmicrosoft.com' AT 13:58:32 ON 23/10/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/
+PS C:\Methods\Defra-Intranet\Deployments\v1.1.0> TerminatingError(Add-PnPField): "Cannot bind argument to parameter 'InternalName' because it is an empty string."
+>> TerminatingError(Add-PnPField): "Cannot bind argument to parameter 'InternalName' because it is an empty string."
+>> TerminatingError(Add-PnPField): "Cannot bind argument to parameter 'InternalName' because it is an empty string."
+Cannot bind argument to parameter 'InternalName' because it is an empty string.
+Add-PnPField : Cannot bind argument to parameter 'InternalName' because it is an empty string.
+At C:\Methods\Defra-Intranet\Deployments\v1.1.0\03 - DEFRA Intranet - Create Site Column - SitePages.ps1:62 char:52
++ $field = Add-PnPField -Type "Choice" -InternalName "" -DisplayName $d ...
++                                                    ~~
+    + CategoryInfo          : InvalidData: (:) [Add-PnPField], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorEmptyStringNotAllowed,SharePointPnP.PowerShell.Commands.Fields.AddField
+
+PS C:\Methods\Defra-Intranet\Deployments\v1.1.0> ./'03 - DEFRA Intranet - Create Site Column - SitePages.ps1'
+**********************
+Windows PowerShell transcript end
+End time: 20231023140133
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231023140133
+Username: DESKTOP-RFKGI3A\neill
+RunAs User: DESKTOP-RFKGI3A\neill
+Configuration Name: 
+Machine: DESKTOP-RFKGI3A (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 31056
+PSVersion: 5.1.19041.3570
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.3570
+BuildVersion: 10.0.19041.3570
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'neill.mison@defradev.onmicrosoft.com' AT 14:01:34 ON 23/10/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/
+SITE COLUMN ALREADY INSTALLED: Content Owner - Team
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231023140135
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231023140651
+Username: DESKTOP-RFKGI3A\neill
+RunAs User: DESKTOP-RFKGI3A\neill
+Configuration Name: 
+Machine: DESKTOP-RFKGI3A (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 31056
+PSVersion: 5.1.19041.3570
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.3570
+BuildVersion: 10.0.19041.3570
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'neill.mison@defradev.onmicrosoft.com' AT 14:06:51 ON 23/10/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/
+PS C:\Methods\Defra-Intranet\Deployments\v1.1.0> TerminatingError(Add-PnPField): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: id
+Parameter name: Field already exists"
+>> TerminatingError(Add-PnPField): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: id
+Parameter name: Field already exists"
+>> TerminatingError(Add-PnPField): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: id
+Parameter name: Field already exists"
+The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: id
+Parameter name: Field already exists
+Add-PnPField : id
+Parameter name: Field already exists
+At C:\Methods\Defra-Intranet\Deployments\v1.1.0\03 - DEFRA Intranet - Create Site Column - SitePages.ps1:62 char:10
++ $field = Add-PnPField -Type "Choice" -InternalName "ContentOwner-Team ...
++          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Add-PnPField], ArgumentException
+    + FullyQualifiedErrorId : EXCEPTION,SharePointPnP.PowerShell.Commands.Fields.AddField
+PS C:\Methods\Defra-Intranet\Deployments\v1.1.0> ./'03 - DEFRA Intranet - Create Site Column - SitePages.ps1'
+**********************
+Windows PowerShell transcript end
+End time: 20231023140841
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231023140841
+Username: DESKTOP-RFKGI3A\neill
+RunAs User: DESKTOP-RFKGI3A\neill
+Configuration Name: 
+Machine: DESKTOP-RFKGI3A (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 31056
+PSVersion: 5.1.19041.3570
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.3570
+BuildVersion: 10.0.19041.3570
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'neill.mison@defradev.onmicrosoft.com' AT 14:08:41 ON 23/10/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/
+PS C:\Methods\Defra-Intranet\Deployments\v1.1.0> TerminatingError(Add-PnPField): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: id
+Parameter name: Field already exists"
+>> TerminatingError(Add-PnPField): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: id
+Parameter name: Field already exists"
+>> TerminatingError(Add-PnPField): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: id
+Parameter name: Field already exists"
+The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: id
+Parameter name: Field already exists
+Add-PnPField : id
+Parameter name: Field already exists
+At C:\Methods\Defra-Intranet\Deployments\v1.1.0\03 - DEFRA Intranet - Create Site Column - SitePages.ps1:62 char:10
++ $field = Add-PnPField -Type "Choice" -InternalName "ContentOwner-Team ...
++          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Add-PnPField], ArgumentException
+    + FullyQualifiedErrorId : EXCEPTION,SharePointPnP.PowerShell.Commands.Fields.AddField
+PS C:\Methods\Defra-Intranet\Deployments\v1.1.0> ./'03 - DEFRA Intranet - Create Site Column - SitePages.ps1'
+**********************
+Windows PowerShell transcript end
+End time: 20231023141046
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231023141046
+Username: DESKTOP-RFKGI3A\neill
+RunAs User: DESKTOP-RFKGI3A\neill
+Configuration Name: 
+Machine: DESKTOP-RFKGI3A (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 31056
+PSVersion: 5.1.19041.3570
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.3570
+BuildVersion: 10.0.19041.3570
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'neill.mison@defradev.onmicrosoft.com' AT 14:10:47 ON 23/10/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/
+SITE COLUMN ALREADY INSTALLED: Content Owner - Team
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231023141047
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231023141735
+Username: DESKTOP-RFKGI3A\neill
+RunAs User: DESKTOP-RFKGI3A\neill
+Configuration Name: 
+Machine: DESKTOP-RFKGI3A (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 31056
+PSVersion: 5.1.19041.3570
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.3570
+BuildVersion: 10.0.19041.3570
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'neill.mison@defradev.onmicrosoft.com' AT 14:17:36 ON 23/10/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/
+SITE COLUMN ALREADY INSTALLED: Content Owner - Team
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231023141736
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231023142528
+Username: DESKTOP-RFKGI3A\neill
+RunAs User: DESKTOP-RFKGI3A\neill
+Configuration Name: 
+Machine: DESKTOP-RFKGI3A (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 31056
+PSVersion: 5.1.19041.3570
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.3570
+BuildVersion: 10.0.19041.3570
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'neill.mison@defradev.onmicrosoft.com' AT 14:25:29 ON 23/10/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/
+SITE COLUMN ALREADY INSTALLED: Content Owner - Team
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231023142529
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231023142821
+Username: DESKTOP-RFKGI3A\neill
+RunAs User: DESKTOP-RFKGI3A\neill
+Configuration Name: 
+Machine: DESKTOP-RFKGI3A (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 31056
+PSVersion: 5.1.19041.3570
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.3570
+BuildVersion: 10.0.19041.3570
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'neill.mison@defradev.onmicrosoft.com' AT 14:28:21 ON 23/10/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/defraintranet
+SITE COLUMN ALREADY INSTALLED: Content Owner - Team
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231023142822
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231025143136
+Username: DESKTOP-RFKGI3A\neill
+RunAs User: DESKTOP-RFKGI3A\neill
+Configuration Name: 
+Machine: DESKTOP-RFKGI3A (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 31056
+PSVersion: 5.1.19041.3570
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.3570
+BuildVersion: 10.0.19041.3570
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'neill.mison@defradev.onmicrosoft.com' AT 14:32:00 ON 25/10/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/defraintranet
+SITE COLUMN ALREADY INSTALLED: Content Owner - Team
+SCRIPT EXECUTED BY 'neill.mison@defradev.onmicrosoft.com' AT 14:32:00 ON 25/10/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/APHAIntranet
+WARNING: No property 'SelectionMode' found on this field. Value will be ignored.
+SITE COLUMN INSTALLED: Content Owner - Team
+SCRIPT EXECUTED BY 'neill.mison@defradev.onmicrosoft.com' AT 14:32:01 ON 25/10/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/EAIntranet
+WARNING: No property 'SelectionMode' found on this field. Value will be ignored.
+SITE COLUMN INSTALLED: Content Owner - Team
+SCRIPT EXECUTED BY 'neill.mison@defradev.onmicrosoft.com' AT 14:32:03 ON 25/10/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/MMOIntranet
+WARNING: No property 'SelectionMode' found on this field. Value will be ignored.
+SITE COLUMN INSTALLED: Content Owner - Team
+SCRIPT EXECUTED BY 'neill.mison@defradev.onmicrosoft.com' AT 14:32:04 ON 25/10/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/NEIntranet
+WARNING: No property 'SelectionMode' found on this field. Value will be ignored.
+SITE COLUMN INSTALLED: Content Owner - Team
+SCRIPT EXECUTED BY 'neill.mison@defradev.onmicrosoft.com' AT 14:32:05 ON 25/10/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/RPAIntranet
+WARNING: No property 'SelectionMode' found on this field. Value will be ignored.
+SITE COLUMN INSTALLED: Content Owner - Team
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231025143206
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231025145042
+Username: DESKTOP-RFKGI3A\neill
+RunAs User: DESKTOP-RFKGI3A\neill
+Configuration Name: 
+Machine: DESKTOP-RFKGI3A (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 31056
+PSVersion: 5.1.19041.3570
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.3570
+BuildVersion: 10.0.19041.3570
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'neill.mison@defradev.onmicrosoft.com' AT 14:50:42 ON 25/10/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/defraintranet
+SITE COLUMN ALREADY INSTALLED: Content Owner - Team
+SCRIPT EXECUTED BY 'neill.mison@defradev.onmicrosoft.com' AT 14:50:43 ON 25/10/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/APHAIntranet
+PS C:\Methods\Defra-Intranet\Deployments\v1.1.0> TerminatingError(Add-PnPField): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: id
+Parameter name: Field already exists"
+>> TerminatingError(Add-PnPField): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: id
+Parameter name: Field already exists"
+>> TerminatingError(Add-PnPField): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: id
+Parameter name: Field already exists"
+The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: id
+Parameter name: Field already exists
+Add-PnPField : id
+Parameter name: Field already exists
+At C:\Methods\Defra-Intranet\Deployments\v1.1.0\03 - DEFRA Intranet - Create Site Column - SitePages.ps1:70 char:18
++ ...    $field = Add-PnPField -Type "Choice" -InternalName "ContentOwnerTe ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Add-PnPField], ArgumentException
+    + FullyQualifiedErrorId : EXCEPTION,SharePointPnP.PowerShell.Commands.Fields.AddField
+PS C:\Methods\Defra-Intranet\Deployments\v1.1.0> ./'03 - DEFRA Intranet - Create Site Column - SitePages.ps1'
+**********************
+Windows PowerShell transcript end
+End time: 20231025145121
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231025145122
+Username: DESKTOP-RFKGI3A\neill
+RunAs User: DESKTOP-RFKGI3A\neill
+Configuration Name: 
+Machine: DESKTOP-RFKGI3A (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 31056
+PSVersion: 5.1.19041.3570
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.3570
+BuildVersion: 10.0.19041.3570
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'neill.mison@defradev.onmicrosoft.com' AT 14:51:22 ON 25/10/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/defraintranet
+SITE COLUMN ALREADY INSTALLED: Content Owner - Team
+SCRIPT EXECUTED BY 'neill.mison@defradev.onmicrosoft.com' AT 14:51:23 ON 25/10/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/APHAIntranet
+PS C:\Methods\Defra-Intranet\Deployments\v1.1.0> TerminatingError(Add-PnPField): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: id
+Parameter name: Field already exists"
+>> TerminatingError(Add-PnPField): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: id
+Parameter name: Field already exists"
+>> TerminatingError(Add-PnPField): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: id
+Parameter name: Field already exists"
+The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: id
+Parameter name: Field already exists
+Add-PnPField : id
+Parameter name: Field already exists
+At C:\Methods\Defra-Intranet\Deployments\v1.1.0\03 - DEFRA Intranet - Create Site Column - SitePages.ps1:70 char:18
++ ...    $field = Add-PnPField -Type "Choice" -InternalName "ContentOwnerTe ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Add-PnPField], ArgumentException
+    + FullyQualifiedErrorId : EXCEPTION,SharePointPnP.PowerShell.Commands.Fields.AddField
+PS C:\Methods\Defra-Intranet\Deployments\v1.1.0> ./'Regression - 03 - DEFRA Intranet - Create Site Columns - SitePages.ps1'
+**********************
+Windows PowerShell transcript end
+End time: 20231025145231
+**********************

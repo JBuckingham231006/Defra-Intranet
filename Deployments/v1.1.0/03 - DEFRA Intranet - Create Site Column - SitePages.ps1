@@ -45,30 +45,37 @@ Start-Transcript -path "$global:scriptPath/Logs/$logfileName" -append | Out-Null
 
 Invoke-Configuration
 
-$site = $global:sites | Where-Object { $_.Abbreviation -eq "DEFRA" -and $_.RelativeURL.Length -gt 0 }
+$sites = $global:sites | Where-Object { $_.SiteType -eq "ALB" -or $_.SiteType -eq "Parent" -and $_.RelativeURL.Length -gt 0 } | Sort-Object -Property @{Expression="SiteType";Descending=$true},@{Expression="DisplayName";Descending=$false}
 
-if($null -eq $site)
+
+
+#$site = $global:sites | Where-Object { $_.Abbreviation -eq "DEFRA" -and $_.RelativeURL.Length -gt 0 }
+
+#if($null -eq $site)
+#{
+#    throw "An entry in the configuration could not be found for the 'DEFRA Intranet' or is not configured correctly"
+#}
+foreach($site in $sites)
 {
-    throw "An entry in the configuration could not be found for the 'DEFRA Intranet' or is not configured correctly"
-}
+    $fullURL = "$global:rootURL/$($site.RelativeURL)"
+    Connect-PnPOnline -Url $fullURL -UseWebLogin
+    Write-Host "SCRIPT EXECUTED BY '$(Get-CurrentUser)' AT $(get-date -f "HH:mm:ss") ON $(get-date -f "dd/MM/yyyy")" -ForegroundColor Cyan
+    Write-Host "ACCESSING SHAREPOINT SITE: $fullURL" -ForegroundColor Cyan
 
-Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
-Write-Host "SCRIPT EXECUTED BY '$(Get-CurrentUser)' AT $(get-date -f "HH:mm:ss") ON $(get-date -f "dd/MM/yyyy")" -ForegroundColor Cyan
-Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.RelativeURL)" -ForegroundColor Cyan
+# "Content Owner - Team" column
+    $displayName = "Content Owner - Team"
+    $field = Get-PnPField -Identity "ContentOwner-Team" -ErrorAction SilentlyContinue 
+    if($null -eq $field)
+    {
+        $field = Add-PnPField -Type "Choice" -InternalName "ContentOwnerTeam" -DisplayName $displayName -Required -Choices "ownr1@defra.gov.uk", "ownr2@defra.gov.uk", "ownr3@defra.gov.uk"
+        Set-PnPField -Identity $field.Id -Values @{SelectionMode=0}
 
-# "Alternative Contact" column
-$displayName = "Content Owner"
-$field = Get-PnPField -Identity "ContentOwner" -ErrorAction SilentlyContinue
-if($null -eq $field)
-{
-    $field = Add-PnPField -Type "Hyperlink" -InternalName "" -DisplayName $displayName -Required
-    Set-PnPField -Identity $field.Id -Values @{SelectionMode=0}
-
-    Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
-}
-else 
-{
-    Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
+        Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
+    }
+    else 
+    {
+        Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
+    }
 }
 
 <# "Content Relevant To" column
