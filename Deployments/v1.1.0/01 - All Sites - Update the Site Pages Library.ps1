@@ -52,21 +52,29 @@ foreach($site in $sites)
     Write-Host "SCRIPT EXECUTED BY '$(Get-CurrentUser)' AT $(get-date -f "HH:mm:ss") ON $(get-date -f "dd/MM/yyyy")" -ForegroundColor Cyan
     Write-Host "ACCESSING SHAREPOINT SITE: $fullURL" -ForegroundColor Cyan
 
-    # "Content Owner - Team" column
-    $displayName = "Content Owner - Team"
-    $internalName = "Content_x0020_Owner_x0020__x002d__x0020_Team"
-
-    $field = Get-PnPField -Identity $internalName -ErrorAction SilentlyContinue 
-    if($null -eq $field)
+    if($site.Abbreviation -ne "EA")
     {
-        $field = Add-PnPField -Type "Choice" -InternalName $internalName -DisplayName $displayName -Required
-        Set-PnPField -Identity $field.Id -Values @{SelectionMode=0}
+        # "Content Owner - Team" column
+        $displayName = "Content Owner - Team"
+        $internalName = "Content_x0020_Owner_x0020__x002d__x0020_Team"
 
-        Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
+        $field = Get-PnPField -Identity $internalName -ErrorAction SilentlyContinue
+
+        if($null -eq $field)
+        {
+            $field = Add-PnPField -Type "Choice" -InternalName $internalName -DisplayName $displayName -Required
+            Set-PnPField -Identity $field.Id -Values @{SelectionMode=0}
+
+            Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
+        }
+        else 
+        {
+            Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
+        }
     }
-    else 
+    else
     {
-        Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
+        Write-Host "SKIPPING SITE. WE DO NOT INSTALL THIS COLUMN ON THE '$($site.Abbreviation)' SITE" -ForegroundColor Yellow
     }
 }
 

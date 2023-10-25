@@ -44,8 +44,7 @@ Start-Transcript -path "$global:scriptPath/Logs/$logfileName" -append | Out-Null
 
 Invoke-Configuration
 
-# WARNING: We do NOT want to uninstall the column from the EA Intranet as this column is in-use already within production. We're only want to remove our introduction of this column to the other sites
-$sites = $global:sites | Where-Object { $_.SiteType -eq "ALB" -or $_.SiteType -eq "Parent" -and $_.RelativeURL.Length -gt 0 -and $_.Abbreviation -ne "EA" } | Sort-Object -Property @{Expression="SiteType";Descending=$true},@{Expression="DisplayName";Descending=$false}
+$sites = $global:sites | Where-Object { $_.SiteType -eq "ALB" -or $_.SiteType -eq "Parent" -and $_.RelativeURL.Length -gt 0 } | Sort-Object -Property @{Expression="SiteType";Descending=$true},@{Expression="DisplayName";Descending=$false}
 
 if($null -eq $site)
 {
@@ -63,12 +62,16 @@ foreach($site in $sites)
 
     foreach($fieldName in $fieldNames)
     {
-        $field = Get-PnPField -Identity $fieldName -ErrorAction SilentlyContinue
-
-        if($null -ne $field)
+        # We do not want to remove the field from the EA site as that's already established and being used. WARNING: Removal of this field would cause data lose.
+        if($site.Abbreviation -ne "EA" -and $fieldName -ne "Content_x0020_Owner_x0020__x002d__x0020_Team")
         {
-            Remove-PnPField -Identity $fieldName -Force
-            Write-Host "SITE COLUMN REMOVED: $fieldName" -ForegroundColor Cyan
+            $field = Get-PnPField -Identity $fieldName -ErrorAction SilentlyContinue
+
+            if($null -ne $field)
+            {
+                Remove-PnPField -Identity $fieldName -Force
+                Write-Host "SITE COLUMN REMOVED: $fieldName" -ForegroundColor Cyan
+            }
         }
     }
 }
