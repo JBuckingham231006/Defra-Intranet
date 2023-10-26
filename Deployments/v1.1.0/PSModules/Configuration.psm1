@@ -207,5 +207,121 @@ function Invoke-Configuration
                 }
             )
         }
+
+        # JB Development Environment
+        local001 {
+            $global:adminURL = "https://buckinghamdevelopment-admin.sharepoint.com"
+            $global:rootURL = "https://buckinghamdevelopment.sharepoint.com"
+
+            $global:sites = @(
+                [PSCustomObject]@{
+                    'Abbreviation' = "APHA"
+                    'ApplyHubSiteNavigationChanges' = $true
+                    'DisplayName' = "Animal  & Plant Health Agency"
+                    'RelativeURL' = "sites/DEFRA002"
+                    'SiteType' = "ALB"
+                },
+                [PSCustomObject]@{
+                    'Abbreviation' = "ContentTypeHub"
+                    'ApplyHubSiteNavigationChanges' = $false
+                    'DisplayName' = ""
+                    'RelativeURL' = "sites/ContentTypeHub"
+                    'SiteType' = "System"
+                },
+                [PSCustomObject]@{
+                    'Abbreviation' = "Defra"
+                    'ApplyHubSiteNavigationChanges' = $true
+                    'DisplayName' = "Defra Intranet"
+                    'RelativeURL' = "sites/HUBSITE001"
+                    'SiteType' = "Parent"
+                },
+                [PSCustomObject]@{
+                    'Abbreviation' = "EA"
+                    'ApplyHubSiteNavigationChanges' = $true
+                    'DisplayName' = "Environment Agency"
+                    'RelativeURL' = "sites/DEFRA001"
+                    'SiteType' = "ALB"
+                },
+                [PSCustomObject]@{
+                    'Abbreviation' = "MMO"
+                    'ApplyHubSiteNavigationChanges' = $true
+                    'DisplayName' = "Marine Management Organisation"
+                    'RelativeURL' = "sites/DEFRA002"
+                    'SiteType' = "ALB"
+                },
+                [PSCustomObject]@{
+                    'Abbreviation' = "NE"
+                    'ApplyHubSiteNavigationChanges' = $true
+                    'DisplayName' = "Natural England Intranet"
+                    'RelativeURL' = "sites/DEFRA002"
+                    'SiteType' = "ALB"
+                },
+                [PSCustomObject]@{
+                    'Abbreviation' = "RPA"
+                    'ApplyHubSiteNavigationChanges' = $true
+                    'DisplayName' = "Rural Payment Agency"
+                    'RelativeURL' = "sites/DEFRA002"
+                    'SiteType' = "ALB"
+                }
+            )
+        }
+
+        # NM Development Environment
+        local002 {
+            $global:adminURL = "https://nhmsolutions-admin.sharepoint.com"
+            $global:rootURL = "https://nhmsolutions.sharepoint.com"
+
+            $global:sites = @(
+                [PSCustomObject]@{
+                    'Abbreviation' = "APHA"
+                    'ApplyHubSiteNavigationChanges' = $true
+                    'DisplayName' = "Animal & Plant Health Agency"
+                    'RelativeURL' = "sites/apha"
+                    'SiteType' = "ALB"
+                },
+                [PSCustomObject]@{
+                    'Abbreviation' = "ContentTypeHub"
+                    'ApplyHubSiteNavigationChanges' = $false
+                    'DisplayName' = ""
+                    'RelativeURL' = "sites/ContentTypeHub"
+                    'SiteType' = "System"
+                },
+                [PSCustomObject]@{
+                    'Abbreviation' = "Defra"
+                    'ApplyHubSiteNavigationChanges' = $true
+                    'DisplayName' = "Defra Intranet"
+                    'RelativeURL' = "sites/defraintranet"
+                    'SiteType' = "Parent"
+                },
+                [PSCustomObject]@{
+                    'Abbreviation' = "EA"
+                    'ApplyHubSiteNavigationChanges' = $true
+                    'DisplayName' = "Environment Agency"
+                    'RelativeURL' = "sites/eaintranet"
+                    'SiteType' = "ALB"
+                },
+                [PSCustomObject]@{
+                    'Abbreviation' = "MMO"
+                    'ApplyHubSiteNavigationChanges' = $true
+                    'DisplayName' = "Marine Management Organisation"
+                    'RelativeURL' = "sites/mmointranet"
+                    'SiteType' = "ALB"
+                },
+                [PSCustomObject]@{
+                    'Abbreviation' = "NE"
+                    'ApplyHubSiteNavigationChanges' = $true
+                    'DisplayName' = "Natural England Intranet"
+                    'RelativeURL' = "sites/neintranet"
+                    'SiteType' = "ALB"
+                },
+                [PSCustomObject]@{
+                    'Abbreviation' = "RPA"
+                    'ApplyHubSiteNavigationChanges' = $true
+                    'DisplayName' = "Rural Payment Agency"
+                    'RelativeURL' = "sites/rpaintranet"
+                    'SiteType' = "ALB"
+                }
+            )
+        }
     }
 }
