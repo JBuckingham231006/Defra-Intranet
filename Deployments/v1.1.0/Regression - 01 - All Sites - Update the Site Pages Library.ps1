@@ -46,9 +46,9 @@ Invoke-Configuration
 
 $sites = $global:sites | Where-Object { $_.SiteType -eq "ALB" -or $_.SiteType -eq "Parent" -and $_.RelativeURL.Length -gt 0 } | Sort-Object -Property @{Expression="SiteType";Descending=$true},@{Expression="DisplayName";Descending=$false}
 
-if($null -eq $site)
+if($null -eq $sites)
 {
-    throw "An entry in the configuration could not be found for the 'DEFRA Intranet' or is not configured correctly"
+    throw "A configuration entry could not be found for '$($global:environment)', '$($global:environment)' is not configured correctly or the rules querying the configuration are returning no result"
 }
 
 foreach($site in $sites)
