@@ -8,7 +8,7 @@
         SharePointPnPPowerShellOnline v3.29.2101.0
 
     SHAREPOINT PERMISSIONS REQUIREMENTS:
-    - Site Collection Admins rights to the DEFRA Intranet SharePoint site
+    - Site Collection Admins rights to the Defra Intranet SharePoint site
     OR
     - Access to the SharePoint Tenant Administration site
 #>
@@ -45,11 +45,11 @@ Start-Transcript -path "$global:scriptPath/Logs/$logfileName" -append | Out-Null
 
 Invoke-Configuration
 
-$site = $global:sites | Where-Object { $_.Abbreviation -eq "DEFRA" -and $_.RelativeURL.Length -gt 0 }
+$site = $global:sites | Where-Object { $_.Abbreviation -eq "Defra" -and $_.RelativeURL.Length -gt 0 }
 
 if($null -eq $site)
 {
-    throw "An entry in the configuration could not be found for the 'DEFRA Intranet' or is not configured correctly"
+    throw "An entry in the configuration could not be found for the 'Defra Intranet' or is not configured correctly"
 }
 
 Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
@@ -71,29 +71,13 @@ else
     Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
 }
 
-# "Content Relevant To" column
-$displayName = "Content Relevant To"
-$field = Get-PnPField -Identity "ContentRelevantTo" -ErrorAction SilentlyContinue
-if($null -eq $field)
-{
-    $field = Add-PnPField -Type "MultiChoice" -InternalName "ContentRelevantTo" -DisplayName $displayName -Required -Choices "DEFRA","EA","NE","APHA","RPA","MMO","CF","VMD","Cefas","JNCC","Kew"
-    Set-PnPField -Identity $field.Id -Values @{
-        Description = "Select whether the content is relevant to the whole of the DEFRA group or specific departments or functions"
-    }
-
-    Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
-}
-else 
-{
-    Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
-}
-
 # "Content Type" column
 $displayName = "Content Types"
 $field = Get-PnPField -Identity "ContentTypes" -ErrorAction SilentlyContinue
 if($null -eq $field)
 {
     $field = Add-PnPField -Type "Choice" -InternalName "ContentTypes" -DisplayName $displayName -Required -Choices "News Story","Blog or Online Diary","Office Notice","Site Page"
+
     Set-PnPField -Identity $field.Id -Values @{
         Description = "Please select what kind of content you are submitting:"; 
         CustomFormatter = '{"elmType":"div","style":{"flex-wrap":"wrap","display":"flex"},"children":[{"elmType":"div","style":{"box-sizing":"border-box","padding":"4px 8px 5px 8px","overflow":"hidden","text-overflow":"ellipsis","display":"flex","border-radius":"16px","height":"24px","align-items":"center","white-space":"nowrap","margin":"4px 4px 4px 4px"},"attributes":{"class":{"operator":":","operands":[{"operator":"==","operands":["[$ContentTypes]",""]},"",{"operator":":","operands":[{"operator":"==","operands":["[$ContentTypes]","News story"]},"sp-css-backgroundColor-successBackground50 sp-css-color-green",{"operator":":","operands":[{"operator":"==","operands":["[$ContentTypes]","Blog or online diary"]},"sp-css-backgroundColor-warningBackground50 sp-css-color-neutralPrimaryAlt",{"operator":":","operands":[{"operator":"==","operands":["[$ContentTypes]","Office notice"]},"sp-field-borderAllRegular sp-field-borderAllSolid sp-css-borderColor-neutralSecondary",{"operator":":","operands":[{"operator":"==","operands":["[$ContentTypes]","Site Pages"]},"sp-css-backgroundColor-BgCyan sp-field-borderAllRegular sp-field-borderAllSolid sp-css-borderColor-CyanFont sp-css-color-CyanFont",""]}]}]}]}]}},"txtContent":"[$ContentTypes]"}],"templateId":"BgColorChoicePill"}'
@@ -101,7 +85,7 @@ if($null -eq $field)
 
     Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
 }
-else 
+else
 {
     Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
 }
@@ -164,7 +148,7 @@ if($null -eq $field)
     Set-PnPField -Identity $field.Id -Values @{
         DefaultValue ="Pending Approval"
         Description = "Status of the content."; 
-        CustomFormatter = '{"elmType":"div","style":{"flex-wrap":"wrap","display":"flex"},"children":[{"elmType":"div","style":{"box-sizing":"border-box","padding":"4px 8px 5px 8px","overflow":"hidden","text-overflow":"ellipsis","display":"flex","border-radius":"16px","height":"24px","align-items":"center","white-space":"nowrap","margin":"4px 4px 4px 4px"},"attributes":{"class":{"operator":":","operands":[{"operator":"==","operands":["[$Status]","Pending"]},"sp-css-backgroundColor-BgLightGray sp-css-borderColor-LightGrayFont sp-css-color-LightGrayFont",{"operator":":","operands":[{"operator":"==","operands":["[$Status]","Approved"]},"sp-css-backgroundColor-BgGreen sp-css-borderColor-WhiteFont sp-css-color-WhiteFont",{"operator":":","operands":[{"operator":"==","operands":["[$Status]","Rejected"]},"sp-css-backgroundColor-BgPeach sp-css-borderColor-PeachFont sp-css-color-PeachFont",{"operator":":","operands":[{"operator":"==","operands":["[$Status]",""]},"","sp-field-borderAllRegular sp-field-borderAllSolid sp-css-borderColor-neutralSecondary"]}]}]}]}},"txtContent":"[$Status]"}],"templateId":"BgColorChoicePill"}'
+        CustomFormatter = '{"elmType":"div","style":{"flex-wrap":"wrap","display":"flex"},"children":[{"elmType":"div","style":{"box-sizing":"border-box","padding":"4px 8px 5px 8px","overflow":"hidden","text-overflow":"ellipsis","display":"flex","border-radius":"16px","height":"24px","align-items":"center","white-space":"nowrap","margin":"4px 4px 4px 4px"},"attributes":{"class":{"operator":":","operands":[{"operator":"==","operands":["[$ContentSubmissionStatus]","Pending Approval"]},"sp-css-backgroundColor-BgGold sp-css-borderColor-GoldFont sp-field-fontSizeSmall sp-css-color-GoldFont",{"operator":":","operands":[{"operator":"==","operands":["[$ContentSubmissionStatus]","Approved"]},"sp-css-backgroundColor-BgMintGreen sp-field-fontSizeSmall sp-css-color-MintGreenFont",{"operator":":","operands":[{"operator":"==","operands":["[$ContentSubmissionStatus]","Rejected"]},"sp-css-backgroundColor-BgDustRose sp-css-borderColor-DustRoseFont sp-field-fontSizeSmall sp-css-color-DustRoseFont",""]}]}]}},"txtContent":"[$ContentSubmissionStatus]"}]}'
     }
 
     Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green

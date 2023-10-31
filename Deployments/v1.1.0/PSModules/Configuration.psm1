@@ -12,7 +12,7 @@
 #>
 
 # GLOBAL SETTINGS
-$global:environment = "local002" # Which environment are we targetting?
+$global:environment = "local001" # Which environment are we targetting?
 
 # GLOBAL VARIABLES
 
@@ -212,6 +212,7 @@ function Invoke-Configuration
         local001 {
             $global:adminURL = "https://buckinghamdevelopment-admin.sharepoint.com"
             $global:rootURL = "https://buckinghamdevelopment.sharepoint.com"
+            $global:termSetPath = "DEFRA EDRM UAT|Organisational Unit|Defra Orgs"
 
             $global:sites = @(
                 [PSCustomObject]@{
@@ -232,14 +233,14 @@ function Invoke-Configuration
                     'Abbreviation' = "Defra"
                     'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = "Defra Intranet"
-                    'RelativeURL' = "sites/HUBSITE001"
+                    'RelativeURL' = "sites/DefraIntranet"
                     'SiteType' = "Parent"
                 },
                 [PSCustomObject]@{
                     'Abbreviation' = "EA"
                     'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = "Environment Agency"
-                    'RelativeURL' = "sites/DEFRA001"
+                    'RelativeURL' = "sites/EAIntranet"
                     'SiteType' = "ALB"
                 },
                 [PSCustomObject]@{
@@ -260,7 +261,7 @@ function Invoke-Configuration
                     'Abbreviation' = "RPA"
                     'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = "Rural Payment Agency"
-                    'RelativeURL' = "sites/DEFRA002"
+                    'RelativeURL' = "sites/RPAIntranet"
                     'SiteType' = "ALB"
                 }
             )
@@ -270,6 +271,7 @@ function Invoke-Configuration
         local002 {
             $global:adminURL = "https://nhmsolutions-admin.sharepoint.com"
             $global:rootURL = "https://nhmsolutions.sharepoint.com"
+            $global:termSetPath = "DEFRA EDRM UAT|Organisational Unit|Defra Orgs"
 
             $global:sites = @(
                 [PSCustomObject]@{

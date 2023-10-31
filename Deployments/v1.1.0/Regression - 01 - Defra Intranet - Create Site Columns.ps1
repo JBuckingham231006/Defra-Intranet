@@ -9,7 +9,7 @@
         SharePointPnPPowerShellOnline v3.29.2101.0
 
     SHAREPOINT PERMISSIONS REQUIREMENTS:
-    - Site Collection Admins rights to the DEFRA Intranet SharePoint site
+    - Site Collection Admins rights to the Defra Intranet SharePoint site
     OR
     - Access to the SharePoint Tenant Administration site
 #>
@@ -46,18 +46,18 @@ Start-Transcript -path "$global:scriptPath/Logs/$logfileName" -append | Out-Null
 
 Invoke-Configuration
 
-$site = $global:sites | Where-Object { $_.Abbreviation -eq "DEFRA" -and $_.RelativeURL.Length -gt 0 }
+$site = $global:sites | Where-Object { $_.Abbreviation -eq "Defra" -and $_.RelativeURL.Length -gt 0 }
 
 if($null -eq $site)
 {
-    throw "An entry in the configuration could not be found for the 'DEFRA Intranet' or is not configured correctly"
+    throw "An entry in the configuration could not be found for the 'Defra Intranet' or is not configured correctly"
 }
 
 Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
 Write-Host "SCRIPT EXECUTED BY '$(Get-CurrentUser)' AT $(get-date -f "HH:mm:ss") ON $(get-date -f "dd/MM/yyyy")" -ForegroundColor Cyan
 Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.RelativeURL)" -ForegroundColor Cyan
 
-$fieldNames = @("AltContact","ContentRelevantTo","ContentTypes","LineManager","PublishBy","StakeholdersInformed","ContentSubmissionStatus","ContentSubmissionDescription")
+$fieldNames = @("AltContact","ContentTypes","LineManager","PublishBy","StakeholdersInformed","ContentSubmissionStatus","ContentSubmissionDescription")
 
 foreach($fieldName in $fieldNames)
 {
