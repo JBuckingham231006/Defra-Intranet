@@ -8,7 +8,7 @@
         SharePointPnPPowerShellOnline v3.29.2101.0
 
     SHAREPOINT PERMISSIONS REQUIREMENTS:
-    - Site Collection Admins rights to the DEFRA Intranet SharePoint site
+    - Site Collection Admins rights to the Defra Intranet SharePoint site
     OR
     - Access to the SharePoint Tenant Administration site
 #>
@@ -45,11 +45,11 @@ Start-Transcript -path "$global:scriptPath/Logs/$logfileName" -append | Out-Null
 
 Invoke-Configuration
 
-$site = $global:sites | Where-Object { $_.Abbreviation -eq "DEFRA" -and $_.RelativeURL.Length -gt 0 }
+$site = $global:sites | Where-Object { $_.Abbreviation -eq "Defra" -and $_.RelativeURL.Length -gt 0 }
 
 if($null -eq $site)
 {
-    throw "An entry in the configuration could not be found for the 'DEFRA Intranet' or is not configured correctly"
+    throw "An entry in the configuration could not be found for the 'Defra Intranet' or is not configured correctly"
 }
 
 Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
@@ -74,7 +74,7 @@ else
 }
 
 # Add our custom columns to the list
-$fieldNames = @("AltContact","ContentTypes","ContentRelevantTo","LineManager","PublishBy","StakeholdersInformed","ContentSubmissionStatus","ContentSubmissionDescription")
+$fieldNames = @("AltContact","ContentTypes","OrganisationIntranets","LineManager","PublishBy","StakeholdersInformed","ContentSubmissionStatus","ContentSubmissionDescription")
 
 foreach($fieldName in $fieldNames)
 {
@@ -91,12 +91,43 @@ foreach($fieldName in $fieldNames)
     }
 }
 
+# Customise the OrganisationIntranets column for this list
+$field = Get-PnPField -List $list -Identity "OrganisationIntranets" -ErrorAction SilentlyContinue
+
+if($null -ne $field)
+{
+    Set-PnPField -List $list -Identity $field.Id -Values @{
+        Title = "Content Relevant To"
+        Description = "Select whether the content is relevant to the whole of the Defra group or specific departments or functions"
+        Required = $true
+    }
+}
+else
+{
+    Write-Host "THE FIELD 'OrganisationIntranets' DOES NOT EXIST IN THE LIST '$displayName'" -ForegroundColor Red
+}
+
+# Customise the ContentSubmissionStatus  column for this list
+$field = Get-PnPField -List $list -Identity "ContentSubmissionStatus" -ErrorAction SilentlyContinue
+
+if($null -ne $field)
+{
+    Set-PnPField -List $list -Identity $field.Id -Values @{
+        Hidden = $true
+        CustomFormatter = '{"elmType":"div","style":{"flex-wrap":"wrap","display":"flex"},"children":[{"elmType":"div","style":{"box-sizing":"border-box","padding":"4px 8px 5px 8px","overflow":"hidden","text-overflow":"ellipsis","display":"flex","border-radius":"16px","height":"24px","align-items":"center","white-space":"nowrap","margin":"4px 4px 4px 4px"},"attributes":{"class":{"operator":":","operands":[{"operator":"==","operands":["[$ContentSubmissionStatus]","Pending Approval"]},"sp-css-backgroundColor-BgGold sp-css-borderColor-GoldFont sp-field-fontSizeSmall sp-css-color-GoldFont",{"operator":":","operands":[{"operator":"==","operands":["[$ContentSubmissionStatus]","Approved"]},"sp-css-backgroundColor-BgMintGreen sp-field-fontSizeSmall sp-css-color-MintGreenFont",{"operator":":","operands":[{"operator":"==","operands":["[$ContentSubmissionStatus]","Rejected"]},"sp-css-backgroundColor-BgDustRose sp-css-borderColor-DustRoseFont sp-field-fontSizeSmall sp-css-color-DustRoseFont",""]}]}]}},"txtContent":"[$ContentSubmissionStatus]"}]}'
+    }
+}
+else
+{
+    Write-Host "THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE LIST '$displayName'" -ForegroundColor Red
+}
+
 # Update the list's default view with our new fields
 $view = Get-PnPView -List $list -Identity "All Items"
 
 if($null -ne $view)
 {
-    $fieldNames = @("LinkTitle","ContentSubmissionDescription","Author","ContentSubmissionStatus","PublishBy","ContentTypes","Attachments","AltContact","ContentRelevantTo","LineManager","StakeholdersInformed")
+    $fieldNames = @("LinkTitle","ContentSubmissionDescription","Author","ContentSubmissionStatus","PublishBy","ContentTypes","Attachments","AltContact","OrganisationIntranets","LineManager","StakeholdersInformed")
     $view = Set-PnPView -List $list -Identity $view.Title -Fields $fieldNames
     Write-Host "LIST DEFAULT VIEW '$($view.Title)' UPDATED WITH NEW FIELDS" -ForegroundColor Green 
 }

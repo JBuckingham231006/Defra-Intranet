@@ -67,13 +67,13 @@ $fields = @(
     }
 )
 
-$termPath = $global:termSetPath
+$termSetPath = $global:termSetPath
 
 # Content Type(s)
 $ctSPDisplayName = "Site Page"
 $ct = Get-PnPContentType -Identity $global:ctDisplayName -ErrorAction SilentlyContinue
-$parentCt = Get-PnPContentType -Identity $ctSPDisplayName -ErrorAction SilentlyContinue
 $library = Get-PnPList -Identity "Site Pages"
+$parentCt = Get-PnPContentType -Identity $ctSPDisplayName -ErrorAction SilentlyContinue
 
 if($null -eq $ct -and $null -ne $parentCt)
 {
