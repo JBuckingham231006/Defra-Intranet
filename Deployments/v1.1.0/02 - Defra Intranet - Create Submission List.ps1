@@ -62,7 +62,6 @@ $listURL = "Lists/ICICS"
 
 $list = Get-PnPList -Identity $listURL
 
-
 if($null -eq $list)
 {
     $list = New-PnPList -Template GenericList -Title $displayName -Url $listURL -EnableVersioning
