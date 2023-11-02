@@ -12,7 +12,7 @@
 #>
 
 # GLOBAL SETTINGS
-$global:environment = "local001" # Which environment are we targetting?
+$global:environment = "dev" # Which environment are we targetting?
 
 # GLOBAL VARIABLES
 
