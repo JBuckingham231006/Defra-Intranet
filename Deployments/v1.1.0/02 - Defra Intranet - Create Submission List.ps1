@@ -106,7 +106,7 @@ else
     Write-Host "THE FIELD 'OrganisationIntranets' DOES NOT EXIST IN THE LIST '$displayName'" -ForegroundColor Red
 }
 
-# Customise the ContentSubmissionStatus  column for this list
+# Customise the ContentSubmissionStatus column for this list
 $field = Get-PnPField -List $list -Identity "ContentSubmissionStatus" -ErrorAction SilentlyContinue
 
 if($null -ne $field)
@@ -128,7 +128,23 @@ if($null -ne $view)
 {
     $fieldNames = @("LinkTitle","ContentSubmissionDescription","Author","ContentSubmissionStatus","PublishBy","ContentTypes","Attachments","AltContact","OrganisationIntranets","LineManager","StakeholdersInformed")
     $view = Set-PnPView -List $list -Identity $view.Title -Fields $fieldNames
-    Write-Host "LIST DEFAULT VIEW '$($view.Title)' UPDATED WITH NEW FIELDS" -ForegroundColor Green 
+    Write-Host "`nLIST DEFAULT VIEW '$($view.Title)' UPDATED WITH NEW FIELDS" -ForegroundColor Green 
+}
+
+# Set unique permissions for the list so anyone on the site can add an item
+if($null -ne $site.GroupPrefix -and $site.GroupPrefix.Length -gt 0)
+{
+    Write-Host "`nCUSTOMISING LIST PERMISSIONS" -ForegroundColor Green
+    Set-PnpList -Identity $list -BreakRoleInheritance
+    
+    Set-PnPListPermission -Identity $list -Group "$($site.GroupPrefix) Owners" -AddRole "Full Control"
+    Write-Host "'$($site.GroupPrefix) Owners' given Full Control" -ForegroundColor Yellow
+    
+    Set-PnPListPermission -Identity $list -Group "$($site.GroupPrefix) Members" -AddRole "Edit"
+    Write-Host "'$($site.GroupPrefix) Members' given Edit permissions to the list" -ForegroundColor Yellow
+
+    Set-PnPListPermission -Identity $list -Group "$($site.GroupPrefix) Visitors" -AddRole "Contribute"
+    Write-Host "'$($site.GroupPrefix) Visitors' given Contribute permissions to the list" -ForegroundColor Yellow
 }
 
 Write-Host "SCRIPT FINISHED" -ForegroundColor Yellow
