@@ -133,6 +133,35 @@ else
     Write-Host "THE FIELD 'AssignedTo' DOES NOT EXIST IN THE LIST '$displayName'" -ForegroundColor Red
 }
 
+# Rename default "Item" content type to "Content Submission Request"
+$ct = Get-PnPContentType -List $list -Identity "Item" -ErrorAction SilentlyContinue
+
+if($null -ne $ct)
+{
+    $ctx = Get-PnPContext
+    $ctx.Load($ct)
+    $ctx.ExecuteQuery()
+
+    try
+    {
+        $ct.ReadOnly = $false
+        $ct.Update($false)
+        $ctx.ExecuteQuery()
+
+        $ct.Name = "Content Submission Request"
+        $ct.Update($false)
+        $ctx.ExecuteQuery()
+
+        Write-Host "`nList default content type 'Item' renamed to 'Content Submission Request'" -ForegroundColor Green
+    }
+    finally
+    {
+        $ct.ReadOnly = $true
+        $ct.Update($false)
+        $ctx.ExecuteQuery()
+    }
+}
+
 # Update the list's default view with our new fields
 $view = Get-PnPView -List $list -Identity "All Items"
 
