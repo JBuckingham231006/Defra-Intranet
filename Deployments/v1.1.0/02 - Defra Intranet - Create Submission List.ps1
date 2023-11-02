@@ -73,7 +73,7 @@ else
 }
 
 # Add our custom columns to the list
-$fieldNames = @("AltContact","ContentTypes","OrganisationIntranets","LineManager","PublishBy","StakeholdersInformed","ContentSubmissionStatus","ContentSubmissionDescription")
+$fieldNames = @("AltContact","ContentTypes","OrganisationIntranets","LineManager","PublishBy","StakeholdersInformed","ContentSubmissionStatus","ContentSubmissionDescription","AssignedTo")
 
 foreach($fieldName in $fieldNames)
 {
@@ -121,12 +121,24 @@ else
     Write-Host "THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE LIST '$displayName'" -ForegroundColor Red
 }
 
+# Customise the AssignedTo column for this list
+$field = Get-PnPField -List $list -Identity "AssignedTo" -ErrorAction SilentlyContinue
+
+if($null -ne $field)
+{
+    Set-PnPField -List $list -Identity $field.Id -Values @{"SelectionMode"=0}
+}
+else
+{
+    Write-Host "THE FIELD 'AssignedTo' DOES NOT EXIST IN THE LIST '$displayName'" -ForegroundColor Red
+}
+
 # Update the list's default view with our new fields
 $view = Get-PnPView -List $list -Identity "All Items"
 
 if($null -ne $view)
 {
-    $fieldNames = @("LinkTitle","ContentSubmissionDescription","Author","ContentSubmissionStatus","PublishBy","ContentTypes","Attachments","AltContact","OrganisationIntranets","LineManager","StakeholdersInformed")
+    $fieldNames = @("Attachments","LinkTitle","AssignedTo","ContentSubmissionDescription","Author","ContentSubmissionStatus","PublishBy","ContentTypes","AltContact","OrganisationIntranets","LineManager","StakeholdersInformed")
     $view = Set-PnPView -List $list -Identity $view.Title -Fields $fieldNames
     Write-Host "`nLIST DEFAULT VIEW '$($view.Title)' UPDATED WITH NEW FIELDS" -ForegroundColor Green 
 }
