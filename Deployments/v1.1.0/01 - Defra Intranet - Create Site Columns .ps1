@@ -59,6 +59,7 @@ Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.Relativ
 # "Alternative Contact" column
 $displayName = "Alternative Contact"
 $field = Get-PnPField -Identity "AltContact" -ErrorAction SilentlyContinue
+
 if($null -eq $field)
 {
     $field = Add-PnPField -Type "User" -InternalName "AltContact" -DisplayName $displayName -Required
@@ -74,6 +75,7 @@ else
 # "Content Type" column
 $displayName = "Content Types"
 $field = Get-PnPField -Identity "ContentTypes" -ErrorAction SilentlyContinue
+
 if($null -eq $field)
 {
     $field = Add-PnPField -Type "Choice" -InternalName "ContentTypes" -DisplayName $displayName -Required -Choices "News Story","Blog or Online Diary","Office Notice","Site Page"
@@ -93,6 +95,7 @@ else
 # "Line Manager" column
 $displayName = "Line Manager"
 $field = Get-PnPField -Identity "LineManager" -ErrorAction SilentlyContinue
+
 if($null -eq $field)
 {
     $field = Add-PnPField -Type "User" -InternalName "LineManager" -DisplayName $displayName -Required
@@ -111,6 +114,7 @@ else
 # "Preferred Timing" column
 $displayName = "Preferred Timing"
 $field = Get-PnPField -Identity "PublishBy" -ErrorAction SilentlyContinue
+
 if($null -eq $field)
 {
     $field = Add-PnPField -Type "DateTime" -InternalName "PublishBy" -DisplayName $displayName -Required
@@ -129,6 +133,7 @@ else
 # "Stakeholders Informed" column
 $displayName = "Stakeholders Informed"
 $field = Get-PnPField -Identity "StakeholdersInformed" -ErrorAction SilentlyContinue
+
 if($null -eq $field)
 {
     $field = Add-PnPField -Type "Choice" -InternalName "StakeholdersInformed" -DisplayName $displayName -Required -Choices "Yes","No"
@@ -142,6 +147,7 @@ else
 # "Status" column
 $displayName = "Status"
 $field = Get-PnPField -Identity "ContentSubmissionStatus" -ErrorAction SilentlyContinue
+
 if($null -eq $field)
 {
     $field = Add-PnPField -Type "Choice" -InternalName "ContentSubmissionStatus" -DisplayName $displayName -Choices "Pending Approval","Approved","Rejected"
@@ -161,6 +167,7 @@ else
 # "Text" column
 $displayName = "Text"
 $field = Get-PnPField -Identity "ContentSubmissionDescription" -ErrorAction SilentlyContinue
+
 if($null -eq $field)
 {
     $field = Add-PnPField -Type "Note" -InternalName "ContentSubmissionDescription" -DisplayName $displayName -Required

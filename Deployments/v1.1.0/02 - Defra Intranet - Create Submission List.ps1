@@ -60,6 +60,8 @@ Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.Relativ
 $displayName = "Internal Comms Intranet Content Submissions"
 $listURL = "Lists/ICICS"
 
+Write-Host "`nCREATING THE LIST" -ForegroundColor Green
+
 $list = Get-PnPList -Identity $listURL
 
 if($null -eq $list)
@@ -71,6 +73,8 @@ else
 {
     Write-Host "THE LIST '$displayName' ALREADY EXISTS" -ForegroundColor Yellow
 }
+
+Write-Host "`nADDING OUR FIELDS TO THE LIST" -ForegroundColor Green
 
 # Add our custom columns to the list
 $fieldNames = @("AltContact","ContentTypes","OrganisationIntranets","LineManager","PublishBy","StakeholdersInformed","ContentSubmissionStatus","ContentSubmissionDescription","AssignedTo")
@@ -106,7 +110,31 @@ else
     Write-Host "THE FIELD 'OrganisationIntranets' DOES NOT EXIST IN THE LIST '$displayName'" -ForegroundColor Red
 }
 
-# Customise the ContentSubmissionStatus column for this list
+Write-Host "`nCUSTOMISING FIELDS" -ForegroundColor Green
+
+# Customise the "AssignedTo" column for this list
+$field = Get-PnPField -List $list -Identity "AssignedTo" -ErrorAction SilentlyContinue
+
+if($null -ne $field)
+{
+    Set-PnPField -List $list -Identity $field.Id -Values @{
+        "SelectionMode" = 0
+    }
+
+    $formula = "=if([{0}] == true, 'true', 'false')" -f '$DisplayAssignedToField'
+
+    $field.ClientValidationFormula = $formula
+    $field.Update()
+    Invoke-PnPQuery
+
+    Write-Host "THE FIELD '$($field.Title)' HAS BEEN CUSTOMISED FOR THE LIST '$displayName'" -ForegroundColor Yellow
+}
+else
+{
+    Write-Host "THE FIELD 'AssignedTo' DOES NOT EXIST IN THE LIST '$displayName'" -ForegroundColor Red
+}
+
+# Customise the "ContentSubmissionStatus" column for this list
 $field = Get-PnPField -List $list -Identity "ContentSubmissionStatus" -ErrorAction SilentlyContinue
 
 if($null -ne $field)
@@ -115,22 +143,12 @@ if($null -ne $field)
         Hidden = $true
         CustomFormatter = '{"elmType":"div","style":{"flex-wrap":"wrap","display":"flex"},"children":[{"elmType":"div","style":{"box-sizing":"border-box","padding":"4px 8px 5px 8px","overflow":"hidden","text-overflow":"ellipsis","display":"flex","border-radius":"16px","height":"24px","align-items":"center","white-space":"nowrap","margin":"4px 4px 4px 4px"},"attributes":{"class":{"operator":":","operands":[{"operator":"==","operands":["[$ContentSubmissionStatus]","Pending Approval"]},"sp-css-backgroundColor-BgGold sp-css-borderColor-GoldFont sp-field-fontSizeSmall sp-css-color-GoldFont",{"operator":":","operands":[{"operator":"==","operands":["[$ContentSubmissionStatus]","Approved"]},"sp-css-backgroundColor-BgMintGreen sp-field-fontSizeSmall sp-css-color-MintGreenFont",{"operator":":","operands":[{"operator":"==","operands":["[$ContentSubmissionStatus]","Rejected"]},"sp-css-backgroundColor-BgDustRose sp-css-borderColor-DustRoseFont sp-field-fontSizeSmall sp-css-color-DustRoseFont",""]}]}]}},"txtContent":"[$ContentSubmissionStatus]"}]}'
     }
+
+    Write-Host "THE FIELD '$($field.Title)' HAS BEEN CUSTOMISED FOR THE LIST '$displayName'" -ForegroundColor Yellow
 }
 else
 {
     Write-Host "THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE LIST '$displayName'" -ForegroundColor Red
-}
-
-# Customise the AssignedTo column for this list
-$field = Get-PnPField -List $list -Identity "AssignedTo" -ErrorAction SilentlyContinue
-
-if($null -ne $field)
-{
-    Set-PnPField -List $list -Identity $field.Id -Values @{"SelectionMode"=0}
-}
-else
-{
-    Write-Host "THE FIELD 'AssignedTo' DOES NOT EXIST IN THE LIST '$displayName'" -ForegroundColor Red
 }
 
 # Rename default "Item" content type to "Content Submission Request"
@@ -188,5 +206,5 @@ if($null -ne $site.GroupPrefix -and $site.GroupPrefix.Length -gt 0)
     Write-Host "'$($site.GroupPrefix) Visitors' given Contribute permissions to the list" -ForegroundColor Yellow
 }
 
-Write-Host "SCRIPT FINISHED" -ForegroundColor Yellow
+Write-Host "`nSCRIPT FINISHED" -ForegroundColor Yellow
 Stop-Transcript
