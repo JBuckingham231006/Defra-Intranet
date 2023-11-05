@@ -1,7 +1,7 @@
 <#
     SCRIPT OVERVIEW:
     REGRESSION SCRIPT FOR: 01 - DEFRA Intranet - Update the Site Pages Library.ps1
-    This script uninstalls our custom column(s) from the "Site Page" libraries in the Intranet sites, except the EA site.
+    This script uninstalls our custom column(s) from the "Site Page" libraries in the Defra and ALB Intranet sites.
 
     SOFTWARE REQUIREMENTS:
     This script was developed on the following platform:
@@ -51,11 +51,12 @@ if($null -eq $sites)
     throw "A configuration entry could not be found for '$($global:environment)', '$($global:environment)' is not configured correctly or the rules querying the configuration are returning no result"
 }
 
+Write-Host "SCRIPT EXECUTED BY '$(Get-CurrentUser)' AT $(get-date -f "HH:mm:ss") ON $(get-date -f "dd/MM/yyyy")" -ForegroundColor Cyan
+Write-Host ""
+
 foreach($site in $sites)
 {
-    $fullURL = "$global:rootURL/$($site.RelativeURL)"
-    Connect-PnPOnline -Url $fullURL -UseWebLogin
-    Write-Host "SCRIPT EXECUTED BY '$(Get-CurrentUser)' AT $(get-date -f "HH:mm:ss") ON $(get-date -f "dd/MM/yyyy")" -ForegroundColor Cyan
+    Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
     Write-Host "ACCESSING SHAREPOINT SITE: $fullURL" -ForegroundColor Cyan
 
     $fieldNames = @("Content_x0020_Owner_x0020__x002d__x0020_Team")

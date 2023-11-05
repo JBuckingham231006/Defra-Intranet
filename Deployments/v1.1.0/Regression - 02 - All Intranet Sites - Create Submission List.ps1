@@ -8,7 +8,7 @@
         SharePointPnPPowerShellOnline v3.29.2101.0
 
     SHAREPOINT PERMISSIONS REQUIREMENTS:
-    - Site Collection Admins rights to the Defra Intranet SharePoint site
+    - Site Collection Admins rights to the Defra and ALB Intranet SharePoint sites
     OR
     - Access to the SharePoint Tenant Administration site
 #>
@@ -45,26 +45,39 @@ Start-Transcript -path "$global:scriptPath/Logs/$logfileName" -append | Out-Null
 
 Invoke-Configuration
 
-$site = $global:sites | Where-Object { $_.Abbreviation -eq "Defra" -and $_.RelativeURL.Length -gt 0 }
+$sites = $global:sites | Where-Object { $_.SiteType -eq "ALB" -or $_.SiteType -eq "Parent" -and $_.RelativeURL.Length -gt 0 } | Sort-Object -Property @{Expression="SiteType";Descending=$false},@{Expression="DisplayName";Descending=$false}
 
-if($null -eq $site)
+if($null -eq $sites)
 {
     throw "An entry in the configuration could not be found for the 'Defra Intranet' or is not configured correctly"
 }
 
-Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
 Write-Host "SCRIPT EXECUTED BY '$(Get-CurrentUser)' AT $(get-date -f "HH:mm:ss") ON $(get-date -f "dd/MM/yyyy")" -ForegroundColor Cyan
-Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.RelativeURL)" -ForegroundColor Cyan
+Write-Host ""
 
-$displayName = "Internal Comms Intranet Content Submissions"
-$listURL = "Lists/ICICS"
-
-$list = Get-PnPList -Identity $listURL
-
-if($null -ne $list)
+foreach($site in $sites)
 {
-    Remove-PnPList -Identity $listURL -Force
-    Write-Host "THE '$displayName' LIST HAS BEEN REMOVED" -ForegroundColor Green
+    Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
+    Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.RelativeURL)" -ForegroundColor Green
+
+    $displayName = "Internal Comms Intranet Content Submissions"
+    $listURL = "Lists/ICICS"
+
+    $web = Get-PnPWeb
+    $list = Get-PnPList -Identity $listURL
+
+
+    if($null -ne $list)
+    {
+        Remove-PnPList -Identity $listURL -Force
+        Write-Host "THE '$displayName' LIST HAS BEEN REMOVED" -ForegroundColor Yellow
+    }
+    else
+    {
+        Write-Host "THE '$displayName' LIST DOES NOT EXIST IN THE SITE '$($web.Title)'" -ForegroundColor Cyan
+    }
+
+    Write-Host ""
 }
 
 Write-Host "SCRIPT FINISHED" -ForegroundColor Yellow
