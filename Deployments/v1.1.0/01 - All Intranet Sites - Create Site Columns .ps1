@@ -1,6 +1,6 @@
 <#
     SCRIPT OVERVIEW:
-    This script creates the site columns required by our custom list(s) and libraries within the DEFRA SharePoint site
+    This script creates the site columns required by our custom list(s) and libraries within the Defra and ALB SharePoint sites
 
     SOFTWARE REQUIREMENTS:
     This script was developed on the following platform:
@@ -57,7 +57,9 @@ Write-Host ""
 foreach($site in $sites)
 {
     Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
+    Write-Host "SCRIPT EXECUTED BY '$(Get-CurrentUser)' AT $(get-date -f "HH:mm:ss") ON $(get-date -f "dd/MM/yyyy")" -ForegroundColor Cyan
     Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.RelativeURL)" -ForegroundColor Cyan
+    Write-Host ""
 
     # "Alternative Contact" column
     $displayName = "Alternative Contact"
