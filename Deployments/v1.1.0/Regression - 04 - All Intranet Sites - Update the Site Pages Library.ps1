@@ -51,13 +51,12 @@ if($null -eq $sites)
     throw "A configuration entry could not be found for '$($global:environment)', '$($global:environment)' is not configured correctly or the rules querying the configuration are returning no result"
 }
 
-Write-Host "SCRIPT EXECUTED BY '$(Get-CurrentUser)' AT $(get-date -f "HH:mm:ss") ON $(get-date -f "dd/MM/yyyy")" -ForegroundColor Cyan
-Write-Host ""
-
 foreach($site in $sites)
 {
     Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
-    Write-Host "ACCESSING SHAREPOINT SITE: $fullURL" -ForegroundColor Cyan
+    Write-Host "SCRIPT EXECUTED BY '$(Get-CurrentUser)' AT $(get-date -f "HH:mm:ss") ON $(get-date -f "dd/MM/yyyy")" -ForegroundColor Cyan
+    Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.RelativeURL)" -ForegroundColor Cyan
+    Write-Host ""
 
     $fieldNames = @("Content_x0020_Owner_x0020__x002d__x0020_Team")
 

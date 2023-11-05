@@ -52,14 +52,13 @@ if($null -eq $sites)
     throw "An entry in the configuration could not be found for the 'Defra Intranet' or is not configured correctly"
 }
 
-Write-Host "SCRIPT EXECUTED BY '$(Get-CurrentUser)' AT $(get-date -f "HH:mm:ss") ON $(get-date -f "dd/MM/yyyy")" -ForegroundColor Cyan
-Write-Host ""
-
 foreach($site in $sites)
 {
     Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
     Write-Host "SCRIPT EXECUTED BY '$(Get-CurrentUser)' AT $(get-date -f "HH:mm:ss") ON $(get-date -f "dd/MM/yyyy")" -ForegroundColor Cyan
     Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.RelativeURL)" -ForegroundColor Cyan
+
+    $ctx = Get-PnPContext
 
     # Create new "Submission" list
     $displayName = "Internal Comms Intranet Content Submissions"
@@ -69,10 +68,10 @@ foreach($site in $sites)
     switch ($site.Abbreviation)
     {
         "Defra" { 
-            $fieldNames = @("AltContact","ContentTypes","OrganisationIntranets","LineManager","PublishBy","StakeholdersInformed","ContentSubmissionStatus","ContentSubmissionDescription","AssignedTo")
+            $fieldNames = @("AltContact","ContentTypes","OrganisationIntranets","LineManager","PublishBy","StakeholdersInformed","ContentSubmissionStatus","ContentSubmissionDescription")
         }
         default { 
-            $fieldNames = @("AltContact","ContentTypes","LineManager","PublishBy","StakeholdersInformed","ContentSubmissionStatus","ContentSubmissionDescription","AssignedTo")
+            $fieldNames = @("AltContact","ContentTypes","LineManager","PublishBy","StakeholdersInformed","ContentSubmissionStatus","ContentSubmissionDescription")
         }
     }
 
@@ -134,7 +133,7 @@ foreach($site in $sites)
     # LIST-LEVEL FIELD CUSTOMISATION
     Write-Host "`nCUSTOMISING FIELDS" -ForegroundColor Green
 
-    # Customise the "AssignedTo" column for this list
+    <# Customise the "AssignedTo" column for this list
     $field = Get-PnPField -List $list -Identity "AssignedTo" -ErrorAction SilentlyContinue
 
     if($null -ne $field)
@@ -154,7 +153,7 @@ foreach($site in $sites)
     else
     {
         Write-Host "THE FIELD 'AssignedTo' DOES NOT EXIST IN THE LIST '$displayName'" -ForegroundColor Red
-    }
+    } #>
 
     # Customise the "ContentSubmissionStatus" column for this list
     $field = Get-PnPField -List $list -Identity "ContentSubmissionStatus" -ErrorAction SilentlyContinue
@@ -201,6 +200,58 @@ foreach($site in $sites)
             $ctx.ExecuteQuery()
         }
     }
+
+    # CONTENT TYPES
+    Write-Host "`nCUSTOMISING CONTENT TYPES" -ForegroundColor Green
+
+    $ctName = "Content Submission Request - Stage 2"
+    $listCT = Get-PnPContentType -Identity $ctName -List $displayName -ErrorAction SilentlyContinue
+
+    if($null -eq $listCT)
+    {
+        $ct = Get-PnPContentType -Identity $ctName
+
+        if($null -ne $ct)
+        {
+            Add-PnPContentTypeToList -List $displayName -ContentType $ct
+            $listCT = Get-PnPContentType -Identity $ctName -List $displayName
+            Write-Host "SITE CONTENT TYPE INSTALLED '$ctName' HAS BEEN INSTALLED ON THE LIST '$displayName'" -ForegroundColor Green
+        }
+        else
+        {
+            throw "ERROR: The content Type '$ctName' is missing from the site. Please run the 'Create Content Types.ps1' script then try again." 
+        }
+    }
+    else
+    {
+        Write-Host "THE CONTENT TYPE '$displayName' ALREADY EXISTS ON THE LIST '$displayName'" -ForegroundColor Yellow   
+    }
+
+    $ctx.Load($list.ContentTypes)
+    $ctx.Load($list.RootFolder)
+    $ctx.ExecuteQuery()
+
+    if($null -eq $list.RootFolder.UniqueContentTypeOrder)
+    {
+        $contentTypesInPlace = New-Object -TypeName 'System.Collections.Generic.List[Microsoft.SharePoint.Client.ContentTypeId]'
+        
+        foreach($ct in $list.ContentTypes | where {$_.Id.StringValue -ne $listCT.Id.StringValue -and $_.Name -ne "Folder"})
+        {
+            $contentTypesInPlace.Add($ct.Id)
+        }
+    }
+    else 
+    {            
+        $contentTypesInPlace = [System.Collections.ArrayList] $list.RootFolder.UniqueContentTypeOrder
+        $contentTypesInPlace = $contentTypesInPlace | where {$_.StringValue -ne $ct.Id.StringValue}
+    }
+
+    # Set the UniqueContentTypeOrder to the collection we made above
+    $list.RootFolder.UniqueContentTypeOrder = [System.Collections.Generic.List[Microsoft.SharePoint.Client.ContentTypeId]] $contentTypesInPlace
+
+    #Update the root folder
+    $list.RootFolder.Update()                
+    Invoke-PnPQuery
 
     # VIEWS - Setup custom list views
     Write-Host "`nCUSTOMISING LIST VIEWS" -ForegroundColor Green
