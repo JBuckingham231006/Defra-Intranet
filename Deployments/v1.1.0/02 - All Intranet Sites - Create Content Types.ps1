@@ -65,11 +65,11 @@ foreach($site in $sites)
     {
         $parentCT = Get-PnPContentType -Identity Item
         $ct = Add-PnPContentType -Name $ctName -ContentTypeId "0x010047807CA071395E44BF168B9CF766B7F5" -Description "Used by 'Internal Comms Intranet Content Submissions' list to show fields that are only relevant after a submission"
-        Write-Host "SITE CONTENT TYPE INSTALLED: $displayName" -ForegroundColor Green
+        Write-Host "SITE CONTENT TYPE INSTALLED: $ctName" -ForegroundColor Green
     }
     else
     {
-        Write-Host "SITE CONTENT TYPE ALREADY INSTALLED: $displayName" -ForegroundColor Yellow   
+        Write-Host "SITE CONTENT TYPE ALREADY INSTALLED: $ctName" -ForegroundColor Yellow   
     }
 
     $ctFields = Get-PnPProperty -ClientObject $ct -Property Fields

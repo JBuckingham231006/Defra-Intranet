@@ -87,14 +87,6 @@ function Invoke-Configuration
                     'GroupPrefix' = 'NEIntranet'
                     'RelativeURL' = 'sites/NEIntranet'
                     'SiteType' = 'ALB'
-                },
-                [PSCustomObject]@{
-                    'Abbreviation' = 'RPA'
-                    'ApplyHubSiteNavigationChanges' = $false
-                    'DisplayName' = 'Rural Payments Agency'
-                    'GroupPrefix' = 'RPAIntranet'
-                    'RelativeURL' = 'sites/RPAIntranet'
-                    'SiteType' = 'ALB'
                 }
             )
         }
@@ -152,14 +144,6 @@ function Invoke-Configuration
                     'GroupPrefix' = ''
                     'RelativeURL' = '/sites/PPNEIntranet'
                     'SiteType' = 'ALB'
-                },
-                [PSCustomObject]@{
-                    'Abbreviation' = 'RPA'
-                    'ApplyHubSiteNavigationChanges' = $false
-                    'DisplayName' = 'Rural Payments Agency'
-                    'GroupPrefix' = ''
-                    'RelativeURL' = '/sites/PPRPAIntranet'
-                    'SiteType' = 'ALB'
                 }
             )
         }
@@ -216,14 +200,6 @@ function Invoke-Configuration
                     'DisplayName' = 'Natural England Intranet'
                     'GroupPrefix' = ''
                     'RelativeURL' = '/sites/NEIntranet'
-                    'SiteType' = 'ALB'
-                },
-                [PSCustomObject]@{
-                    'Abbreviation' = 'RPA'
-                    'ApplyHubSiteNavigationChanges' = $false
-                    'DisplayName' = 'Rural Payments Agency'
-                    'GroupPrefix' = ''
-                    'RelativeURL' = '/sites/RPAIntranet'
                     'SiteType' = 'ALB'
                 }
             )
@@ -283,14 +259,6 @@ function Invoke-Configuration
                     'GroupPrefix' = ''
                     'RelativeURL' = ''
                     'SiteType' = 'ALB'
-                },
-                [PSCustomObject]@{
-                    'Abbreviation' = 'RPA'
-                    'ApplyHubSiteNavigationChanges' = $true
-                    'DisplayName' = 'Rural Payment Agency'
-                    'GroupPrefix' = 'DEFRA002'
-                    'RelativeURL' = 'sites/RPAIntranet'
-                    'SiteType' = 'ALB'
                 }
             )
         }
@@ -348,14 +316,6 @@ function Invoke-Configuration
                     'DisplayName' = 'Natural England Intranet'
                     'GroupPrefix' = 'NE Intranet'
                     'RelativeURL' = 'sites/neintranet'
-                    'SiteType' = 'ALB'
-                },
-                [PSCustomObject]@{
-                    'Abbreviation' = 'RPA'
-                    'ApplyHubSiteNavigationChanges' = $true
-                    'DisplayName' = 'Rural Payment Agency'
-                    'GroupPrefix' = 'RPA Intranet'
-                    'RelativeURL' = 'sites/rpaintranet'
                     'SiteType' = 'ALB'
                 }
             )
