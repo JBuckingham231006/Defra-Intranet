@@ -51,8 +51,6 @@ if($null -eq $sites)
 {
     throw "An entry in the configuration could not be found for the 'Defra Intranet' or is not configured correctly"
 }
-Write-Host "SCRIPT EXECUTED BY '$(Get-CurrentUser)' AT $(get-date -f "HH:mm:ss") ON $(get-date -f "dd/MM/yyyy")" -ForegroundColor Cyan
-Write-Host ""
 
 foreach($site in $sites)
 {
@@ -156,6 +154,7 @@ foreach($site in $sites)
     if($null -eq $field)
     {
         $field = Add-PnPField -Type "Choice" -InternalName "ContentSubmissionStatus" -DisplayName $displayName -Choices "Pending Approval","Approved","Rejected"
+
         Set-PnPField -Identity $field.Id -Values @{
             DefaultValue ="Pending Approval"
             Description = "Status of the content."; 

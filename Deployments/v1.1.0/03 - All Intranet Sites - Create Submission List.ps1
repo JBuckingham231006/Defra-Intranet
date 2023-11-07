@@ -82,7 +82,7 @@ foreach($site in $sites)
 
     if($null -eq $list)
     {
-        $list = New-PnPList -Template GenericList -Title $displayName -Url $listURL -EnableVersioning
+        $list = New-PnPList -Template GenericList -Title $displayName -Url $listURL -EnableVersioning -EnableContentTypes
         Write-Host "LIST CREATED: $displayName (URL: $listURL)" -ForegroundColor Green
     }
     else
@@ -133,28 +133,6 @@ foreach($site in $sites)
     # LIST-LEVEL FIELD CUSTOMISATION
     Write-Host "`nCUSTOMISING FIELDS" -ForegroundColor Green
 
-    <# Customise the "AssignedTo" column for this list
-    $field = Get-PnPField -List $list -Identity "AssignedTo" -ErrorAction SilentlyContinue
-
-    if($null -ne $field)
-    {
-        Set-PnPField -List $list -Identity $field.Id -Values @{
-            "SelectionMode" = 0
-        }
-
-        $formula = "=if([{0}] == true, 'true', 'false')" -f '$DisplayAssignedToField'
-
-        $field.ClientValidationFormula = $formula
-        $field.Update()
-        Invoke-PnPQuery
-
-        Write-Host "THE FIELD '$($field.Title)' HAS BEEN CUSTOMISED FOR THE LIST '$displayName'" -ForegroundColor Yellow
-    }
-    else
-    {
-        Write-Host "THE FIELD 'AssignedTo' DOES NOT EXIST IN THE LIST '$displayName'" -ForegroundColor Red
-    } #>
-
     # Customise the "ContentSubmissionStatus" column for this list
     $field = Get-PnPField -List $list -Identity "ContentSubmissionStatus" -ErrorAction SilentlyContinue
 
@@ -170,35 +148,6 @@ foreach($site in $sites)
     else
     {
         Write-Host "THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE LIST '$displayName'" -ForegroundColor Red
-    }
-
-    # Rename default "Item" content type to "Content Submission Request"
-    $ct = Get-PnPContentType -List $list -Identity "Item" -ErrorAction SilentlyContinue
-
-    if($null -ne $ct)
-    {
-        $ctx = Get-PnPContext
-        $ctx.Load($ct)
-        $ctx.ExecuteQuery()
-
-        try
-        {
-            $ct.ReadOnly = $false
-            $ct.Update($false)
-            $ctx.ExecuteQuery()
-
-            $ct.Name = "Content Submission Request"
-            $ct.Update($false)
-            $ctx.ExecuteQuery()
-
-            Write-Host "`nList default content type 'Item' renamed to 'Content Submission Request'" -ForegroundColor Green
-        }
-        finally
-        {
-            $ct.ReadOnly = $true
-            $ct.Update($false)
-            $ctx.ExecuteQuery()
-        }
     }
 
     # CONTENT TYPES
@@ -231,6 +180,7 @@ foreach($site in $sites)
     $ctx.Load($list.RootFolder)
     $ctx.ExecuteQuery()
 
+    # Hide the "Content Submission Requst - Stage 2" content type from the New menu. Its only Power Automate that will be using this column
     if($null -eq $list.RootFolder.UniqueContentTypeOrder)
     {
         $contentTypesInPlace = New-Object -TypeName 'System.Collections.Generic.List[Microsoft.SharePoint.Client.ContentTypeId]'
@@ -246,12 +196,38 @@ foreach($site in $sites)
         $contentTypesInPlace = $contentTypesInPlace | where {$_.StringValue -ne $ct.Id.StringValue}
     }
 
-    # Set the UniqueContentTypeOrder to the collection we made above
     $list.RootFolder.UniqueContentTypeOrder = [System.Collections.Generic.List[Microsoft.SharePoint.Client.ContentTypeId]] $contentTypesInPlace
-
-    #Update the root folder
     $list.RootFolder.Update()                
     Invoke-PnPQuery
+
+    # Rename default "Item" content type to "Content Submission Request"
+    $ct = Get-PnPContentType -List $list -Identity "Item" -ErrorAction SilentlyContinue
+
+    if($null -ne $ct)
+    {
+        $ctx = Get-PnPContext
+        $ctx.Load($ct)
+        $ctx.ExecuteQuery()
+
+        try
+        {
+            $ct.ReadOnly = $false
+            $ct.Update($false)
+            $ctx.ExecuteQuery()
+
+            $ct.Name = "Content Submission Request"
+            $ct.Update($false)
+            $ctx.ExecuteQuery()
+
+            Write-Host "`nList default content type 'Item' renamed to 'Content Submission Request'" -ForegroundColor Green
+        }
+        finally
+        {
+            $ct.ReadOnly = $true
+            $ct.Update($false)
+            $ctx.ExecuteQuery()
+        }
+    }
 
     # VIEWS - Setup custom list views
     Write-Host "`nCUSTOMISING LIST VIEWS" -ForegroundColor Green
@@ -294,32 +270,6 @@ foreach($site in $sites)
             'TargetSite' = ''
             'Title' = 'Due in the next 7 days'
         }
-        <# Examples of views based on each ALB ,
-        [PSCustomObject]@{
-            'Query' = '<OrderBy><FieldRef Name="ID" /></OrderBy><Where><Eq><FieldRef Name="OrganisationIntranets" /><Value Type="Text">APHA</Value></Eq></Where>'
-            'TargetSite' = 'All APHA Submissions'
-            'Title' = 'By Status'
-        },
-        [PSCustomObject]@{
-            'Query' = '<OrderBy><FieldRef Name="ID" /></OrderBy><Where><Eq><FieldRef Name="OrganisationIntranets" /><Value Type="Text">EA</Value></Eq></Where>'
-            'TargetSite' = 'Defra'
-            'Title' = 'All EA Submissions'
-        },
-        [PSCustomObject]@{
-            'Query' = '<OrderBy><FieldRef Name="ID" /></OrderBy><Where><Eq><FieldRef Name="OrganisationIntranets" /><Value Type="Text">NE</Value></Eq></Where>'
-            'TargetSite' = 'Defra'
-            'Title' = 'All NE Submissions'
-        },
-        [PSCustomObject]@{
-            'Query' = '<OrderBy><FieldRef Name="ID" /></OrderBy><Where><Eq><FieldRef Name="OrganisationIntranets" /><Value Type="Text">MMO</Value></Eq></Where>'
-            'TargetSite' = 'Defra'
-            'Title' = 'All MMO Submissions'
-        },
-        [PSCustomObject]@{
-            'Query' = '<OrderBy><FieldRef Name="ID" /></OrderBy><Where><Eq><FieldRef Name="OrganisationIntranets" /><Value Type="Text">RPA</Value></Eq></Where>'
-            'TargetSite' = 'Defra'
-            'Title' = 'All RPA Submissions'
-        } #>
     )
 
     foreach($viewConfig in $viewConfiguration)
@@ -335,7 +285,7 @@ foreach($site in $sites)
 
         if($null -eq $view)
         {
-            Add-PnPView -List $list -Title $viewConfig.Title -Fields $viewFields -Query $viewConfig.Query
+            $view = Add-PnPView -List $list -Title $viewConfig.Title -Fields $viewFields -Query $viewConfig.Query
             Write-Host "VIEW '$($viewConfig.Title)' ADD TO THE LIST" -ForegroundColor Green
         }
         else
