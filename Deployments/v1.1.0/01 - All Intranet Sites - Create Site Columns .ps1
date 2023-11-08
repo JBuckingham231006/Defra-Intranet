@@ -45,7 +45,7 @@ Start-Transcript -path "$global:scriptPath/Logs/$logfileName" -append | Out-Null
 
 Invoke-Configuration
 
-$sites = $global:sites | Where-Object { $_.SiteType -eq "ALB" -or $_.SiteType -eq "Parent" -and $_.RelativeURL.Length -gt 0 } | Sort-Object -Property @{Expression="SiteType";Descending=$false},@{Expression="DisplayName";Descending=$false}
+$sites = $global:sites | Where-Object { $_.SiteType -eq "ALB" -or $_.SiteType -eq "Parent" -and $_.RelativeURL.Length -gt 0 } | Sort-Object -Property @{Expression="SiteType";Descending=$true},@{Expression="DisplayName";Descending=$false}
 
 if($null -eq $sites)
 {
@@ -81,7 +81,7 @@ foreach($site in $sites)
 
     if($null -eq $field)
     {
-        $field = Add-PnPField -Type "Choice" -InternalName "ContentTypes" -DisplayName $displayName -Required -Choices "News Story","Blog or Online Diary","Office Notice","Site Page"
+        $field = Add-PnPField -Type "Choice" -InternalName "ContentTypes" -DisplayName $displayName -Required -Choices "Blog or Online Diary","Form","Guidance Page","News Story","Office Notice"
 
         Set-PnPField -Identity $field.Id -Values @{
             Description = "Please select what kind of content you are submitting:"; 
@@ -183,6 +183,92 @@ foreach($site in $sites)
     }
 
     Write-Host ""
+
+    # EVENT CONTENT-TYPE FIELDS
+    
+    # "Event Date/Time" column
+    $displayName = "Event Date/Time"
+    $field = Get-PnPField -Identity "EventDateTime" -ErrorAction SilentlyContinue
+
+    if($null -eq $field)
+    {
+        $field = Add-PnPField -Type "DateTime" -InternalName "EventDateTime" -DisplayName $displayName -Required
+        Set-PnPField -Identity $field.Id -Values @{
+            FriendlyDisplayFormat = [Microsoft.SharePoint.Client.DateTimeFieldFriendlyFormatType]::Disabled;
+        }
+
+        Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
+    }
+    else
+    {
+        Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
+    }
+
+    # "Venue and Joining Details" column
+    $displayName = "Venue and Joining Details"
+    $field = Get-PnPField -Identity "EventVenueAndJoiningDetails" -ErrorAction SilentlyContinue
+
+    if($null -eq $field)
+    {
+        $field = Add-PnPField -Type "Note" -InternalName "EventVenueAndJoiningDetails" -DisplayName $displayName -Required
+        Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
+    }
+    else
+    {
+        Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
+    }
+
+    # "Event Details" column
+    $displayName = "Details about the event"
+    $field = Get-PnPField -Identity "EventDetails" -ErrorAction SilentlyContinue
+
+    if($null -eq $field)
+    {
+        $field = Add-PnPField -Type "Note" -InternalName "EventDetails" -DisplayName $displayName -Required
+
+        Set-PnPField -Identity $field.Id -Values @{
+            Description = "What is the event about? What can attendees expect from the event? Who is speaking at the event? What will they get out of it? At the end of the event, what will they have gained? IS there anything they should do or think about before the event? Is there any interactivity in the event?"; 
+        }
+
+        Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
+    }
+    else
+    {
+        Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
+    }
+
+    # "Booking" column
+    $displayName = "Booking"
+    $field = Get-PnPField -Identity "EventBooking" -ErrorAction SilentlyContinue
+
+    if($null -eq $field)
+    {
+        $field = Add-PnPField -Type "Note" -InternalName "EventBooking" -DisplayName $displayName -Required
+
+        Set-PnPField -Identity $field.Id -Values @{
+            Description = "How can people join your event? Eg, a link to register on Eventbrite; an MS Teams link; an email address to register with. Is it open to all staff in Defra group? Will a confirmation email or calendar invite be sent, or should attendees add it to their own calendars?"; 
+        }
+
+        Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
+    }
+    else
+    {
+        Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
+    }
+
+    # "Further information for the reader" column
+    $displayName = "Further information for the reader"
+    $field = Get-PnPField -Identity "EventFurtherInformation" -ErrorAction SilentlyContinue
+
+    if($null -eq $field)
+    {
+        $field = Add-PnPField -Type "Note" -InternalName "EventFurtherInformation" -DisplayName $displayName -Required
+        Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
+    }
+    else
+    {
+        Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
+    }
 }
 
 Write-Host "SCRIPT FINISHED" -ForegroundColor Yellow

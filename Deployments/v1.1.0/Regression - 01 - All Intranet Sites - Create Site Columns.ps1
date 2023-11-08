@@ -46,7 +46,7 @@ Start-Transcript -path "$global:scriptPath/Logs/$logfileName" -append | Out-Null
 
 Invoke-Configuration
 
-$sites = $global:sites | Where-Object { $_.SiteType -eq "ALB" -or $_.SiteType -eq "Parent" -and $_.RelativeURL.Length -gt 0 } | Sort-Object -Property @{Expression="SiteType";Descending=$false},@{Expression="DisplayName";Descending=$false}
+$sites = $global:sites | Where-Object { $_.SiteType -eq "ALB" -or $_.SiteType -eq "Parent" -and $_.RelativeURL.Length -gt 0 } | Sort-Object -Property @{Expression="SiteType";Descending=$true},@{Expression="DisplayName";Descending=$false}
 
 if($null -eq $sites)
 {
@@ -61,7 +61,7 @@ foreach($site in $sites)
     Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
     Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.RelativeURL)" -ForegroundColor Green
 
-    $fieldNames = @("AltContact","ContentTypes","LineManager","PublishBy","StakeholdersInformed","ContentSubmissionStatus","ContentSubmissionDescription")
+    $fieldNames = @("AltContact","ContentTypes","LineManager","PublishBy","StakeholdersInformed","ContentSubmissionStatus","ContentSubmissionDescription","EventDateTime","EventVenueAndJoiningDetails","EventDetails","EventBooking","EventFurtherInformation")
     $web = Get-PnPWeb
 
     foreach($fieldName in $fieldNames)
