@@ -46,12 +46,14 @@ Start-Transcript -path "$global:scriptPath/Logs/$logfileName" -append | Out-Null
 
 Invoke-Configuration
 
-$sites = $global:sites | Where-Object { $_.SiteType -eq "ALB" -or $_.SiteType -eq "Parent" -and $_.RelativeURL.Length -gt 0 } | Sort-Object -Property @{Expression="SiteType";Descending=$false},@{Expression="DisplayName";Descending=$false}
+$sites = $global:sites | Where-Object { $_.SiteType -eq "ALB" -or $_.SiteType -eq "Parent" -and $_.RelativeURL.Length -gt 0 } | Sort-Object -Property @{Expression="SiteType";Descending=$true},@{Expression="DisplayName";Descending=$false}
 
 if($null -eq $sites)
 {
     throw "An entry in the configuration could not be found for the 'Defra Intranet' or is not configured correctly"
 }
+
+$ctNames = @("Content Submission Request - Stage 2","Event Submission Request","Event Submission Request - Stage 2")
 
 foreach($site in $sites)
 {
@@ -62,17 +64,19 @@ foreach($site in $sites)
 
     $web = Get-PnPWeb
 
-    $ctName = "Content Submission Request - Stage 2"
-    $ct = Get-PnPContentType -Identity $ctName -ErrorAction SilentlyContinue
+    foreach($ctName in $ctNames)
+    {
+        $ct = Get-PnPContentType -Identity $ctName -ErrorAction SilentlyContinue
 
-    if($null -ne $ct)
-    {
-        Remove-PnPContentType -Identity $ctName -Force
-        Write-Host "CONTENT TYPE '$ctName' REMOVE FROM THE '$($web.Title)' SITE" -ForegroundColor Green
-    }
-    else
-    {
-        Write-Host "CONTENT TYPE '$ctName' DOES NOT EXIST IN THE '$($web.Title)' SITE" -ForegroundColor Yellow
+        if($null -ne $ct)
+        {
+            Remove-PnPContentType -Identity $ctName -Force
+            Write-Host "CONTENT TYPE '$ctName' REMOVE FROM THE '$($web.Title)' SITE" -ForegroundColor Green
+        }
+        else
+        {
+            Write-Host "CONTENT TYPE '$ctName' DOES NOT EXIST IN THE '$($web.Title)' SITE" -ForegroundColor Yellow
+        }
     }
 
     Write-Host ""

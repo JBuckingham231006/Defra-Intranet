@@ -45,7 +45,7 @@ Start-Transcript -path "$global:scriptPath/Logs/$logfileName" -append | Out-Null
 
 Invoke-Configuration
 
-$sites = $global:sites | Where-Object { $_.SiteType -eq "ALB" -or $_.SiteType -eq "Parent" -and $_.RelativeURL.Length -gt 0 } | Sort-Object -Property @{Expression="SiteType";Descending=$false},@{Expression="DisplayName";Descending=$false}
+$sites = $global:sites | Where-Object { $_.SiteType -eq "ALB" -or $_.SiteType -eq "Parent" -and $_.RelativeURL.Length -gt 0 } | Sort-Object -Property @{Expression="SiteType";Descending=$true},@{Expression="DisplayName";Descending=$false}
 
 if($null -eq $sites)
 {
@@ -153,6 +153,9 @@ foreach($site in $sites)
     # CONTENT TYPES
     Write-Host "`nCUSTOMISING CONTENT TYPES" -ForegroundColor Green
 
+    $CTsToHide = New-Object System.Collections.ArrayList
+
+    # Content Submission Request - Stage 2
     $ctName = "Content Submission Request - Stage 2"
     $listCT = Get-PnPContentType -Identity $ctName -List $displayName -ErrorAction SilentlyContinue
 
@@ -180,24 +183,86 @@ foreach($site in $sites)
     $ctx.Load($list.RootFolder)
     $ctx.ExecuteQuery()
 
-    # Hide the "Content Submission Requst - Stage 2" content type from the New menu. Its only Power Automate that will be using this column
+    # We'll hide this CT from the New menu, as it's only needed by Power Automate.
+    $CTsToHide.Add($listCT.Id.StringValue) | Out-Null
+
+    # Event Submission Request
+    $ctName = "Event Submission Request"
+    $listCT = Get-PnPContentType -Identity $ctName -List $displayName -ErrorAction SilentlyContinue
+
+    if($null -eq $listCT)
+    {
+        $ct = Get-PnPContentType -Identity $ctName
+
+        if($null -ne $ct)
+        {
+            Add-PnPContentTypeToList -List $displayName -ContentType $ct
+            $listCT = Get-PnPContentType -Identity $ctName -List $displayName
+            Write-Host "SITE CONTENT TYPE INSTALLED '$ctName' HAS BEEN INSTALLED ON THE LIST '$displayName'" -ForegroundColor Green
+        }
+        else
+        {
+            throw "ERROR: The content Type '$ctName' is missing from the site. Please run the 'Create Content Types.ps1' script then try again." 
+        }
+    }
+    else
+    {
+        Write-Host "THE CONTENT TYPE '$displayName' ALREADY EXISTS ON THE LIST '$displayName'" -ForegroundColor Yellow   
+    }
+
+    $ctx.Load($list.ContentTypes)
+    $ctx.Load($list.RootFolder)
+    $ctx.ExecuteQuery()
+
+    # Event Submission Request - Stage 2
+    $ctName = "Event Submission Request - Stage 2"
+    $listCT = Get-PnPContentType -Identity $ctName -List $displayName -ErrorAction SilentlyContinue
+
+    if($null -eq $listCT)
+    {
+        $ct = Get-PnPContentType -Identity $ctName
+
+        if($null -ne $ct)
+        {
+            Add-PnPContentTypeToList -List $displayName -ContentType $ct
+            $listCT = Get-PnPContentType -Identity $ctName -List $displayName
+            Write-Host "SITE CONTENT TYPE INSTALLED '$ctName' HAS BEEN INSTALLED ON THE LIST '$displayName'" -ForegroundColor Green
+        }
+        else
+        {
+            throw "ERROR: The content Type '$ctName' is missing from the site. Please run the 'Create Content Types.ps1' script then try again." 
+        }
+    }
+    else
+    {
+        Write-Host "THE CONTENT TYPE '$displayName' ALREADY EXISTS ON THE LIST '$displayName'" -ForegroundColor Yellow   
+    }
+
+    $ctx.Load($list.ContentTypes)
+    $ctx.Load($list.RootFolder)
+    $ctx.ExecuteQuery()
+
+    # We'll hide this CT from the New menu, as it's only needed by Power Automate.
+    $CTsToHide.Add($listCT.Id.StringValue) | Out-Null
+   
     if($null -eq $list.RootFolder.UniqueContentTypeOrder)
     {
         $contentTypesInPlace = New-Object -TypeName 'System.Collections.Generic.List[Microsoft.SharePoint.Client.ContentTypeId]'
         
-        foreach($ct in $list.ContentTypes | where {$_.Id.StringValue -ne $listCT.Id.StringValue -and $_.Name -ne "Folder"})
+        foreach($ct in $list.ContentTypes | where {$CTsToHide -notcontains $_.Id.StringValue -and $_.Name -ne "Folder"})
         {
+            Write-Host "$($ct.Name) added the 'New' menu" -ForegroundColor Cyan
             $contentTypesInPlace.Add($ct.Id)
         }
     }
     else 
-    {            
+    {
         $contentTypesInPlace = [System.Collections.ArrayList] $list.RootFolder.UniqueContentTypeOrder
         $contentTypesInPlace = $contentTypesInPlace | where {$_.StringValue -ne $ct.Id.StringValue}
     }
 
     $list.RootFolder.UniqueContentTypeOrder = [System.Collections.Generic.List[Microsoft.SharePoint.Client.ContentTypeId]] $contentTypesInPlace
-    $list.RootFolder.Update()                
+    $list.RootFolder.Update()             
     Invoke-PnPQuery
 
     # Rename default "Item" content type to "Content Submission Request"
