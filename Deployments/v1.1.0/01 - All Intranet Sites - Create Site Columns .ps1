@@ -225,11 +225,6 @@ foreach($site in $sites)
     if($null -eq $field)
     {
         $field = Add-PnPField -Type "Note" -InternalName "EventDetails" -DisplayName $displayName -Required
-
-        Set-PnPField -Identity $field.Id -Values @{
-            Description = "What is the event about? What can attendees expect from the event? Who is speaking at the event? What will they get out of it? At the end of the event, what will they have gained? IS there anything they should do or think about before the event? Is there any interactivity in the event?"; 
-        }
-
         Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
     }
     else
@@ -244,11 +239,6 @@ foreach($site in $sites)
     if($null -eq $field)
     {
         $field = Add-PnPField -Type "Note" -InternalName "EventBooking" -DisplayName $displayName -Required
-
-        Set-PnPField -Identity $field.Id -Values @{
-            Description = "How can people join your event? Eg, a link to register on Eventbrite; an MS Teams link; an email address to register with. Is it open to all staff in Defra group? Will a confirmation email or calendar invite be sent, or should attendees add it to their own calendars?"; 
-        }
-
         Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
     }
     else
