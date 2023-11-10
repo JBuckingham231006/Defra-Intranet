@@ -259,6 +259,8 @@ foreach($site in $sites)
     {
         Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
     }
+
+    Write-Host ""
 }
 
 Write-Host "SCRIPT FINISHED" -ForegroundColor Yellow
