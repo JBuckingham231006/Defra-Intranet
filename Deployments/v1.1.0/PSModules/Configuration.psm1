@@ -12,7 +12,7 @@
 #>
 
 # GLOBAL SETTINGS
-$global:environment = 'dev' # Which environment are we targetting?
+$global:environment = 'local001' # Which environment are we targetting?
 
 # GLOBAL VARIABLES
 
@@ -248,8 +248,8 @@ function Invoke-Configuration
                     'Abbreviation' = 'MMO'
                     'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = 'Marine Management Organisation'
-                    'GroupPrefix' = ''
-                    'RelativeURL' = ''
+                    'GroupPrefix' = 'MMOIntranet'
+                    'RelativeURL' = 'sites/MMOIntranet'
                     'SiteType' = 'ALB'
                 },
                 [PSCustomObject]@{
