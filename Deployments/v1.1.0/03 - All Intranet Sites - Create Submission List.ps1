@@ -34,7 +34,7 @@ else
     Clear-Host
 
     $logFileName = $MyInvocation.MyCommand.Name
-    $global:scriptPath = "."
+    $global:scriptPath = "." 
 
     Import-Module "./PSModules/Configuration.psm1" -Force
     Import-Module "./PSModules/Helper.psm1" -Force
@@ -118,7 +118,7 @@ foreach($site in $sites)
             if($null -ne $field)
             {
                 Set-PnPField -List $list -Identity $field.Id -Values @{
-                    Title = "Content Relevant To"
+                    Title = "Which Defra organisation is this relevant to?"
                     Description = "Select whether the content is relevant to the whole of the Defra group or specific departments or functions"
                     Required = $true
                 }

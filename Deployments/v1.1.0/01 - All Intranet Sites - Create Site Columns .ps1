@@ -59,7 +59,7 @@ foreach($site in $sites)
     Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.RelativeURL)" -ForegroundColor Cyan
     Write-Host ""
 
-    # Custom Field values
+    # Custom Field values (per-site)
     switch ($site.Abbreviation)
     {
         "EA" {
