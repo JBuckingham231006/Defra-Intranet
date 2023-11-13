@@ -68,10 +68,10 @@ foreach($site in $sites)
     switch ($site.Abbreviation)
     {
         "Defra" { 
-            $fieldNames = @("AltContact","ContentTypes","OrganisationIntranets","LineManager","PublishBy","ContentSubmissionStatus","ContentSubmissionDescription")
+            $fieldNames = @("ContentTypes","OrganisationIntranets","PublishBy","LineManager","AltContact","ContentSubmissionStatus","ContentSubmissionDescription")
         }
         default { 
-            $fieldNames = @("AltContact","ContentTypes","LineManager","PublishBy","ContentSubmissionStatus","ContentSubmissionDescription")
+            $fieldNames = @("ContentTypes","LineManager","AltContact","PublishBy","ContentSubmissionStatus","ContentSubmissionDescription")
         }
     }
 
@@ -119,7 +119,7 @@ foreach($site in $sites)
             {
                 Set-PnPField -List $list -Identity $field.Id -Values @{
                     Title = "Which Defra organisation is this relevant to?"
-                    Description = "Select whether the content is relevant to the whole of the Defra group or specific departments or functions"
+                    Description = "Select whether the content is relevant to the whole of the Defra group or specific organisations."
                     Required = $true
                 }
             }
