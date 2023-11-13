@@ -80,10 +80,10 @@ foreach($site in $sites)
     switch ($site.Abbreviation)
     {
         "Defra" { 
-            $fieldNames = @("AltContact","ContentTypes","OrganisationIntranets","LineManager","PublishBy","StakeholdersInformed","ContentSubmissionStatus","ContentSubmissionDescription","AssignedTo")
+            $fieldNames = @("AltContact","ContentTypes","OrganisationIntranets","LineManager","PublishBy","ContentSubmissionStatus","ContentSubmissionDescription","AssignedTo")
         }
         default { 
-            $fieldNames = @("AltContact","ContentTypes","LineManager","PublishBy","StakeholdersInformed","ContentSubmissionStatus","ContentSubmissionDescription","AssignedTo")
+            $fieldNames = @("AltContact","ContentTypes","LineManager","PublishBy","ContentSubmissionStatus","ContentSubmissionDescription","AssignedTo")
         }
     }
 

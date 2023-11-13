@@ -68,10 +68,10 @@ foreach($site in $sites)
     switch ($site.Abbreviation)
     {
         "Defra" { 
-            $fieldNames = @("AltContact","ContentTypes","OrganisationIntranets","LineManager","PublishBy","StakeholdersInformed","ContentSubmissionStatus","ContentSubmissionDescription")
+            $fieldNames = @("AltContact","ContentTypes","OrganisationIntranets","LineManager","PublishBy","ContentSubmissionStatus","ContentSubmissionDescription")
         }
         default { 
-            $fieldNames = @("AltContact","ContentTypes","LineManager","PublishBy","StakeholdersInformed","ContentSubmissionStatus","ContentSubmissionDescription")
+            $fieldNames = @("AltContact","ContentTypes","LineManager","PublishBy","ContentSubmissionStatus","ContentSubmissionDescription")
         }
     }
 
@@ -230,7 +230,7 @@ foreach($site in $sites)
         }
         else
         {
-            throw "ERROR: The content Type '$ctName' is missing from the site. Please run the 'Create Content Types.ps1' script then try again." 
+            throw "ERROR: The content Type '$ctName' is missing from the site. Please run the 'All Intranet Sites - Create Content Types.ps1' script then try again." 
         }
     }
     else
@@ -299,43 +299,113 @@ foreach($site in $sites)
 
     switch ($site.Abbreviation)
     {
-        "Defra" { 
-            $fieldNames = @("AltContact","ContentTypes","OrganisationIntranets","LineManager","PublishBy","StakeholdersInformed","ContentSubmissionStatus","ContentSubmissionDescription","AssignedTo")
-            $viewFields = "Attachments","LinkTitle","AssignedTo","ContentSubmissionDescription","Author","ContentSubmissionStatus","PublishBy","ContentTypes","AltContact","OrganisationIntranets","LineManager","StakeholdersInformed"
+        "Defra" 
+        {
+            $contentViewFields = "Attachments","LinkTitle","AssignedTo","ContentSubmissionDescription","Author","ContentSubmissionStatus","PublishBy","ContentTypes","AltContact","OrganisationIntranets","LineManager"
+            $defaultViewFields = "Attachments","LinkTitle","ContentType","AssignedTo","Author","ContentSubmissionStatus","AltContact","OrganisationIntranets"
+            $eventViewFields = "Attachments","LinkTitle","AssignedTo","OrganisationIntranets","EventDateTime","EventVenueAndJoiningDetails","EventDetails","EventBooking","EventFurtherInformation"
+
+            $fieldNames = @("AltContact","ContentTypes","OrganisationIntranets","LineManager","PublishBy","ContentSubmissionStatus","ContentSubmissionDescription","AssignedTo") 
         }
-        default { 
-            $fieldNames = @("AltContact","ContentTypes","LineManager","PublishBy","StakeholdersInformed","ContentSubmissionStatus","ContentSubmissionDescription","AssignedTo")
-            $viewFields = "Attachments","LinkTitle","AssignedTo","ContentSubmissionDescription","Author","ContentSubmissionStatus","PublishBy","ContentTypes","AltContact","LineManager","StakeholdersInformed"
+
+        default 
+        {
+            $contentViewFields = "Attachments","LinkTitle","AssignedTo","ContentSubmissionDescription","Author","ContentSubmissionStatus","PublishBy","ContentTypes","AltContact","LineManager"
+            $defaultViewFields = "Attachments","LinkTitle","ContentType","AssignedTo","Author","ContentSubmissionStatus","AltContact"
+
+            $fieldNames = @("AltContact","ContentTypes","LineManager","PublishBy","ContentSubmissionStatus","ContentSubmissionDescription","AssignedTo")
+            $eventViewFields = "Attachments","LinkTitle","AssignedTo","EventDateTime","EventVenueAndJoiningDetails","EventDetails","EventBooking","EventFurtherInformation"
         }
     }
 
     $viewConfiguration = @(
         [PSCustomObject]@{
-            'Query' = '<OrderBy><FieldRef Name="ID" Ascending="FALSE" /></OrderBy><Where><Eq><FieldRef Name="ContentSubmissionStatus" /><Value Type="Text">Pending Approval</Value></Eq></Where>'
+            'Query' = '<GroupBy Collapse="FALSE" GroupLimit="30"><FieldRef Name="AssignedTo" /></GroupBy><OrderBy><FieldRef Name="ID" Ascending="FALSE" /></OrderBy><Where><Eq><FieldRef Name="ContentSubmissionStatus" /><Value Type="Text">Pending Approval</Value></Eq></Where>'
             'TargetSite' = ''
-            'Title' = 'All Pending Submissions'
+            'Title' = 'All Items - By Assigned To'
+            'ViewFields' = "Attachments","LinkTitle","ContentType","Author","ContentSubmissionStatus","AltContact","OrganisationIntranets"
         },
         [PSCustomObject]@{
-            'Query' = '<OrderBy><FieldRef Name="ID" Ascending="FALSE" /></OrderBy><Where><Or><Eq><FieldRef Name="ContentSubmissionStatus" /><Value Type="Text">Approved</Value></Eq><Eq><FieldRef Name="ContentSubmissionStatus" /><Value Type="Text">Rejected</Value></Eq></Or></Where>'
+            'Query' = '<OrderBy><FieldRef Name="ID" Ascending="FALSE" /></OrderBy><Where><And><Eq><FieldRef Name="ContentSubmissionStatus" /><Value Type="Text">Pending Approval</Value></Eq><Or><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Content Submission Request</Value></Eq><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Content Submission Request - Stage 2</Value></Eq></Or></And></Where>'
             'TargetSite' = ''
-            'Title' = 'All Processed Submissions'
+            'Title' = 'Content - All Pending Submissions'
+            'ViewFields' = $null
         },
         [PSCustomObject]@{
-            'Query' = '<GroupBy Collapse="FALSE" GroupLimit="30"><FieldRef Name="AssignedTo" /></GroupBy>'
+            'Query' = '<OrderBy><FieldRef Name="ID" Ascending="FALSE" /></OrderBy><Where><And><Or><Eq><FieldRef Name="ContentSubmissionStatus" /><Value Type="Text">Approved</Value></Eq><Eq><FieldRef Name="ContentSubmissionStatus" /><Value Type="Text">Rejected</Value></Eq></Or><Or><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Content Submission Request</Value></Eq><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Content Submission Request - Stage 2</Value></Eq></Or></And></Where>'
             'TargetSite' = ''
-            'Title' = 'By Assigned To'
+            'Title' = 'Content - All Processed Submissions'
+            'ViewFields' = $null
         },
         [PSCustomObject]@{
-            'Query' = '<GroupBy Collapse="FALSE" GroupLimit="30"><FieldRef Name="ContentTypes" /></GroupBy>'
+            'Query' = '<GroupBy Collapse="FALSE" GroupLimit="30"><FieldRef Name="AssignedTo" /></GroupBy><Where><Or><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Content Submission Request</Value></Eq><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Content Submission Request - Stage 2</Value></Eq></Or></Where>'
             'TargetSite' = ''
-            'Title' = 'By Content Types'
+            'Title' = 'Content - By Assigned To'
+            'ViewFields' = $null
         },
         [PSCustomObject]@{
-            'Query' = '<GroupBy Collapse="FALSE" GroupLimit="30"><FieldRef Name="AssignedTo" /></GroupBy><OrderBy><FieldRef Name="PublishBy" /></OrderBy><Where><And><Geq><FieldRef Name="PublishBy" /><Value Type="DateTime"><Today /></Value></Geq><Leq><FieldRef Name="PublishBy" /><Value Type="DateTime"><Today OffsetDays="7" /></Value></Leq></And></Where>'
+            'Query' = '<GroupBy Collapse="FALSE" GroupLimit="30"><FieldRef Name="ContentTypes" /></GroupBy><Where><Or><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Content Submission Request</Value></Eq><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Content Submission Request - Stage 2</Value></Eq></Or></Where>'
             'TargetSite' = ''
-            'Title' = 'Due in the next 7 days'
+            'Title' = 'Content - By Content Types'
+            'ViewFields' = "Attachments","LinkTitle","AssignedTo","ContentSubmissionDescription","Author","ContentSubmissionStatus","PublishBy","AltContact","LineManager"
+        },
+        [PSCustomObject]@{
+            'Query' = '<GroupBy Collapse="FALSE" GroupLimit="30"><FieldRef Name="AssignedTo" /></GroupBy><OrderBy><FieldRef Name="PublishBy" /></OrderBy><Where><And><And><Or><And><And><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Content Submission Request</Value></Eq><Geq><FieldRef Name="PublishBy" /><Value Type="DateTime"><Today /></Value></Geq></And><Leq><FieldRef Name="PublishBy" /><Value Type="DateTime"><Today OffsetDays="7" /></Value></Leq></And><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Content Submission Request - Stage 2</Value></Eq></Or><Geq><FieldRef Name="PublishBy" /><Value Type="DateTime"><Today /></Value></Geq></And><Leq><FieldRef Name="PublishBy" /><Value Type="DateTime"><Today OffsetDays="7" /></Value></Leq></And></Where>'
+            'TargetSite' = ''
+            'Title' = 'Content - Due in the Next 07 Days'
+            'ViewFields' = $null
+        },
+        [PSCustomObject]@{
+            'Query' = '<GroupBy Collapse="FALSE" GroupLimit="30"><FieldRef Name="AssignedTo" /></GroupBy><OrderBy><FieldRef Name="PublishBy" /></OrderBy><Where><And><And><Or><And><And><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Content Submission Request</Value></Eq><Geq><FieldRef Name="PublishBy" /><Value Type="DateTime"><Today /></Value></Geq></And><Leq><FieldRef Name="PublishBy" /><Value Type="DateTime"><Today OffsetDays="14" /></Value></Leq></And><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Content Submission Request - Stage 2</Value></Eq></Or><Geq><FieldRef Name="PublishBy" /><Value Type="DateTime"><Today /></Value></Geq></And><Leq><FieldRef Name="PublishBy" /><Value Type="DateTime"><Today OffsetDays="14" /></Value></Leq></And></Where>'
+            'TargetSite' = ''
+            'Title' = 'Content - Due in the Next 14 Days'
+            'ViewFields' = $null
+        },
+        [PSCustomObject]@{
+            'Query' = '<OrderBy><FieldRef Name="ID" Ascending="FALSE" /></OrderBy><Where><And><Eq><FieldRef Name="ContentSubmissionStatus" /><Value Type="Text">Pending Approval</Value></Eq><Or><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Event Submission Request</Value></Eq><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Event Submission Request - Stage 2</Value></Eq></Or></And></Where>'
+            'TargetSite' = ''
+            'Title' = 'Events - All Pending Submissions'
+            'ViewFields' = $eventViewFields
+        },
+        [PSCustomObject]@{
+            'Query' = '<OrderBy><FieldRef Name="ID" Ascending="FALSE" /></OrderBy><Where><And><Or><Eq><FieldRef Name="ContentSubmissionStatus" /><Value Type="Text">Approved</Value></Eq><Eq><FieldRef Name="ContentSubmissionStatus" /><Value Type="Text">Rejected</Value></Eq></Or><Or><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Event Submission Request</Value></Eq><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Event Submission Request - Stage 2</Value></Eq></Or></And></Where>'
+            'TargetSite' = ''
+            'Title' = 'Events - All Processed Submissions'
+            'ViewFields' = $eventViewFields
+        },
+        [PSCustomObject]@{
+            'Query' = '<GroupBy Collapse="FALSE" GroupLimit="30"><FieldRef Name="AssignedTo" /></GroupBy><Where><Or><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Event Submission Request</Value></Eq><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Event Submission Request - Stage 2</Value></Eq></Or></Where>'
+            'TargetSite' = ''
+            'Title' = 'Events - By Assigned To'
+            'ViewFields' = $eventViewFields
+        },
+        [PSCustomObject]@{
+            'Query' = '<GroupBy Collapse="FALSE" GroupLimit="30"><FieldRef Name="ContentTypes" /></GroupBy><Where><Or><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Event Submission Request</Value></Eq><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Event Submission Request - Stage 2</Value></Eq></Or></Where>'
+            'TargetSite' = ''
+            'Title' = 'Events - By Content Types'
+            'ViewFields' = $eventViewFields
+        },
+        [PSCustomObject]@{
+            'Query' = '<GroupBy Collapse="FALSE" GroupLimit="30"><FieldRef Name="AssignedTo" /></GroupBy><OrderBy><FieldRef Name="EventDateTime" /></OrderBy><Where><And><And><Or><And><And><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Event Submission Request</Value></Eq><Geq><FieldRef Name="EventDateTime" /><Value Type="DateTime"><Today /></Value></Geq></And><Leq><FieldRef Name="EventDateTime" /><Value Type="DateTime"><Today OffsetDays="7" /></Value></Leq></And><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Event Submission Request - Stage 2</Value></Eq></Or><Geq><FieldRef Name="EventDateTime" /><Value Type="DateTime"><Today /></Value></Geq></And><Leq><FieldRef Name="EventDateTime" /><Value Type="DateTime"><Today OffsetDays="7" /></Value></Leq></And></Where>'
+            'TargetSite' = ''
+            'Title' = 'Events - Due in the Next 07 Days'
+            'ViewFields' = $eventViewFields
+        },
+        [PSCustomObject]@{
+            'Query' = '<GroupBy Collapse="FALSE" GroupLimit="30"><FieldRef Name="AssignedTo" /></GroupBy><OrderBy><FieldRef Name="EventDateTime" /></OrderBy><Where><And><And><Or><And><And><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Event Submission Request</Value></Eq><Geq><FieldRef Name="EventDateTime" /><Value Type="DateTime"><Today /></Value></Geq></And><Leq><FieldRef Name="EventDateTime" /><Value Type="DateTime"><Today OffsetDays="14" /></Value></Leq></And><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Event Submission Request - Stage 2</Value></Eq></Or><Geq><FieldRef Name="EventDateTime" /><Value Type="DateTime"><Today /></Value></Geq></And><Leq><FieldRef Name="EventDateTime" /><Value Type="DateTime"><Today OffsetDays="14" /></Value></Leq></And></Where>'
+            'TargetSite' = ''
+            'Title' = 'Events - Due in the Next 14 Days'
+            'ViewFields' = $eventViewFields
         }
     )
+
+    $view = Get-PnPView -List $list -Identity "All Items"
+
+    if($null -ne $view)
+    {
+        $view = Set-PnPView -List $list -Identity $view.Title -Fields $defaultViewFields
+        Write-Host "`nLIST DEFAULT VIEW '$($view.Title)' UPDATED WITH NEW FIELDS" -ForegroundColor Green 
+    }
 
     foreach($viewConfig in $viewConfiguration)
     {
@@ -348,23 +418,20 @@ foreach($site in $sites)
         $title = $viewConfig.viewTitle
         $view = Get-PnPView -List $list -Identity $viewConfig.Title -ErrorAction SilentlyContinue
 
-        if($null -eq $view)
+        if($null -eq $view -and $viewConfig.ViewFields -eq $null)
         {
             $view = Add-PnPView -List $list -Title $viewConfig.Title -Fields $viewFields -Query $viewConfig.Query
+            Write-Host "VIEW '$($viewConfig.Title)' ADD TO THE LIST" -ForegroundColor Green
+        }
+        elseif($null -eq $view -and $viewConfig.ViewFields -ne $null)
+        {
+            $view = Add-PnPView -List $list -Title $viewConfig.Title -Fields $viewConfig.ViewFields -Query $viewConfig.Query
             Write-Host "VIEW '$($viewConfig.Title)' ADD TO THE LIST" -ForegroundColor Green
         }
         else
         {
             Write-Host "THE VIEW '$($viewConfig.Title)' ALREADY EXISTS" -ForegroundColor Yellow
         }
-    }
-
-    $view = Get-PnPView -List $list -Identity "All Items"
-
-    if($null -ne $view)
-    {
-        $view = Set-PnPView -List $list -Identity $view.Title -Fields $viewFields
-        Write-Host "`nLIST DEFAULT VIEW '$($view.Title)' UPDATED WITH NEW FIELDS" -ForegroundColor Green 
     }
   
     # Set unique permissions for the list so anyone on the site can add an item

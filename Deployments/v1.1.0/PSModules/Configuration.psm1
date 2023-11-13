@@ -49,14 +49,6 @@ function Invoke-Configuration
                     'SiteType' = 'ALB'
                 },
                 [PSCustomObject]@{
-                    'Abbreviation' = 'ContentTypeHub'
-                    'ApplyHubSiteNavigationChanges' = $false
-                    'DisplayName' = ''
-                    'GroupPrefix' = ''
-                    'RelativeURL' = 'sites/ContentTypeHub'
-                    'SiteType' = 'System'
-                },
-                [PSCustomObject]@{
                     'Abbreviation' = 'Defra'
                     'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = 'Defra Intranet'
@@ -104,14 +96,6 @@ function Invoke-Configuration
                     'GroupPrefix' = ''
                     'RelativeURL' = '/sites/PPAPHAIntranet'
                     'SiteType' = 'ALB'
-                },
-                [PSCustomObject]@{
-                    'Abbreviation' = 'ContentTypeHub'
-                    'ApplyHubSiteNavigationChanges' = $false
-                    'DisplayName' = ''
-                    'GroupPrefix' = ''
-                    'RelativeURL' = 'sites/ContentTypeHub'
-                    'SiteType' = 'System'
                 },
                 [PSCustomObject]@{
                     'Abbreviation' = 'Defra'
@@ -163,14 +147,6 @@ function Invoke-Configuration
                     'SiteType' = 'ALB'
                 },
                 [PSCustomObject]@{
-                    'Abbreviation' = 'ContentTypeHub'
-                    'ApplyHubSiteNavigationChanges' = $false
-                    'DisplayName' = ''
-                    'GroupPrefix' = ''
-                    'RelativeURL' = 'sites/ContentTypeHub'
-                    'SiteType' = 'System'
-                },
-                [PSCustomObject]@{
                     'Abbreviation' = 'Defra'
                     'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = 'Defra Intranet'
@@ -216,17 +192,9 @@ function Invoke-Configuration
                     'Abbreviation' = 'APHA'
                     'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = 'Animal & Plant Health Agency'
-                    'GroupPrefix' = ''
-                    'RelativeURL' = ''
+                    'GroupPrefix' = 'APHAIntranet'
+                    'RelativeURL' = 'sites/APHAIntranet'
                     'SiteType' = 'ALB'
-                },
-                [PSCustomObject]@{
-                    'Abbreviation' = 'ContentTypeHub'
-                    'ApplyHubSiteNavigationChanges' = $false
-                    'DisplayName' = ''
-                    'GroupPrefix' = ''
-                    'RelativeURL' = 'sites/ContentTypeHub'
-                    'SiteType' = 'System'
                 },
                 [PSCustomObject]@{
                     'Abbreviation' = 'Defra'
@@ -256,8 +224,8 @@ function Invoke-Configuration
                     'Abbreviation' = 'NE'
                     'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = 'Natural England Intranet'
-                    'GroupPrefix' = ''
-                    'RelativeURL' = ''
+                    'GroupPrefix' = 'NEIntranet'
+                    'RelativeURL' = 'sites/NEIntranet'
                     'SiteType' = 'ALB'
                 }
             )
@@ -277,14 +245,6 @@ function Invoke-Configuration
                     'GroupPrefix' = 'APHA'
                     'RelativeURL' = 'sites/apha'
                     'SiteType' = 'ALB'
-                },
-                [PSCustomObject]@{
-                    'Abbreviation' = 'ContentTypeHub'
-                    'ApplyHubSiteNavigationChanges' = $false
-                    'DisplayName' = ''
-                    'GroupPrefix' = 'APHA Intranet'
-                    'RelativeURL' = 'sites/ContentTypeHub'
-                    'SiteType' = 'System'
                 },
                 [PSCustomObject]@{
                     'Abbreviation' = 'Defra'
