@@ -301,20 +301,22 @@ foreach($site in $sites)
     {
         "Defra" 
         {
-            $contentViewFields = "Attachments","LinkTitle","AssignedTo","ContentSubmissionDescription","Author","ContentSubmissionStatus","PublishBy","ContentTypes","AltContact","OrganisationIntranets","LineManager"
-            $defaultViewFields = "Attachments","LinkTitle","ContentType","AssignedTo","Author","ContentSubmissionStatus","AltContact","OrganisationIntranets"
-            $eventViewFields = "Attachments","LinkTitle","AssignedTo","OrganisationIntranets","EventDateTime","EventVenueAndJoiningDetails","EventDetails","EventBooking","EventFurtherInformation"
+            $allItemsAssignedFields = "Attachments","LinkTitle","ContentType","Author","OrganisationIntranets","ContentSubmissionStatus","AltContact"
+            $contentViewFields = "Attachments","LinkTitle","AssignedTo","OrganisationIntranets","ContentSubmissionDescription","Author","ContentSubmissionStatus","PublishBy","ContentTypes","AltContact","LineManager"
+            $defaultViewFields = "Attachments","LinkTitle","ContentType","AssignedTo","Author","OrganisationIntranets","ContentSubmissionStatus","AltContact"
+            $eventViewFields = "Attachments","LinkTitle","AssignedTo","OrganisationIntranets","Author","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails","EventBooking","EventFurtherInformation"
 
             $fieldNames = @("AltContact","ContentTypes","OrganisationIntranets","LineManager","PublishBy","ContentSubmissionStatus","ContentSubmissionDescription","AssignedTo") 
         }
 
         default 
         {
-            $contentViewFields = "Attachments","LinkTitle","AssignedTo","ContentSubmissionDescription","Author","ContentSubmissionStatus","PublishBy","ContentTypes","AltContact","LineManager"
+            $allItemsAssignedFields = "Attachments","LinkTitle","ContentType","Author","ContentSubmissionStatus","AltContact"
+            $contentViewFields = "Attachments","LinkTitle","AssignedTo","Author","ContentSubmissionStatus","ContentSubmissionDescription","PublishBy","ContentTypes","AltContact","LineManager"
             $defaultViewFields = "Attachments","LinkTitle","ContentType","AssignedTo","Author","ContentSubmissionStatus","AltContact"
+            $eventViewFields = "Attachments","LinkTitle","AssignedTo","Author","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails","EventBooking","EventFurtherInformation"
 
             $fieldNames = @("AltContact","ContentTypes","LineManager","PublishBy","ContentSubmissionStatus","ContentSubmissionDescription","AssignedTo")
-            $eventViewFields = "Attachments","LinkTitle","AssignedTo","EventDateTime","EventVenueAndJoiningDetails","EventDetails","EventBooking","EventFurtherInformation"
         }
     }
 
@@ -323,7 +325,7 @@ foreach($site in $sites)
             'Query' = '<GroupBy Collapse="FALSE" GroupLimit="30"><FieldRef Name="AssignedTo" /></GroupBy><OrderBy><FieldRef Name="ID" Ascending="FALSE" /></OrderBy><Where><Eq><FieldRef Name="ContentSubmissionStatus" /><Value Type="Text">Pending Approval</Value></Eq></Where>'
             'TargetSite' = ''
             'Title' = 'All Items - By Assigned To'
-            'ViewFields' = "Attachments","LinkTitle","ContentType","Author","ContentSubmissionStatus","AltContact","OrganisationIntranets"
+            'ViewFields' = $allItemsAssignedFields
         },
         [PSCustomObject]@{
             'Query' = '<OrderBy><FieldRef Name="ID" Ascending="FALSE" /></OrderBy><Where><And><Eq><FieldRef Name="ContentSubmissionStatus" /><Value Type="Text">Pending Approval</Value></Eq><Or><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Content Submission Request</Value></Eq><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Content Submission Request - Stage 2</Value></Eq></Or></And></Where>'
