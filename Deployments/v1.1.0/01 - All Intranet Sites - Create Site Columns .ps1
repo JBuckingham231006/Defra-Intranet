@@ -118,7 +118,7 @@ foreach($site in $sites)
         $field = Add-PnPField -Type "User" -InternalName "LineManager" -DisplayName $displayName -Required
         Set-PnPField -Identity $field.Id -Values @{
             SelectionMode = 0;
-            Description = "Please tell us who in your senior management provided the final sign-off on this story and confirm all relevant stakeholders have been informed:"
+            Description = "Please let us know which senior management provided the final sign-off on this content."
         }
 
         Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
@@ -128,8 +128,8 @@ foreach($site in $sites)
         Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
     }
 
-    # "Preferred Timing" column
-    $displayName = "Preferred Timing"
+    # "When do you need this published?" column
+    $displayName = "When do you need this published?"
     $field = Get-PnPField -Identity "PublishBy" -ErrorAction SilentlyContinue
 
     if($null -eq $field)
