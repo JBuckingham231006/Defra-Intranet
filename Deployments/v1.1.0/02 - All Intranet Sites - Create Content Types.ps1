@@ -80,10 +80,10 @@ foreach($site in $sites)
     switch ($site.Abbreviation)
     {
         "Defra" { 
-            $fieldNames = @("ContentTypes","OrganisationIntranets","PublishBy","LineManager","AltContact","ContentSubmissionStatus","ContentSubmissionDescription","AssignedTo")
+            $fieldNames = @("OrganisationIntranets","ContentTypes","PublishBy","LineManager","AltContact","ContentSubmissionStatus","ContentSubmissionDescription","AssignedTo")
         }
         default { 
-            $fieldNames = @("ContentTypes","LineManager","AltContact","PublishBy","ContentSubmissionStatus","ContentSubmissionDescription","AssignedTo")
+            $fieldNames = @("ContentTypes","PublishBy","LineManager","AltContact","ContentSubmissionStatus","ContentSubmissionDescription","AssignedTo")
         }
     }
 
@@ -94,7 +94,15 @@ foreach($site in $sites)
 
        if($null -eq $exists)
        {
-            Add-PnPFieldToContentType -Field $field -ContentType $ct
+            if($field.Required -eq $true)
+            {
+                Add-PnPFieldToContentType -Field $field -ContentType $ct -Required
+            }
+            else
+            {
+                Add-PnPFieldToContentType -Field $field -ContentType $ct
+            }
+
             Write-Host "THE FIELD '$($field.Title)' HAS BEEN ADDED TO THE CONTENT TYPE '$ctName'" -ForegroundColor Green
        }
        else
@@ -103,6 +111,7 @@ foreach($site in $sites)
        }
     }
 
+    # EVENT SUBMISSION REQUEST
     $ctName = "Event Submission Request"
     $ct = Get-PnPContentType -Identity $ctName -ErrorAction SilentlyContinue
 
@@ -123,10 +132,10 @@ foreach($site in $sites)
     switch ($site.Abbreviation)
     {
         "Defra" { 
-            $fieldNames = @("AltContact","EventDateTime","OrganisationIntranets","EventVenueAndJoiningDetails","EventDetails","EventBooking","EventFurtherInformation","ContentSubmissionStatus")
+            $fieldNames = @("OrganisationIntranets","EventDateTime","EventDetails","EventVenueAndJoiningDetails","PublishBy","AltContact","ContentSubmissionStatus")
         }
         default { 
-            $fieldNames = @("AltContact","EventDateTime","EventVenueAndJoiningDetails","EventDetails","EventBooking","EventFurtherInformation","ContentSubmissionStatus")
+            $fieldNames = @("EventDateTime","EventDetails","EventVenueAndJoiningDetails","PublishBy","AltContact","ContentSubmissionStatus")
         }
     }
 
@@ -137,7 +146,15 @@ foreach($site in $sites)
 
        if($null -eq $exists)
        {
-            Add-PnPFieldToContentType -Field $field -ContentType $ct
+            if($field.Required -eq $true)
+            {
+                Add-PnPFieldToContentType -Field $field -ContentType $ct -Required
+            }
+            else
+            {
+                Add-PnPFieldToContentType -Field $field -ContentType $ct
+            }
+
             Write-Host "THE FIELD '$($field.Title)' HAS BEEN ADDED TO THE CONTENT TYPE '$ctName'" -ForegroundColor Green
        }
        else
@@ -146,6 +163,7 @@ foreach($site in $sites)
        }
     }
 
+    # EVENT SUBMISSION REQUEST - STAGE 2
     $ctName = "Event Submission Request - Stage 2"
     $ct = Get-PnPContentType -Identity $ctName -ErrorAction SilentlyContinue
 
@@ -165,11 +183,11 @@ foreach($site in $sites)
     # Site-specific variable configuration.
     switch ($site.Abbreviation)
     {
-        "Defra" {
-            $fieldNames = @("AltContact","EventDateTime","OrganisationIntranets","EventVenueAndJoiningDetails","EventDetails","EventBooking","EventFurtherInformation","ContentSubmissionStatus","AssignedTo")
+        "Defra" { 
+            $fieldNames = @("OrganisationIntranets","EventDateTime","EventDetails","EventVenueAndJoiningDetails","PublishBy","AltContact","ContentSubmissionStatus","AssignedTo")
         }
-        default {
-            $fieldNames = @("AltContact","EventDateTime","EventVenueAndJoiningDetails","EventDetails","EventBooking","EventFurtherInformation","ContentSubmissionStatus","AssignedTo")
+        default { 
+            $fieldNames = @("EventDateTime","EventDetails","EventVenueAndJoiningDetails","PublishBy","AltContact","ContentSubmissionStatus","AssignedTo")
         }
     }
 
@@ -180,7 +198,15 @@ foreach($site in $sites)
 
        if($null -eq $exists)
        {
-            Add-PnPFieldToContentType -Field $field -ContentType $ct
+            if($field.Required -eq $true)
+            {
+                Add-PnPFieldToContentType -Field $field -ContentType $ct -Required
+            }
+            else
+            {
+                Add-PnPFieldToContentType -Field $field -ContentType $ct
+            }
+
             Write-Host "THE FIELD '$($field.Title)' HAS BEEN ADDED TO THE CONTENT TYPE '$ctName'" -ForegroundColor Green
        }
        else
