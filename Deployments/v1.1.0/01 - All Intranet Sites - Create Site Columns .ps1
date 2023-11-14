@@ -59,14 +59,29 @@ foreach($site in $sites)
     Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.RelativeURL)" -ForegroundColor Cyan
     Write-Host ""
 
+    # Custom Field values (per-site)
+    switch ($site.Abbreviation)
+    {
+        "EA" {
+            $contentTypeOptions = "Alert","Blog or Online Diary", "Guidance Page","News Story - Highlight","News Story - Top Story"
+        }
+
+        default {
+            $contentTypeOptions = "Blog or Online Diary","Form","Guidance Page","News Story","Office Notice"
+        }
+    }
+
     # "Alternative Contact" column
     $displayName = "Alternative Contact"
     $field = Get-PnPField -Identity "AltContact" -ErrorAction SilentlyContinue
 
     if($null -eq $field)
     {
-        $field = Add-PnPField -Type "User" -InternalName "AltContact" -DisplayName $displayName -Required
-        Set-PnPField -Identity $field.Id -Values @{SelectionMode=0}
+        $field = Add-PnPField -Type "User" -InternalName "AltContact" -DisplayName $displayName
+        Set-PnPField -Identity $field.Id -Values @{
+            SelectionMode=0;
+            Description = "Please provide the name of someone else we can contact about this request should you be out of the office."
+        }
 
         Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
     }
@@ -81,11 +96,10 @@ foreach($site in $sites)
 
     if($null -eq $field)
     {
-        $field = Add-PnPField -Type "Choice" -InternalName "ContentTypes" -DisplayName $displayName -Required -Choices "Blog or Online Diary","Form","Guidance Page","News Story","Office Notice"
+        $field = Add-PnPField -Type "Choice" -InternalName "ContentTypes" -DisplayName $displayName -Required -Choices $contentTypeOptions
 
         Set-PnPField -Identity $field.Id -Values @{
-            Description = "Please select what kind of content you are submitting:"; 
-            CustomFormatter = '{"elmType":"div","style":{"flex-wrap":"wrap","display":"flex"},"children":[{"elmType":"div","style":{"box-sizing":"border-box","padding":"4px 8px 5px 8px","overflow":"hidden","text-overflow":"ellipsis","display":"flex","border-radius":"16px","height":"24px","align-items":"center","white-space":"nowrap","margin":"4px 4px 4px 4px"},"attributes":{"class":{"operator":":","operands":[{"operator":"==","operands":["[$ContentTypes]",""]},"",{"operator":":","operands":[{"operator":"==","operands":["[$ContentTypes]","News story"]},"sp-css-backgroundColor-successBackground50 sp-css-color-green",{"operator":":","operands":[{"operator":"==","operands":["[$ContentTypes]","Blog or online diary"]},"sp-css-backgroundColor-warningBackground50 sp-css-color-neutralPrimaryAlt",{"operator":":","operands":[{"operator":"==","operands":["[$ContentTypes]","Office notice"]},"sp-css-backgroundColor-BgLightPurple sp-field-borderAllRegular sp-field-borderAllSolid sp-css-borderColor-LightPurpleFont sp-css-color-LightPurpleFont",{"operator":":","operands":[{"operator":"==","operands":["[$ContentTypes]","Guidance Page"]},"sp-css-backgroundColor-BgCyan sp-field-borderAllRegular sp-field-borderAllSolid sp-css-borderColor-CyanFont sp-css-color-CyanFont",{"operator":":","operands":[{"operator":"==","operands":["[$ContentTypes]","Blog or Online Diary"]},"sp-css-backgroundColor-BgGold sp-field-borderAllRegular sp-field-borderAllSolid sp-css-borderColor-GoldFont sp-css-color-GoldFont",{"operator":":","operands":[{"operator":"==","operands":["[$ContentTypes]","Form"]},"sp-css-backgroundColor-BgDustRose sp-field-borderAllRegular sp-field-borderAllSolid sp-css-borderColor-DustRoseFont sp-css-color-DustRoseFont",{"operator":":","operands":[{"operator":"==","operands":["[$ContentTypes]","News Story"]},"sp-css-backgroundColor-BgMintGreen sp-field-borderAllRegular sp-field-borderAllSolid sp-css-borderColor-MintGreenFont sp-css-color-MintGreenFont",{"operator":":","operands":[{"operator":"==","operands":["[$ContentTypes]","Office Notice"]},"sp-css-backgroundColor-BgLightPurple sp-field-borderAllRegular sp-field-borderAllSolid sp-css-borderColor-LightPurpleFont sp-css-color-LightPurpleFont",""]}]}]}]}]}]}]}]}]}},"txtContent":"[$ContentTypes]"}],"templateId":"BgColorChoicePill"}'
+            Description = "Please select what kind of content you are submitting:";
         }
 
         Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
@@ -104,7 +118,7 @@ foreach($site in $sites)
         $field = Add-PnPField -Type "User" -InternalName "LineManager" -DisplayName $displayName -Required
         Set-PnPField -Identity $field.Id -Values @{
             SelectionMode = 0;
-            Description = "Please tell us who in your senior management provided the final sign-off on this story and confirm all relevant stakeholders have been informed:"
+            Description = "Please let us know which senior management provided the final sign-off on this content."
         }
 
         Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
@@ -114,8 +128,8 @@ foreach($site in $sites)
         Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
     }
 
-    # "Preferred Timing" column
-    $displayName = "Preferred Timing"
+    # "When do you need this published?" column
+    $displayName = "When do you need this published?"
     $field = Get-PnPField -Identity "PublishBy" -ErrorAction SilentlyContinue
 
     if($null -eq $field)
@@ -129,20 +143,6 @@ foreach($site in $sites)
         Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
     }
     else
-    {
-        Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
-    }
-
-    # "Stakeholders Informed" column
-    $displayName = "Stakeholders Informed"
-    $field = Get-PnPField -Identity "StakeholdersInformed" -ErrorAction SilentlyContinue
-
-    if($null -eq $field)
-    {
-        $field = Add-PnPField -Type "Choice" -InternalName "StakeholdersInformed" -DisplayName $displayName -Required -Choices "Yes","No"
-        Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
-    }
-    else 
     {
         Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
     }
@@ -193,6 +193,7 @@ foreach($site in $sites)
     if($null -eq $field)
     {
         $field = Add-PnPField -Type "DateTime" -InternalName "EventDateTime" -DisplayName $displayName -Required
+
         Set-PnPField -Identity $field.Id -Values @{
             FriendlyDisplayFormat = [Microsoft.SharePoint.Client.DateTimeFieldFriendlyFormatType]::Disabled;
         }
@@ -225,34 +226,6 @@ foreach($site in $sites)
     if($null -eq $field)
     {
         $field = Add-PnPField -Type "Note" -InternalName "EventDetails" -DisplayName $displayName -Required
-        Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
-    }
-    else
-    {
-        Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
-    }
-
-    # "Booking" column
-    $displayName = "Booking"
-    $field = Get-PnPField -Identity "EventBooking" -ErrorAction SilentlyContinue
-
-    if($null -eq $field)
-    {
-        $field = Add-PnPField -Type "Note" -InternalName "EventBooking" -DisplayName $displayName -Required
-        Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
-    }
-    else
-    {
-        Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
-    }
-
-    # "Further information for the reader" column
-    $displayName = "Further information for the reader"
-    $field = Get-PnPField -Identity "EventFurtherInformation" -ErrorAction SilentlyContinue
-
-    if($null -eq $field)
-    {
-        $field = Add-PnPField -Type "Note" -InternalName "EventFurtherInformation" -DisplayName $displayName -Required
         Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
     }
     else
