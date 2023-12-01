@@ -46,41 +46,37 @@ Start-Transcript -path "$global:scriptPath/Logs/$logfileName" -append | Out-Null
 
 Invoke-Configuration
 
-$sites = $global:sites | Where-Object { $_.SiteType -eq "ALB" -or $_.SiteType -eq "Parent" -and $_.RelativeURL.Length -gt 0 } | Sort-Object -Property @{Expression="SiteType";Descending=$true},@{Expression="DisplayName";Descending=$false}
+$site = $global:sites | Where-Object { $_.SiteType -eq "Parent" -and $_.RelativeURL.Length -gt 0 } | Sort-Object -Property @{Expression="SiteType";Descending=$true},@{Expression="DisplayName";Descending=$false}
 
-if($null -eq $sites)
+if($null -eq $site)
 {
-    throw "Entries could not be found in the configuration module that matches the requirements for this script to run. The Defra Intranet and all associated ALB intranets are required."
+    throw "An entry in the configuration could not be found for the 'Defra Intranet' or is not configured correctly"
 }
 
-$ctNames = @("Content Submission Request - Stage 2","Event Submission Request","Event Submission Request - Stage 2")
+Write-Host "SCRIPT EXECUTED BY '$(Get-CurrentUser)' AT $(get-date -f "HH:mm:ss") ON $(get-date -f "dd/MM/yyyy")" -ForegroundColor Cyan
+Write-Host ""
 
-foreach($site in $sites)
+Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
+Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.RelativeURL)" -ForegroundColor Green
+
+$fieldNames = @("OrganisationIntranetsContentEditorInput","PageApprovalInfo")
+
+foreach($fieldName in $fieldNames)
 {
-    Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
-    Write-Host "SCRIPT EXECUTED BY '$(Get-CurrentUser)' AT $(get-date -f "HH:mm:ss") ON $(get-date -f "dd/MM/yyyy")" -ForegroundColor Cyan
-    Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.RelativeURL)" -ForegroundColor Cyan
-    Write-Host ""
+    $field = Get-PnPField -Identity $fieldName -ErrorAction SilentlyContinue
 
-    $web = Get-PnPWeb
-
-    foreach($ctName in $ctNames)
+    if($null -ne $field)
     {
-        $ct = Get-PnPContentType -Identity $ctName -ErrorAction SilentlyContinue
-
-        if($null -ne $ct)
-        {
-            Remove-PnPContentType -Identity $ctName -Force
-            Write-Host "CONTENT TYPE '$ctName' REMOVE FROM THE '$($web.Title)' SITE" -ForegroundColor Green
-        }
-        else
-        {
-            Write-Host "CONTENT TYPE '$ctName' DOES NOT EXIST IN THE '$($web.Title)' SITE" -ForegroundColor Yellow
-        }
+        Remove-PnPField -Identity $fieldName -Force
+        Write-Host "SITE COLUMN REMOVED: $fieldName" -ForegroundColor Yellow
     }
-
-    Write-Host ""
+    else
+    {
+        Write-Host "THE FIELD '$fieldName' DOES NOT EXIST IN THE SITE '$($web.Title)'" -ForegroundColor Cyan
+    }
 }
+
+Write-Host ""
 
 Write-Host "SCRIPT FINISHED" -ForegroundColor Yellow
 Stop-Transcript

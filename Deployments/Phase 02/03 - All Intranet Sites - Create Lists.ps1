@@ -1,6 +1,6 @@
 <#
     SCRIPT OVERVIEW:
-    This script creates our custom submission list
+    This script creates our custom lists
 
     SOFTWARE REQUIREMENTS:
     This script was developed on the following platform:
@@ -49,7 +49,7 @@ $sites = $global:sites | Where-Object { $_.SiteType -eq "ALB" -or $_.SiteType -e
 
 if($null -eq $sites)
 {
-    throw "An entry in the configuration could not be found for the 'Defra Intranet' or is not configured correctly"
+    throw "Entries could not be found in the configuration module that matches the requirements for this script to run. The Defra Intranet and all associated ALB intranets are required."
 }
 
 $listDetails = New-Object System.Collections.ArrayList

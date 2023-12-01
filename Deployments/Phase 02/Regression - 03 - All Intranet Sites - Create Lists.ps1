@@ -1,7 +1,6 @@
 <#
     SCRIPT OVERVIEW:
-    REGRESSION SCRIPT FOR: 03 - DEFRA Intranet - Site Columns.ps1
-    This script uninstalls the site columns required by our custom list(s) and libraries  
+    This script uninstalls our custom lists
 
     SOFTWARE REQUIREMENTS:
     This script was developed on the following platform:
@@ -53,8 +52,6 @@ if($null -eq $sites)
     throw "Entries could not be found in the configuration module that matches the requirements for this script to run. The Defra Intranet and all associated ALB intranets are required."
 }
 
-$ctNames = @("Content Submission Request - Stage 2","Event Submission Request","Event Submission Request - Stage 2")
-
 foreach($site in $sites)
 {
     Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
@@ -62,21 +59,21 @@ foreach($site in $sites)
     Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.RelativeURL)" -ForegroundColor Cyan
     Write-Host ""
 
+    $displayName = "Internal Comms Intranet Content Submissions"
+    $listURL = "Lists/ICICS"
+
     $web = Get-PnPWeb
+    $list = Get-PnPList -Identity $listURL
 
-    foreach($ctName in $ctNames)
+
+    if($null -ne $list)
     {
-        $ct = Get-PnPContentType -Identity $ctName -ErrorAction SilentlyContinue
-
-        if($null -ne $ct)
-        {
-            Remove-PnPContentType -Identity $ctName -Force
-            Write-Host "CONTENT TYPE '$ctName' REMOVE FROM THE '$($web.Title)' SITE" -ForegroundColor Green
-        }
-        else
-        {
-            Write-Host "CONTENT TYPE '$ctName' DOES NOT EXIST IN THE '$($web.Title)' SITE" -ForegroundColor Yellow
-        }
+        Remove-PnPList -Identity $listURL -Force
+        Write-Host "THE '$displayName' LIST HAS BEEN REMOVED" -ForegroundColor Yellow
+    }
+    else
+    {
+        Write-Host "THE '$displayName' LIST DOES NOT EXIST IN THE SITE '$($web.Title)'" -ForegroundColor Green
     }
 
     Write-Host ""
