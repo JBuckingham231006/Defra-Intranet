@@ -1,0 +1,32 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20231031110508
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\Regression - 02 - Defra Intranet - Create Submission List.ps1
+Process ID: 24368
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 11:05:09 ON 31/10/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+SITE COLUMN 'OrganisationIntranets' ADDED TO THE CONTENT TYPE 'Site Page'
+THE FIELD 'OrganisationIntranets' HAS BEEN ADDED TO THE 'Site Pages' LIBRARY VIEW 'By Author'
+THE FIELD 'OrganisationIntranets' HAS BEEN ADDED TO THE 'Site Pages' LIBRARY VIEW 'Created By Me'
+THE FIELD 'OrganisationIntranets' HAS BEEN ADDED TO THE 'Site Pages' LIBRARY VIEW 'All Pages'
+THE FIELD 'OrganisationIntranets' HAS BEEN ADDED TO THE 'Site Pages' LIBRARY VIEW 'By Editor'
+THE FIELD 'OrganisationIntranets' HAS BEEN ADDED TO THE 'Site Pages' LIBRARY VIEW 'Recent Changes'
+THE FIELD 'OrganisationIntranets' HAS BEEN ADDED TO THE 'Site Pages' LIBRARY VIEW 'Base Site Page Content Type Hub'
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231031110514
+**********************

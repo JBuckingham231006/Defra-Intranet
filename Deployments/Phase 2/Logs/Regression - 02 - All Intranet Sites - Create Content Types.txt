@@ -1,0 +1,1359 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20231107154241
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\Regression - 01 - All Intranet Sites - Create Site Columns.ps1
+Process ID: 41656
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james.buckingham@defradev.onmicrosoft.com' AT 15:42:43 ON 07/11/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/APHAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Animal & Plant Health Agency' SITE
+
+SCRIPT EXECUTED BY 'james.buckingham@defradev.onmicrosoft.com' AT 15:42:46 ON 07/11/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/EAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency Intranet' SITE
+
+SCRIPT EXECUTED BY 'james.buckingham@defradev.onmicrosoft.com' AT 15:42:49 ON 07/11/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/MMOIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'MMO Connect' SITE
+
+SCRIPT EXECUTED BY 'james.buckingham@defradev.onmicrosoft.com' AT 15:42:52 ON 07/11/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/NEIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Natural England Intranet' SITE
+
+SCRIPT EXECUTED BY 'james.buckingham@defradev.onmicrosoft.com' AT 15:42:54 ON 07/11/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/RPAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Rural Payments Agency' SITE
+
+SCRIPT EXECUTED BY 'james.buckingham@defradev.onmicrosoft.com' AT 15:42:57 ON 07/11/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/defraintranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231107154259
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231108174135
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.0.0\01 - Content Type Hub - Site Columns and Content Types.ps1
+Process ID: 20032
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 17:41:36 ON 08/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request - Stage 1' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 17:41:37 ON 08/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 1' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231108174139
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231108195812
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 23532
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 19:58:12 ON 08/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 1' DOES NOT EXIST IN THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 19:58:14 ON 08/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request - Stage 1' DOES NOT EXIST IN THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231108195815
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231108195823
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 23532
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 19:58:24 ON 08/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' DOES NOT EXIST IN THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' DOES NOT EXIST IN THE 'Defra Intranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 19:58:25 ON 08/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' DOES NOT EXIST IN THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' DOES NOT EXIST IN THE 'Environment Agency' SITE
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231108195826
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231108201601
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 23532
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 20:16:02 ON 08/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 20:16:04 ON 08/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231108201605
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231108221629
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 23532
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james.buckingham@defradev.onmicrosoft.com' AT 22:16:30 ON 08/11/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/APHAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Animal & Plant Health Agency' SITE
+
+SCRIPT EXECUTED BY 'james.buckingham@defradev.onmicrosoft.com' AT 22:16:31 ON 08/11/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/EAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency Intranet' SITE
+
+SCRIPT EXECUTED BY 'james.buckingham@defradev.onmicrosoft.com' AT 22:16:32 ON 08/11/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/MMOIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'MMO Connect' SITE
+
+SCRIPT EXECUTED BY 'james.buckingham@defradev.onmicrosoft.com' AT 22:16:33 ON 08/11/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/NEIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Natural England Intranet' SITE
+
+SCRIPT EXECUTED BY 'james.buckingham@defradev.onmicrosoft.com' AT 22:16:34 ON 08/11/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/defraintranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231108221635
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231109162156
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 23532
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james.buckingham@defradev.onmicrosoft.com' AT 16:21:56 ON 09/11/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/defraintranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+
+SCRIPT EXECUTED BY 'james.buckingham@defradev.onmicrosoft.com' AT 16:21:58 ON 09/11/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/APHAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Animal & Plant Health Agency' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Animal & Plant Health Agency' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Animal & Plant Health Agency' SITE
+
+SCRIPT EXECUTED BY 'james.buckingham@defradev.onmicrosoft.com' AT 16:22:00 ON 09/11/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/EAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency Intranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Environment Agency Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency Intranet' SITE
+
+SCRIPT EXECUTED BY 'james.buckingham@defradev.onmicrosoft.com' AT 16:22:01 ON 09/11/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/MMOIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'MMO Connect' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'MMO Connect' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'MMO Connect' SITE
+
+SCRIPT EXECUTED BY 'james.buckingham@defradev.onmicrosoft.com' AT 16:22:03 ON 09/11/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/NEIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Natural England Intranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Natural England Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Natural England Intranet' SITE
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231109162204
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231109222109
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 23532
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 22:21:10 ON 09/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 22:21:12 ON 09/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 22:21:14 ON 09/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' DOES NOT EXIST IN THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request' DOES NOT EXIST IN THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' DOES NOT EXIST IN THE 'MMOIntranet' SITE
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231109222114
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231110143804
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 23532
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 14:38:05 ON 10/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 14:38:07 ON 10/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 14:38:09 ON 10/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'MMOIntranet' SITE
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231110143810
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231110151536
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 23532
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 15:15:37 ON 10/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 15:15:39 ON 10/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 15:15:41 ON 10/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'MMOIntranet' SITE
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231110151542
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231110153256
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 23532
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 15:32:57 ON 10/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 15:32:59 ON 10/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 15:33:01 ON 10/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'MMOIntranet' SITE
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231110153302
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231113150445
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\Regression - 03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 13688
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 15:04:45 ON 13/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 15:04:48 ON 13/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'APHAIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 15:04:50 ON 13/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 15:04:52 ON 13/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'MMOIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 15:04:54 ON 13/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'NEIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'NEIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'NEIntranet' SITE
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231113150456
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231113234817
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\Regression - 03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 13688
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 23:48:18 ON 13/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 23:48:21 ON 13/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'APHAIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 23:48:22 ON 13/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 23:48:24 ON 13/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'MMOIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 23:48:26 ON 13/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+
+PS C:\WINDOWS\system32> TerminatingError(Remove-PnPContentType): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Another site or list is still using this content type. If you would still like to delete it, please remove the content type from all sites and lists and then try again."
+>> TerminatingError(Remove-PnPContentType): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Another site or list is still using this content type. If you would still like to delete it, please remove the content type from all sites and lists and then try again."
+Remove-PnPContentType : Another site or list is still using this content type. If you would still like to delete it, please remove the content type from all sites and lists and then try again.
+At C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\Regression - 02 - All Intranet Sites - Create Content Types.ps1:73 char:13
++             Remove-PnPContentType -Identity $ctName -Force
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Remove-PnPContentType], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.ContentTypes.RemoveContentType
+**********************
+Windows PowerShell transcript end
+End time: 20231113234834
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231113234846
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\Regression - 03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 13688
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 23:48:47 ON 13/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' DOES NOT EXIST IN THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request' DOES NOT EXIST IN THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' DOES NOT EXIST IN THE 'Defra Intranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 23:48:48 ON 13/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' DOES NOT EXIST IN THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request' DOES NOT EXIST IN THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' DOES NOT EXIST IN THE 'APHAIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 23:48:49 ON 13/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' DOES NOT EXIST IN THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request' DOES NOT EXIST IN THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' DOES NOT EXIST IN THE 'Environment Agency' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 23:48:50 ON 13/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' DOES NOT EXIST IN THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request' DOES NOT EXIST IN THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' DOES NOT EXIST IN THE 'MMOIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 23:48:52 ON 13/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+
+PS C:\WINDOWS\system32> TerminatingError(Remove-PnPContentType): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Another site or list is still using this content type. If you would still like to delete it, please remove the content type from all sites and lists and then try again."
+>> TerminatingError(Remove-PnPContentType): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Another site or list is still using this content type. If you would still like to delete it, please remove the content type from all sites and lists and then try again."
+Remove-PnPContentType : Another site or list is still using this content type. If you would still like to delete it, please remove the content type from all sites and lists and then try again.
+At C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\Regression - 02 - All Intranet Sites - Create Content Types.ps1:73 char:13
++             Remove-PnPContentType -Identity $ctName -Force
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Remove-PnPContentType], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.ContentTypes.RemoveContentType
+**********************
+Windows PowerShell transcript end
+End time: 20231113234925
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231113234925
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\Regression - 03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 13688
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 23:49:26 ON 13/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' DOES NOT EXIST IN THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request' DOES NOT EXIST IN THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' DOES NOT EXIST IN THE 'Defra Intranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 23:49:27 ON 13/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' DOES NOT EXIST IN THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request' DOES NOT EXIST IN THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' DOES NOT EXIST IN THE 'APHAIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 23:49:28 ON 13/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' DOES NOT EXIST IN THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request' DOES NOT EXIST IN THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' DOES NOT EXIST IN THE 'Environment Agency' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 23:49:29 ON 13/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' DOES NOT EXIST IN THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request' DOES NOT EXIST IN THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' DOES NOT EXIST IN THE 'MMOIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 23:49:31 ON 13/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'NEIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'NEIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'NEIntranet' SITE
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231113234932
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231113235839
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\Regression - 03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 13688
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 23:58:40 ON 13/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 23:58:41 ON 13/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'APHAIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 23:58:43 ON 13/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 23:58:45 ON 13/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'MMOIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 23:58:47 ON 13/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'NEIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'NEIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'NEIntranet' SITE
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231113235848
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231114002643
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\Regression - 03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 13688
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 00:26:44 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 00:26:46 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'APHAIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 00:26:47 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 00:26:49 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'MMOIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 00:26:51 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'NEIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'NEIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'NEIntranet' SITE
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231114002652
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231114102103
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\Regression - 03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 13688
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 10:21:04 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 10:21:06 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'APHAIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 10:21:08 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 10:21:10 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'MMOIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 10:21:12 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'NEIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'NEIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'NEIntranet' SITE
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231114102114
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231114112646
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\01 - All Intranet Sites - Create Site Columns .ps1
+Process ID: 9828
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 11:26:46 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 11:26:48 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'APHAIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 11:26:50 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 11:26:52 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'MMOIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 11:26:54 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'NEIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'NEIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'NEIntranet' SITE
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231114112655
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231114113154
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\01 - All Intranet Sites - Create Site Columns .ps1
+Process ID: 9828
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 11:31:55 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 11:31:57 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'APHAIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 11:31:59 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 11:32:01 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'MMOIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 11:32:03 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'NEIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'NEIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'NEIntranet' SITE
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231114113204
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231114113309
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\01 - All Intranet Sites - Create Site Columns .ps1
+Process ID: 9828
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 11:33:09 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' DOES NOT EXIST IN THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request' DOES NOT EXIST IN THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' DOES NOT EXIST IN THE 'Defra Intranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 11:33:10 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' DOES NOT EXIST IN THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request' DOES NOT EXIST IN THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' DOES NOT EXIST IN THE 'APHAIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 11:33:11 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' DOES NOT EXIST IN THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request' DOES NOT EXIST IN THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' DOES NOT EXIST IN THE 'Environment Agency' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 11:33:13 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' DOES NOT EXIST IN THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request' DOES NOT EXIST IN THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' DOES NOT EXIST IN THE 'MMOIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 11:33:14 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' DOES NOT EXIST IN THE 'NEIntranet' SITE
+CONTENT TYPE 'Event Submission Request' DOES NOT EXIST IN THE 'NEIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' DOES NOT EXIST IN THE 'NEIntranet' SITE
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231114113314
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231114120252
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\01 - All Intranet Sites - Create Site Columns .ps1
+Process ID: 9828
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 12:02:53 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 12:02:55 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'APHAIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 12:02:57 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 12:02:59 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'MMOIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 12:03:01 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'NEIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'NEIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'NEIntranet' SITE
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231114120303
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231114122105
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\01 - All Intranet Sites - Create Site Columns .ps1
+Process ID: 9828
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 12:21:06 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' DOES NOT EXIST IN THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request' DOES NOT EXIST IN THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' DOES NOT EXIST IN THE 'Defra Intranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 12:21:07 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' DOES NOT EXIST IN THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request' DOES NOT EXIST IN THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' DOES NOT EXIST IN THE 'APHAIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 12:21:08 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' DOES NOT EXIST IN THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request' DOES NOT EXIST IN THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' DOES NOT EXIST IN THE 'Environment Agency' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 12:21:09 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' DOES NOT EXIST IN THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request' DOES NOT EXIST IN THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' DOES NOT EXIST IN THE 'MMOIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 12:21:10 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' DOES NOT EXIST IN THE 'NEIntranet' SITE
+CONTENT TYPE 'Event Submission Request' DOES NOT EXIST IN THE 'NEIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' DOES NOT EXIST IN THE 'NEIntranet' SITE
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231114122111
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231114130342
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\01 - All Intranet Sites - Create Site Columns .ps1
+Process ID: 9828
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 13:03:43 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 13:03:45 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'APHAIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 13:03:46 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 13:03:48 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'MMOIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 13:03:50 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'NEIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'NEIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'NEIntranet' SITE
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231114130351
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231114143811
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\01 - All Intranet Sites - Create Site Columns .ps1
+Process ID: 9828
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 14:38:12 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 14:38:14 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'APHAIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'APHAIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 14:38:16 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Environment Agency' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 14:38:19 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'MMOIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'MMOIntranet' SITE
+
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 14:38:21 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'NEIntranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'NEIntranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'NEIntranet' SITE
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231114143822
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231114152507
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\01 - All Intranet Sites - Create Site Columns .ps1
+Process ID: 35972
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james.buckingham@defradev.onmicrosoft.com' AT 15:25:07 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/defraintranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Defra Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Defra Intranet' SITE
+
+SCRIPT EXECUTED BY 'james.buckingham@defradev.onmicrosoft.com' AT 15:25:09 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/APHAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Animal & Plant Health Agency' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Animal & Plant Health Agency' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Animal & Plant Health Agency' SITE
+
+SCRIPT EXECUTED BY 'james.buckingham@defradev.onmicrosoft.com' AT 15:25:11 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/EAIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency Intranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Environment Agency Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Environment Agency Intranet' SITE
+
+SCRIPT EXECUTED BY 'james.buckingham@defradev.onmicrosoft.com' AT 15:25:13 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/MMOIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'MMO Connect' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'MMO Connect' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'MMO Connect' SITE
+
+SCRIPT EXECUTED BY 'james.buckingham@defradev.onmicrosoft.com' AT 15:25:15 ON 14/11/2023
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/NEIntranet
+
+CONTENT TYPE 'Content Submission Request - Stage 2' REMOVE FROM THE 'Natural England Intranet' SITE
+CONTENT TYPE 'Event Submission Request' REMOVE FROM THE 'Natural England Intranet' SITE
+CONTENT TYPE 'Event Submission Request - Stage 2' REMOVE FROM THE 'Natural England Intranet' SITE
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231114152516
+**********************

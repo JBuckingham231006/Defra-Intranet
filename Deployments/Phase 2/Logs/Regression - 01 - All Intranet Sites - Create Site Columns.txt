@@ -1,0 +1,2009 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20231107154315
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\Regression - 01 - All Intranet Sites - Create Site Columns.ps1
+Process ID: 41656
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james.buckingham@defradev.onmicrosoft.com' AT 15:43:15 ON 07/11/2023
+
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/APHAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/EAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/MMOIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/NEIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/RPAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/defraintranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231107154413
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231108195829
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 23532
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 19:58:29 ON 08/11/2023
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231108195836
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231108201616
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 23532
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 20:16:16 ON 08/11/2023
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231108201627
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231108221638
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 23532
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james.buckingham@defradev.onmicrosoft.com' AT 22:16:39 ON 08/11/2023
+
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/APHAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/EAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/MMOIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/NEIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/defraintranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231108221654
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231109162208
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 23532
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james.buckingham@defradev.onmicrosoft.com' AT 16:22:08 ON 09/11/2023
+
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/defraintranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/APHAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/EAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/MMOIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/NEIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231109162233
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231109222117
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 23532
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 22:21:17 ON 09/11/2023
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+THE FIELD 'AltContact' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'ContentTypes' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'LineManager' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'PublishBy' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'ContentSubmissionDescription' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventDateTime' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventVenueAndJoiningDetails' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventDetails' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231109222130
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231110143813
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 23532
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 14:38:13 ON 10/11/2023
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231110143829
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231110151547
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 23532
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 15:15:47 ON 10/11/2023
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231110151603
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231110153310
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 23532
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 15:33:10 ON 10/11/2023
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231110153325
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231113150458
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\Regression - 03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 13688
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 15:04:58 ON 13/11/2023
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231113150530
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231113235851
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\Regression - 03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 13688
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 23:58:51 ON 13/11/2023
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'Environment Agency'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'NEIntranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231113235916
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231114000500
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\Regression - 03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 13688
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 00:05:01 ON 14/11/2023
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'Environment Agency'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'NEIntranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231114000525
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231114003528
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\Regression - 03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 13688
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 00:35:28 ON 14/11/2023
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'Environment Agency'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'NEIntranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231114003552
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231114102117
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\Regression - 03 - All Intranet Sites - Create Submission List.ps1
+Process ID: 13688
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 10:21:17 ON 14/11/2023
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'Environment Agency'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'NEIntranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231114102146
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231114120305
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\01 - All Intranet Sites - Create Site Columns .ps1
+Process ID: 9828
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 12:03:05 ON 14/11/2023
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'Environment Agency'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'NEIntranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231114120333
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231114121021
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\01 - All Intranet Sites - Create Site Columns .ps1
+Process ID: 9828
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 12:10:21 ON 14/11/2023
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+THE FIELD 'AltContact' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'ContentTypes' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'LineManager' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'PublishBy' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'ContentSubmissionDescription' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventDateTime' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventVenueAndJoiningDetails' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventDetails' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+THE FIELD 'AltContact' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'ContentTypes' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'LineManager' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'PublishBy' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'ContentSubmissionDescription' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EventDateTime' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EventVenueAndJoiningDetails' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EventDetails' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+THE FIELD 'AltContact' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'ContentTypes' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'LineManager' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'PublishBy' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'ContentSubmissionDescription' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'EventDateTime' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'EventVenueAndJoiningDetails' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'EventDetails' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'Environment Agency'
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+THE FIELD 'AltContact' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'ContentTypes' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'LineManager' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'PublishBy' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'ContentSubmissionDescription' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventDateTime' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventVenueAndJoiningDetails' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventDetails' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+THE FIELD 'AltContact' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'ContentTypes' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'LineManager' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'PublishBy' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'ContentSubmissionDescription' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EventDateTime' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EventVenueAndJoiningDetails' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EventDetails' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'NEIntranet'
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231114121033
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231114122113
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\01 - All Intranet Sites - Create Site Columns .ps1
+Process ID: 9828
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 12:21:13 ON 14/11/2023
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+THE FIELD 'AltContact' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'ContentTypes' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'LineManager' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'PublishBy' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'ContentSubmissionDescription' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventDateTime' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventVenueAndJoiningDetails' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventDetails' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+THE FIELD 'AltContact' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'ContentTypes' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'LineManager' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'PublishBy' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'ContentSubmissionDescription' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EventDateTime' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EventVenueAndJoiningDetails' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EventDetails' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+THE FIELD 'AltContact' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'ContentTypes' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'LineManager' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'PublishBy' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'ContentSubmissionDescription' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'EventDateTime' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'EventVenueAndJoiningDetails' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'EventDetails' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'Environment Agency'
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+THE FIELD 'AltContact' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'ContentTypes' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'LineManager' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'PublishBy' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'ContentSubmissionDescription' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventDateTime' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventVenueAndJoiningDetails' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventDetails' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+THE FIELD 'AltContact' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'ContentTypes' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'LineManager' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'PublishBy' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'ContentSubmissionDescription' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EventDateTime' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EventVenueAndJoiningDetails' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EventDetails' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'NEIntranet'
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231114122126
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231114122237
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\01 - All Intranet Sites - Create Site Columns .ps1
+Process ID: 9828
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 12:22:37 ON 14/11/2023
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'Environment Agency'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'Environment Agency'
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'NEIntranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'NEIntranet'
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231114122259
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231114122323
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\01 - All Intranet Sites - Create Site Columns .ps1
+Process ID: 9828
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 12:23:23 ON 14/11/2023
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+THE FIELD 'AltContact' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'ContentTypes' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'LineManager' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'PublishBy' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'ContentSubmissionDescription' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventDateTime' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventVenueAndJoiningDetails' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventDetails' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+SITE COLUMN REMOVED: EvenDetails
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+THE FIELD 'AltContact' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'ContentTypes' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'LineManager' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'PublishBy' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'ContentSubmissionDescription' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EventDateTime' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EventVenueAndJoiningDetails' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EventDetails' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EvenDetails' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+THE FIELD 'AltContact' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'ContentTypes' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'LineManager' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'PublishBy' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'ContentSubmissionDescription' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'EventDateTime' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'EventVenueAndJoiningDetails' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'EventDetails' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'Environment Agency'
+SITE COLUMN REMOVED: EvenDetails
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+THE FIELD 'AltContact' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'ContentTypes' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'LineManager' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'PublishBy' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'ContentSubmissionDescription' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventDateTime' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventVenueAndJoiningDetails' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventDetails' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EvenDetails' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+THE FIELD 'AltContact' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'ContentTypes' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'LineManager' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'PublishBy' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'ContentSubmissionDescription' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EventDateTime' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EventVenueAndJoiningDetails' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EventDetails' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EvenDetails' DOES NOT EXIST IN THE SITE 'NEIntranet'
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231114122337
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231114122401
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\01 - All Intranet Sites - Create Site Columns .ps1
+Process ID: 9828
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 12:24:01 ON 14/11/2023
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+THE FIELD 'AltContact' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'ContentTypes' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'LineManager' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'PublishBy' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'ContentSubmissionDescription' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventDateTime' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventVenueAndJoiningDetails' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventDetails' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EvenDetails' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+PS C:\WINDOWS\system32> TerminatingError(Remove-PnPField): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Site columns which are included in content types or on lists cannot be deleted. Please remove all instances of this site column prior to deleting it."
+>> TerminatingError(Remove-PnPField): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Site columns which are included in content types or on lists cannot be deleted. Please remove all instances of this site column prior to deleting it."
+Remove-PnPField : Site columns which are included in content types or on lists cannot be deleted. Please remove all instances of this site column prior to deleting it.
+At C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\Regression - 01 - All Intranet Sites - Create Site Columns.ps1:73 char:13
++             Remove-PnPField -Identity $fieldName -Force
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Remove-PnPField], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Fields.RemoveField
+**********************
+Windows PowerShell transcript end
+End time: 20231114122426
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231114130353
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\01 - All Intranet Sites - Create Site Columns .ps1
+Process ID: 9828
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 13:03:53 ON 14/11/2023
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EvenDetails' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EvenDetails' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'Environment Agency'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'EvenDetails' DOES NOT EXIST IN THE SITE 'Environment Agency'
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EvenDetails' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'NEIntranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EvenDetails' DOES NOT EXIST IN THE SITE 'NEIntranet'
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231114130417
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231114143825
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\01 - All Intranet Sites - Create Site Columns .ps1
+Process ID: 9828
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 14:38:25 ON 14/11/2023
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EvenDetails' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EvenDetails' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'Environment Agency'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'EvenDetails' DOES NOT EXIST IN THE SITE 'Environment Agency'
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EvenDetails' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'NEIntranet'
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EvenDetails' DOES NOT EXIST IN THE SITE 'NEIntranet'
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231114143854
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231114145058
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\01 - All Intranet Sites - Create Site Columns .ps1
+Process ID: 9828
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 14:50:58 ON 14/11/2023
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/DefraIntranet
+THE FIELD 'AltContact' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'ContentTypes' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'LineManager' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'PublishBy' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'ContentSubmissionDescription' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventDateTime' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventVenueAndJoiningDetails' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventDetails' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+THE FIELD 'EvenDetails' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/APHAIntranet
+THE FIELD 'AltContact' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'ContentTypes' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'LineManager' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'PublishBy' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'ContentSubmissionDescription' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EventDateTime' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EventVenueAndJoiningDetails' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EventDetails' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+THE FIELD 'EvenDetails' DOES NOT EXIST IN THE SITE 'APHAIntranet'
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/EAIntranet
+THE FIELD 'AltContact' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'ContentTypes' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'LineManager' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'PublishBy' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'ContentSubmissionDescription' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'EventDateTime' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'EventVenueAndJoiningDetails' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'EventDetails' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'Environment Agency'
+THE FIELD 'EvenDetails' DOES NOT EXIST IN THE SITE 'Environment Agency'
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/MMOIntranet
+THE FIELD 'AltContact' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'ContentTypes' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'LineManager' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'PublishBy' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'ContentSubmissionDescription' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventDateTime' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventVenueAndJoiningDetails' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventDetails' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+THE FIELD 'EvenDetails' DOES NOT EXIST IN THE SITE 'MMOIntranet'
+
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/NEIntranet
+THE FIELD 'AltContact' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'ContentTypes' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'LineManager' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'PublishBy' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'StakeholdersInformed' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'ContentSubmissionDescription' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EventDateTime' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EventVenueAndJoiningDetails' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EventDetails' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EventBooking' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EventFurtherInformation' DOES NOT EXIST IN THE SITE 'NEIntranet'
+THE FIELD 'EvenDetails' DOES NOT EXIST IN THE SITE 'NEIntranet'
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231114145111
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231114152521
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\01 - All Intranet Sites - Create Site Columns .ps1
+Process ID: 35972
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james.buckingham@defradev.onmicrosoft.com' AT 15:25:21 ON 14/11/2023
+
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/defraintranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+THE FIELD 'EvenDetails' DOES NOT EXIST IN THE SITE 'Defra Intranet'
+
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/APHAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+THE FIELD 'EvenDetails' DOES NOT EXIST IN THE SITE 'Animal & Plant Health Agency'
+
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/EAIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+THE FIELD 'EvenDetails' DOES NOT EXIST IN THE SITE 'Environment Agency Intranet'
+
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/MMOIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+THE FIELD 'EvenDetails' DOES NOT EXIST IN THE SITE 'MMO Connect'
+
+ACCESSING SHAREPOINT SITE: https://defradev.sharepoint.com/sites/NEIntranet
+SITE COLUMN REMOVED: AltContact
+SITE COLUMN REMOVED: ContentTypes
+SITE COLUMN REMOVED: LineManager
+SITE COLUMN REMOVED: PublishBy
+SITE COLUMN REMOVED: StakeholdersInformed
+SITE COLUMN REMOVED: ContentSubmissionStatus
+SITE COLUMN REMOVED: ContentSubmissionDescription
+SITE COLUMN REMOVED: EventDateTime
+SITE COLUMN REMOVED: EventVenueAndJoiningDetails
+SITE COLUMN REMOVED: EventDetails
+SITE COLUMN REMOVED: EventBooking
+SITE COLUMN REMOVED: EventFurtherInformation
+THE FIELD 'EvenDetails' DOES NOT EXIST IN THE SITE 'Natural England Intranet'
+
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231114152548
+**********************

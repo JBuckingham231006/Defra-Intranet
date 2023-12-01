@@ -1,0 +1,100 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20231031102617
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\Regression - 02 - Defra Intranet - Create Submission List.ps1
+Process ID: 24368
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 10:26:17 ON 31/10/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/ContentTypeHub
+CONTENT TYPE ALREADY INSTALLED: Base Site Page Content Type Hub
+PS C:\WINDOWS\system32> TerminatingError(Add-PnPTaxonomyField): "Cannot bind argument to parameter 'TermSetPath' because it is null."
+>> TerminatingError(Add-PnPTaxonomyField): "Cannot bind argument to parameter 'TermSetPath' because it is null."
+Add-PnPTaxonomyField : Cannot bind argument to parameter 'TermSetPath' because it is null.
+At C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.0.0\01 - Content Type Hub - Site Columns and Content Types.ps1:99 char:124
++ ... InternalName $objField.InternalName -TermSetPath $termSetPath -MultiV ...
++                                                      ~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Add-PnPTaxonomyField], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,PnP.PowerShell.Commands.Fields.AddTaxonomyField
+
+**********************
+Windows PowerShell transcript end
+End time: 20231031104002
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231031104002
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\Regression - 02 - Defra Intranet - Create Submission List.ps1
+Process ID: 24368
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 10:40:03 ON 31/10/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/ContentTypeHub
+CONTENT TYPE ALREADY INSTALLED: Base Site Page Content Type Hub
+PS C:\WINDOWS\system32> TerminatingError(Add-PnPTaxonomyField): "Cannot bind argument to parameter 'TermSetPath' because it is null."
+>> TerminatingError(Add-PnPTaxonomyField): "Cannot bind argument to parameter 'TermSetPath' because it is null."
+Add-PnPTaxonomyField : Cannot bind argument to parameter 'TermSetPath' because it is null.
+At C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.0.0\01 - Content Type Hub - Site Columns and Content Types.ps1:99 char:124
++ ... InternalName $objField.InternalName -TermSetPath $termSetPath -MultiV ...
++                                                      ~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Add-PnPTaxonomyField], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,PnP.PowerShell.Commands.Fields.AddTaxonomyField
+
+PS C:\WINDOWS\system32> $termSetPath
+**********************
+Windows PowerShell transcript end
+End time: 20231031104524
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20231031104524
+Username: BUCKIPC\WORKJB
+RunAs User: BUCKIPC\WORKJB
+Configuration Name: 
+Machine: BUCKIPC (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Users\WORKJB\_Projects\Methods\Defra Intranet\Deployments\v1.1.0\Regression - 02 - Defra Intranet - Create Submission List.ps1
+Process ID: 24368
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+SCRIPT EXECUTED BY 'james@buckinghamdevelopment.co.uk' AT 10:45:25 ON 31/10/2023
+ACCESSING SHAREPOINT SITE: https://buckinghamdevelopment.sharepoint.com/sites/ContentTypeHub
+CONTENT TYPE ALREADY INSTALLED: Base Site Page Content Type Hub
+SITE COLUMN INSTALLED: Organisation (Intranets)
+SITE COLUMN 'Organisation (Intranets)' ADDED TO THE CONTENT TYPE 'Base Site Page Content Type Hub'
+SITE COLUMN 'Organisation (Intranets)' ADDED TO THE 'Site Pages' LIBRARY CONTENT TYPE 'Site Page'
+INITIALISING THE COLUMN'S CRAWLED PROPERTY
+REINDEXING THE 'CONTENT TYPE HUB' SITE ON THE NEXT SCHEDULED SEARCH CRAWL
+SCRIPT FINISHED
+**********************
+Windows PowerShell transcript end
+End time: 20231031104531
+**********************
