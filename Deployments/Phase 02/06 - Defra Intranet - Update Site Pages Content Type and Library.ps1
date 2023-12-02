@@ -92,7 +92,6 @@ foreach($fieldName in $fieldNames)
     }
 }
 
-
 # Customise the "PageApprovalInfo" column for this library.
 $fieldInternalName = $fieldNames[1]
 
@@ -111,7 +110,6 @@ else
     Write-Host "THE FIELD '$fieldInternalName' DOES NOT EXIST IN THE LIBRARY '$displayName'" -ForegroundColor Red
 }
 
-
 # Customise the existing "OrganisationIntranets" column for this library. The new column will be taking over user interaction.
 $fieldInternalName = "OrganisationIntranets"
 $newFieldInternalName = $fieldNames[0]
@@ -122,7 +120,6 @@ if($null -ne $field)
 {
     Set-PnPField -List $list -Identity $field.Id -Values @{
         Title = "Organisation (Intranets) - Approving ALBs"
-        Hidden = $true
     }
 
     Write-Host "FIELD '$fieldInternalName' UPDATED" -ForegroundColor Green
