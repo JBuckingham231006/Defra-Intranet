@@ -61,7 +61,8 @@ $ctx = Get-PnPContext
 $CTName = "Site Page"
 $ct = Get-PnPContentType -Identity $CTName
 
-$list = "Site Pages"
+$listName = "Site Pages"
+$list = Get-PnPList -Identity $listName
 
 if($null -eq $ct)
 {
@@ -94,12 +95,11 @@ foreach($fieldName in $fieldNames)
 
 # Customise the "PageApprovalInfo" column for this library.
 $fieldInternalName = $fieldNames[1]
-
 $field = Get-PnPField -List $list -Identity $fieldInternalName -ErrorAction SilentlyContinue
 
 if($null -ne $field)
 {
-    Set-PnPField -List $list -Identity $field.Id -Values @{
+    Set-PnPField -List $listName -Identity $field.Id -Values @{
         Hidden = $true
     }
 
@@ -107,7 +107,7 @@ if($null -ne $field)
 }
 else
 {
-    Write-Host "THE FIELD '$fieldInternalName' DOES NOT EXIST IN THE LIBRARY '$displayName'" -ForegroundColor Red
+    Write-Host "THE FIELD '$fieldInternalName' DOES NOT EXIST IN THE LIBRARY '$listName'" -ForegroundColor Red
 }
 
 # Customise the existing "OrganisationIntranets" column for this library. The new column will be taking over user interaction.
@@ -118,7 +118,7 @@ $field = Get-PnPField -List $list -Identity $fieldInternalName -ErrorAction Sile
 
 if($null -ne $field)
 {
-    Set-PnPField -List $list -Identity $field.Id -Values @{
+    Set-PnPField -List $listName -Identity $field.Id -Values @{
         Title = "Organisation (Intranets) - Approving ALBs"
     }
 
@@ -126,11 +126,11 @@ if($null -ne $field)
 }
 else
 {
-    Write-Host "THE FIELD '$fieldInternalName' DOES NOT EXIST IN THE LIBRARY '$displayName'" -ForegroundColor Red
+    Write-Host "THE FIELD '$fieldInternalName' DOES NOT EXIST IN THE LIBRARY '$listName'" -ForegroundColor Red
 }
 
-# Update the views
-if($null -ne $list -and $null -ne $field)
+# VIEW UPDATES
+if($null -ne $listName -and $null -ne $field)
 {
     # Remove the old Organisation (Intranet) field. The reason for this is SharePoint is going to manage this away from the user now
     $views = Get-PnPView -List $list | Where-Object { $_.Title -ne "" }
@@ -154,8 +154,8 @@ if($null -ne $list -and $null -ne $field)
                 }
             }
 
-            $view = Set-PnPView -List $list -Identity $view.Title -Fields $fieldNames
-            Write-Host "THE FIELD '$($fieldInternalName)' HAS REMOVED FROM THE '$list' LIBRARY VIEW '$($view.Title)'" -ForegroundColor Green 
+            $view = Set-PnPView -List $listName -Identity $view.Title -Fields $fieldNames
+            Write-Host "THE FIELD '$($fieldInternalName)' HAS REMOVED FROM THE '$listName' LIBRARY VIEW '$($view.Title)'" -ForegroundColor Green 
         }
         else
         {
@@ -184,8 +184,8 @@ if($null -ne $list -and $null -ne $field)
 
                 $viewFieldNames.Add($fieldName)
 
-                $view = Set-PnPView -List $list -Identity $view.Title -Fields $viewFieldNames
-                Write-Host "THE FIELD '$($fieldName)' HAS BEEN ADDED TO THE '$list' LIBRARY VIEW '$($view.Title)'" -ForegroundColor Green 
+                $view = Set-PnPView -List $listName -Identity $view.Title -Fields $viewFieldNames
+                Write-Host "THE FIELD '$($fieldName)' HAS BEEN ADDED TO THE '$listName' LIBRARY VIEW '$($view.Title)'" -ForegroundColor Green 
             }
             else
             {
@@ -195,7 +195,24 @@ if($null -ne $list -and $null -ne $field)
     }
 }
 
-Write-Host ""
+# LIST SETTINGS 
 
+# Disable Quick Edit
+Write-Host "CONFIGURING '$listName' LIBRARY SETTINGS" -ForegroundColor Green
+$list.DisableGridEditing = $true
+$list.Update()
+Invoke-PnPQuery
+Write-Host "Quick Edit and Details Pane disabled" -ForegroundColor Green
+
+Write-Host "Updating Permissions" -ForegroundColor Green
+
+# Break Permission Inheritance of the List and set the new permissions for the members
+Set-PnPList -Identity $list -BreakRoleInheritance -CopyRoleAssignments
+
+$group = Get-PnPGroup | Where-Object { $_.Title -like "* Members"}
+
+Set-PnPListPermission -Identity $list -AddRole "Custom Permission - Contribute - For Site Page Library Only" -Group $group -RemoveRole "Edit"
+
+Write-Host ""
 Write-Host "SCRIPT FINISHED" -ForegroundColor Yellow
 Stop-Transcript

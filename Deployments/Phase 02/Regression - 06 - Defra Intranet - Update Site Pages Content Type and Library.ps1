@@ -62,6 +62,16 @@ $ctDisplayName = "Site Page"
 $displayName = "Site Pages"
 $fieldNames = @("OrganisationIntranetsContentEditorInput","PageApprovalInfo")
 
+$list = Get-PnPList -Identity $displayName
+
+# Reverse the list settings
+Write-Host "REVERSING '$displayName' LIBRARY SETTINGS" -ForegroundColor Green
+$list.DisableGridEditing = $false
+$list.Update()
+Invoke-PnPQuery
+
+Set-PnPList -Identity $displayName -ResetRoleInheritance
+
 # Remove the field(s) from "Site Page" content type
 $ct = Get-PnPContentType -Identity $ctDisplayName -ErrorAction SilentlyContinue
 
