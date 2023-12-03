@@ -111,7 +111,16 @@ $view = Get-PnPView -List $list -Identity "All Items"
 if($null -ne $view)
 {
     $view = Set-PnPView -List $list -Identity $view.Title -Fields @("AssociatedSitePage","NewsArticleTitle","Title","ContentSubmissionStatus","DateOfApprovalRequest")
+
+    $view.ViewQuery = '<GroupBy Collapse="FALSE" GroupLimit="30"><FieldRef Name="DateOfApprovalRequest" Ascending="FALSE" /></GroupBy><OrderBy><FieldRef Name="DateOfApprovalRequest" Ascending="FALSE" /></OrderBy>'
+    $view.Update()
+    $ctx.ExecuteQuery()
+
     Write-Host "`nLIST DEFAULT VIEW '$($view.Title)' UPDATED WITH NEW FIELDS" -ForegroundColor Green 
+}
+else
+{
+    Write-Host "`nLIST DEFAULT VIEW '$($view.Title)' DOES NOT EXIST" -ForegroundColor Yellow
 }
 
 # LIST SETTING AND PERMISSION UPDATES
