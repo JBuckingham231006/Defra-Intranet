@@ -1,6 +1,7 @@
 <#
     SCRIPT OVERVIEW:
-    This script creates a custom role definition which we'll apply to the Site Page library. This role prevents editors from editing the library views, so they cannot edit our internal fields.
+    REGRESSION SCRIPT FOR: 03 - DEFRA Intranet - Site Columns.ps1
+    This script uninstalls the site columns required by our custom list(s) and libraries  
 
     SOFTWARE REQUIREMENTS:
     This script was developed on the following platform:
@@ -34,7 +35,7 @@ else
     Clear-Host
 
     $logFileName = $MyInvocation.MyCommand.Name
-    $global:scriptPath = "." 
+    $global:scriptPath = "."
 
     Import-Module "./PSModules/Configuration.psm1" -Force
     Import-Module "./PSModules/Helper.psm1" -Force
@@ -47,35 +48,32 @@ Invoke-Configuration
 
 $site = $global:sites | Where-Object { $_.SiteType -eq "Parent" -and $_.RelativeURL.Length -gt 0 } | Sort-Object -Property @{Expression="SiteType";Descending=$true},@{Expression="DisplayName";Descending=$false}
 
-if($null -eq $sites)
+if($null -eq $site)
 {
     throw "An entry in the configuration could not be found for the 'Defra Intranet' or is not configured correctly"
 }
 
-Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
 Write-Host "SCRIPT EXECUTED BY '$(Get-CurrentUser)' AT $(get-date -f "HH:mm:ss") ON $(get-date -f "dd/MM/yyyy")" -ForegroundColor Cyan
-Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.RelativeURL)" -ForegroundColor Cyan
+Write-Host ""
 
-$ctx = Get-PnPContext
+Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
+Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.RelativeURL)" -ForegroundColor Green
 
-# Create a custom permission level
-$roleName = "Custom Permission - Contribute - For Site Page Library Only"
-$role = Get-PnPRoleDefinition -Identity $roleName -ErrorAction SilentlyContinue
+$fieldNames = @("OrganisationIntranetsContentEditorInput","PageApprovalInfo","NewsArticleTitle","AssociatedSitePage")
 
-if($null -eq $role)
+foreach($fieldName in $fieldNames)
 {
-    $BasePermissionLevel = Get-PnPRoleDefinition -Identity "Contribute"
- 
-    # Set Parameters for new permission level
-    $NewPermissionLevel= @{
-        Exclude     = 'ManagePersonalViews','AddDelPrivateWebParts','UpdatePersonalWebParts'
-        Description = "Can view, add, update, and delete list items and documents, but cannot create or edit list views."
-        RoleName    = $roleName
-        Clone       = $BasePermissionLevel
+    $field = Get-PnPField -Identity $fieldName -ErrorAction SilentlyContinue
+
+    if($null -ne $field)
+    {
+        Remove-PnPField -Identity $fieldName -Force
+        Write-Host "SITE COLUMN REMOVED: $fieldName" -ForegroundColor Yellow
     }
- 
-    # Create new permission level
-    Add-PnPRoleDefinition @NewPermissionLevel
+    else
+    {
+        Write-Host "THE FIELD '$fieldName' DOES NOT EXIST IN THE SITE '$($web.Title)'" -ForegroundColor Cyan
+    }
 }
 
 Write-Host ""

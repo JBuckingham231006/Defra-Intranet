@@ -1,6 +1,6 @@
 <#
     SCRIPT OVERVIEW:
-    This script uninstalls the Defra Intranet Site Pages customisations for the site page approval system
+    This script uninstalls the Defra Intranet Site Pages customisations we setup for site page approval system
 
     SOFTWARE REQUIREMENTS:
     This script was developed on the following platform:

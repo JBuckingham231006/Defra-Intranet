@@ -56,6 +56,29 @@ if($null -eq $sites)
 Write-Host "SCRIPT EXECUTED BY '$(Get-CurrentUser)' AT $(get-date -f "HH:mm:ss") ON $(get-date -f "dd/MM/yyyy")" -ForegroundColor Cyan
 Write-Host ""
 
+$site = $sites | Where-Object { $_.SiteType -eq "Parent" -and $_.RelativeURL.Length -gt 0 } | Sort-Object -Property @{Expression="SiteType";Descending=$true},@{Expression="DisplayName";Descending=$false}
+
+Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
+Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.RelativeURL)" -ForegroundColor Cyan
+
+$fieldNames = @("AssociatedSitePage")
+$web = Get-PnPWeb 
+
+foreach($fieldName in $fieldNames)
+{
+    $field = Get-PnPField -Identity $fieldName -ErrorAction SilentlyContinue
+
+    if($null -ne $field)
+    {
+        Remove-PnPField -Identity $fieldName -Force
+        Write-Host "SITE COLUMN REMOVED: $fieldName" -ForegroundColor Yellow
+    }
+    else
+    {
+        Write-Host "THE FIELD '$fieldName' DOES NOT EXIST IN THE SITE '$($web.Title)'" -ForegroundColor Cyan
+    }
+}
+
 foreach($site in $sites)
 {
     Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin

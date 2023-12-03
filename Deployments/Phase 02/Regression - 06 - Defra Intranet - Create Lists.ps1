@@ -1,7 +1,6 @@
 <#
     SCRIPT OVERVIEW:
-    REGRESSION SCRIPT FOR: 03 - DEFRA Intranet - Site Columns.ps1
-    This script uninstalls the site columns required by our custom list(s) and libraries  
+    This script uninstalls our custom lists from the Defra Intranet site
 
     SOFTWARE REQUIREMENTS:
     This script was developed on the following platform:
@@ -46,40 +45,32 @@ Start-Transcript -path "$global:scriptPath/Logs/$logfileName" -append | Out-Null
 
 Invoke-Configuration
 
-$sites = $global:sites | Where-Object { $_.SiteType -eq "Parent" -and $_.RelativeURL.Length -gt 0 } | Sort-Object -Property @{Expression="SiteType";Descending=$true},@{Expression="DisplayName";Descending=$false}
+$site = $global:sites | Where-Object { $_.Abbreviation -eq "Defra" -and $_.RelativeURL.Length -gt 0 }
 
-if($null -eq $sites)
+if($null -eq $site)
 {
     throw "An entry in the configuration could not be found for the 'Defra Intranet' or is not configured correctly"
 }
 
+Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
 Write-Host "SCRIPT EXECUTED BY '$(Get-CurrentUser)' AT $(get-date -f "HH:mm:ss") ON $(get-date -f "dd/MM/yyyy")" -ForegroundColor Cyan
-Write-Host ""
+Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.RelativeURL)" -ForegroundColor Cyan
 
-foreach($site in $sites)
+$ctx = Get-PnPContext
+
+$displayName = "News Article Approval Information"
+$listURL = "Lists/SPAI"
+
+$list = Get-PnPList -Identity $listURL -ErrorAction SilentlyContinue
+
+if($null -ne $list)
 {
-    Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
-    Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.RelativeURL)" -ForegroundColor Green
-
-    $fieldNames = @("OrganisationIntranetsContentEditorInput")
-    $web = Get-PnPWeb
-
-    foreach($fieldName in $fieldNames)
-    {
-        $field = Get-PnPField -Identity $fieldName -ErrorAction SilentlyContinue
-
-        if($null -ne $field)
-        {
-            Remove-PnPField -Identity $fieldName -Force
-            Write-Host "SITE COLUMN REMOVED: $fieldName" -ForegroundColor Yellow
-        }
-        else
-        {
-            Write-Host "THE FIELD '$fieldName' DOES NOT EXIST IN THE SITE '$($web.Title)'" -ForegroundColor Cyan
-        }
-    }
-
-    Write-Host ""
+    Remove-PnPList -Identity $listURL -Force
+    Write-Host "THE '$displayName' LIST HAS BEEN REMOVED" -ForegroundColor Yellow
+}
+else
+{
+    Write-Host "THE '$displayName' LIST DOES NOT EXIST IN THE SITE '$($web.Title)'" -ForegroundColor Green
 }
 
 Write-Host "SCRIPT FINISHED" -ForegroundColor Yellow

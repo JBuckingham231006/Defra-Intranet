@@ -1,6 +1,6 @@
 <#
     SCRIPT OVERVIEW:
-    This script creates the site columns used by our custom lists and libraries within the Defra and ALB SharePoint sites, and site columns for the existing lists and libraries.
+    This script creates the site columns used by the lists and libraries within the Defra and ALB SharePoint sites.
 
     SOFTWARE REQUIREMENTS:
     This script was developed on the following platform:
@@ -247,6 +247,20 @@ foreach($site in $sites)
     else
     {
         Write-Host "SITE COLUMN ALREADY INSTALLED: $($displayName)" -ForegroundColor Yellow
+    }
+
+    # "Event Details" column
+    $displayName = "Details about the event"
+    $field = Get-PnPField -Identity "EventDetails" -ErrorAction SilentlyContinue
+
+    if($null -eq $field)
+    {
+        $field = Add-PnPField -Type "Note" -InternalName "EventDetails" -DisplayName $displayName -Required
+        Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
+    }
+    else
+    {
+        Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
     }
 
     Write-Host ""
