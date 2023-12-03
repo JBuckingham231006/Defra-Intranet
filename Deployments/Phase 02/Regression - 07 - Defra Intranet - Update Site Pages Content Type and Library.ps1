@@ -118,7 +118,7 @@ if($null -ne $list)
 # SITE-SPECIFIC FIELDS
 # Customise the existing "OrganisationIntranets" column for this library. The new column will be taking over user interaction.
 $fieldInternalName = "OrganisationIntranets"
-$field = Get-PnPField -Identity $fieldName -ErrorAction SilentlyContinue
+$field = Get-PnPField -Identity $fieldInternalName -ErrorAction SilentlyContinue
 
 if($null -ne $field)
 {

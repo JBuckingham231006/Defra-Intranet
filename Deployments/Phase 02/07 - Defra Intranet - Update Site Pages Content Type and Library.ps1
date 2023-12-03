@@ -89,11 +89,11 @@ foreach($fieldName in $fieldNames)
     }
     else
     {
-        Write-Host "THE FIELD '$fieldName' ALREADY EXISTS ON THE CONTENT TYPE: $CTName" -ForegroundColor Yellow 
+        Write-Host "THE FIELD '$fieldName' ALREADY EXISTS ON THE CONTENT TYPE: $CTName" -ForegroundColor Yellow
     }
 }
 
-# Customise the "PageApprovalInfo" column for this library.
+# Customise the new "PageApprovalInfo" column for this library.
 $fieldInternalName = $fieldNames[1]
 $field = Get-PnPField -List $list -Identity $fieldInternalName -ErrorAction SilentlyContinue
 
@@ -110,10 +110,8 @@ else
     Write-Host "THE FIELD '$fieldInternalName' DOES NOT EXIST IN THE LIBRARY '$listName'" -ForegroundColor Red
 }
 
-# Customise the existing "OrganisationIntranets" column for this library. The new column will be taking over user interaction.
+# Customise the existing "OrganisationIntranets" column for this library. The new "Organisation (Intranets)" column will be taking over user interaction.
 $fieldInternalName = "OrganisationIntranets"
-$newFieldInternalName = $fieldNames[0]
-
 $field = Get-PnPField -List $list -Identity $fieldInternalName -ErrorAction SilentlyContinue
 
 if($null -ne $field)
@@ -121,6 +119,12 @@ if($null -ne $field)
     Set-PnPField -List $listName -Identity $field.Id -Values @{
         Title = "Organisation (Intranets) - Approving ALBs"
     }
+
+    # Apply conditional formula
+    $formula = "=if([{0}]=='SystemColumns','true','false')" -f '$ContentType'
+    $field.ClientValidationFormula = $formula
+    $field.Update()
+    Invoke-PnPQuery
 
     Write-Host "FIELD '$fieldInternalName' UPDATED" -ForegroundColor Green
 }
@@ -130,75 +134,74 @@ else
 }
 
 # VIEW UPDATES
-if($null -ne $listName -and $null -ne $field)
+$views = Get-PnPView -List $list | Where-Object { $_.Title -ne "" }
+
+# Remove the old Organisation (Intranet) field. The reason for this is SharePoint is going to manage this away from the user now
+foreach($view in $views)
 {
-    # Remove the old Organisation (Intranet) field. The reason for this is SharePoint is going to manage this away from the user now
-    $views = Get-PnPView -List $list | Where-Object { $_.Title -ne "" }
+    $ctx.Load($view.ViewFields)
+    $ctx.ExecuteQuery()
 
-    foreach($view in $views)
+    $viewFields = $view.ViewFields
+
+    if($null -ne $($viewFields | Where-Object { $_ -eq $fieldInternalName }))
     {
-        $ctx.Load($view.ViewFields)
-        $ctx.ExecuteQuery()
+        $viewFieldNames = New-Object Collections.Generic.List[String]
 
-        $fieldExists = $view.ViewFields | Where-Object { $_ -eq $fieldInternalName }
-
-        if($null -ne $fieldExists)
+        foreach($viewField in $viewFields)
         {
-            $fieldNames = New-Object Collections.Generic.List[String]
-
-            foreach($viewField in $view.ViewFields)
+            if($viewField -ne $fieldInternalName)
             {
-                if($viewField -ne $fieldInternalName)
-                {
-                    $fieldNames.Add($viewField)
-                }
+                $viewFieldNames.Add($viewField)
             }
+        }
 
-            $view = Set-PnPView -List $listName -Identity $view.Title -Fields $fieldNames
-            Write-Host "THE FIELD '$($fieldInternalName)' HAS REMOVED FROM THE '$listName' LIBRARY VIEW '$($view.Title)'" -ForegroundColor Green 
+        $view = Set-PnPView -List $listName -Identity $view.Title -Fields $viewFieldNames
+        Write-Host "THE FIELD '$($fieldInternalName)' HAS REMOVED FROM THE '$listName' LIBRARY VIEW '$($view.Title)'" -ForegroundColor Green 
+    }
+    else
+    {
+        Write-Host "THE FIELD '$($fieldInternalName)' HAS ALREADY BEEN REMOVED FROM THE VIEW '$($view.Title)'" -ForegroundColor Yellow
+    }
+}
+
+Write-Host ""
+
+foreach($view in $views)
+{
+    $ctx.Load($view.ViewFields)
+    $ctx.ExecuteQuery()
+
+    $viewFields = $view.ViewFields
+
+    $viewFieldNames = New-Object Collections.Generic.List[String]
+
+    foreach($viewField in $viewFields)
+    {
+        $viewFieldNames.Add($viewField)
+    }
+
+    foreach($fieldName in $fieldNames)
+    {
+
+        if($null -eq $($viewFields | Where-Object { $_ -eq $fieldName }))
+        {
+            $viewFieldNames.Add($fieldName)
+            Write-Host "THE FIELD '$($fieldName)' HAS BEEN ADDED TO THE '$listName' LIBRARY VIEW '$($view.Title)'" -ForegroundColor Green
         }
         else
         {
-            Write-Host "THE FIELD '$($fieldInternalName)' HAS ALREADY BEEN REMOVED FROM THE VIEW '$($view.Title)'" -ForegroundColor Yellow
+            Write-Host "THE FIELD '$($fieldName)' HAS ALREADY BEEN ADDED TO THE VIEW '$($view.Title)'" -ForegroundColor Yellow
         }
     }
 
-    foreach($view in $views)
-    {
-        $ctx.Load($view.ViewFields)
-        $ctx.ExecuteQuery()
-
-        foreach($fieldName in $fieldNames)
-        {
-            $fieldExists = $view.ViewFields | Where-Object { $_ -eq $fieldName }
-
-            if($null -eq $fieldExists)
-            {
-                $viewFieldNames = New-Object Collections.Generic.List[String]
-
-                foreach($viewField in $view.ViewFields)
-                {
-
-                    $viewFieldNames.Add($viewField)
-                }
-
-                $viewFieldNames.Add($fieldName)
-
-                $view = Set-PnPView -List $listName -Identity $view.Title -Fields $viewFieldNames
-                Write-Host "THE FIELD '$($fieldName)' HAS BEEN ADDED TO THE '$listName' LIBRARY VIEW '$($view.Title)'" -ForegroundColor Green 
-            }
-            else
-            {
-                Write-Host "THE FIELD '$($fieldName)' HAS ALREADY BEEN ADDED TO THE VIEW '$($view.Title)'" -ForegroundColor Yellow
-            }
-        }
-    }
+    $view = Set-PnPView -List $listName -Identity $view.Title -Fields $viewFieldNames
 }
 
 # LIST SETTINGS 
 
 # Disable Quick Edit
-Write-Host "CONFIGURING '$listName' LIBRARY SETTINGS" -ForegroundColor Green
+Write-Host "`nCONFIGURING '$listName' LIBRARY SETTINGS" -ForegroundColor Green
 $list.DisableGridEditing = $true
 $list.Update()
 Invoke-PnPQuery

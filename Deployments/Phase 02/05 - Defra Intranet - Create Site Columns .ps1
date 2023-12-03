@@ -75,7 +75,7 @@ else
     Write-Host "SITE COLUMN ALREADY INSTALLED: $($displayName)" -ForegroundColor Yellow
 }
 
-# "Organisation (Intranets)" column
+# "Approval Information" column
 $displayName = "Approval Information"
 $field = Get-PnPField | Where-Object { $_.InternalName -eq "PageApprovalInfo" }
 
