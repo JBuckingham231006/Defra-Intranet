@@ -45,13 +45,6 @@ Start-Transcript -path "$global:scriptPath/Logs/$logfileName" -append | Out-Null
 
 Invoke-Configuration
 
-$sites = $global:sites | Where-Object { $_.SiteType -eq "ALB" -or $_.SiteType -eq "Parent" -and $_.RelativeURL.Length -gt 0 } | Sort-Object -Property @{Expression="SiteType";Descending=$true},@{Expression="DisplayName";Descending=$false}
-
-if($null -eq $sites)
-{
-    throw "Entries could not be found in the configuration module that matches the requirements for this script to run. The Defra Intranet and all associated ALB intranets are required."
-}
-
 # LIST - Create the "News Article Approval Information" list in which of the Intranet sites
 $displayName = "News Article Approval Information"
 $listURL = "Lists/SPAI"
