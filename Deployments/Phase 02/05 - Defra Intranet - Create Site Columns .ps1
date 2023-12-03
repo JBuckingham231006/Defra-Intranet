@@ -123,6 +123,24 @@ else
     Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
 }
 
+# "Date of Approval Request" column
+$displayName = "Date of Approval Request"
+$field = Get-PnPField -Identity "DateOfApprovalRequest" -ErrorAction SilentlyContinue
+
+if($null -eq $field)
+{
+    $field = Add-PnPField -Type "DateTime" -InternalName "DateOfApprovalRequest" -DisplayName $displayName
+    Set-PnPField -Identity $field.Id -Values @{
+        FriendlyDisplayFormat = [Microsoft.SharePoint.Client.DateTimeFieldFriendlyFormatType]::Disabled;
+    }
+
+    Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
+}
+else
+{
+    Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
+}
+
 Write-Host ""
 
 Write-Host "SCRIPT FINISHED" -ForegroundColor Yellow

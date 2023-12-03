@@ -59,7 +59,7 @@ Write-Host ""
 Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
 Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.RelativeURL)" -ForegroundColor Green
 
-$fieldNames = @("OrganisationIntranetsContentEditorInput","PageApprovalInfo","NewsArticleTitle","AssociatedSitePage")
+$fieldNames = @("OrganisationIntranetsContentEditorInput","PageApprovalInfo","NewsArticleTitle","AssociatedSitePage","DateOfApprovalRequest")
 
 foreach($fieldName in $fieldNames)
 {

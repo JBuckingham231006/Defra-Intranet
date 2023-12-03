@@ -56,7 +56,7 @@ if($null -eq $sites)
 $displayName = "News Article Approval Information"
 $listURL = "Lists/SPAI"
 
-$fieldNames = @("AssociatedSitePage","ContentSubmissionStatus")
+$fieldNames = @("AssociatedSitePage","NewsArticleTitle","ContentSubmissionStatus","DateOfApprovalRequest")
 
 Write-Host "`nCREATING THE '$displayName' LIST" -ForegroundColor Green
 
@@ -99,15 +99,18 @@ foreach($fieldName in $fieldNames)
 }
 
 Set-PnPField -List $list -Identity "Title" -Values @{
-    Title = "ALB"
+    Title = "Approving ALB"
+    Required = $false
 }
+
+Write-Host "CUSTOMISED THE 'Title' FIELD" -ForegroundColor Green
 
 # UPDATE VIEW INFORMATION
 $view = Get-PnPView -List $list -Identity "All Items"
 
 if($null -ne $view)
 {
-    $view = Set-PnPView -List $list -Identity $view.Title -Fields $fieldNames
+    $view = Set-PnPView -List $list -Identity $view.Title -Fields @("AssociatedSitePage","NewsArticleTitle","Title","ContentSubmissionStatus","DateOfApprovalRequest")
     Write-Host "`nLIST DEFAULT VIEW '$($view.Title)' UPDATED WITH NEW FIELDS" -ForegroundColor Green 
 }
 
