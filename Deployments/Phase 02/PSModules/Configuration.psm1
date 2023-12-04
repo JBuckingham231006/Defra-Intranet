@@ -200,7 +200,7 @@ function Invoke-Configuration
                     'Abbreviation' = 'Defra'
                     'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = 'Defra Intranet'
-                    'GroupPrefix' = 'HUBSITE001'
+                    'GroupPrefix' = 'Defra Intranet'
                     'RelativeURL' = 'sites/DefraIntranet'
                     'SiteType' = 'Parent'
                 },
