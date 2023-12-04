@@ -1,6 +1,7 @@
 <#
     SCRIPT OVERVIEW:
-    This script uninstalls our custom submission list
+    REGRESSION SCRIPT FOR: 03 - DEFRA Intranet - Site Columns.ps1
+    This script uninstalls the site columns required by our custom list(s) and libraries  
 
     SOFTWARE REQUIREMENTS:
     This script was developed on the following platform:
@@ -45,39 +46,37 @@ Start-Transcript -path "$global:scriptPath/Logs/$logfileName" -append | Out-Null
 
 Invoke-Configuration
 
-$sites = $global:sites | Where-Object { $_.SiteType -eq "ALB" -or $_.SiteType -eq "Parent" -and $_.RelativeURL.Length -gt 0 } | Sort-Object -Property @{Expression="SiteType";Descending=$true},@{Expression="DisplayName";Descending=$false}
+$site = $global:sites | Where-Object { $_.SiteType -eq "Parent" -and $_.RelativeURL.Length -gt 0 } | Sort-Object -Property @{Expression="SiteType";Descending=$true},@{Expression="DisplayName";Descending=$false}
 
-if($null -eq $sites)
+if($null -eq $site)
 {
     throw "An entry in the configuration could not be found for the 'Defra Intranet' or is not configured correctly"
 }
 
-foreach($site in $sites)
+Write-Host "SCRIPT EXECUTED BY '$(Get-CurrentUser)' AT $(get-date -f "HH:mm:ss") ON $(get-date -f "dd/MM/yyyy")" -ForegroundColor Cyan
+Write-Host ""
+
+Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
+Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.RelativeURL)" -ForegroundColor Green
+
+$fieldNames = @("OrganisationIntranetsContentEditorInput","PageApprovalInfo","NewsArticleTitle","AssociatedSitePage","DateOfApprovalRequest")
+
+foreach($fieldName in $fieldNames)
 {
-    Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
-    Write-Host "SCRIPT EXECUTED BY '$(Get-CurrentUser)' AT $(get-date -f "HH:mm:ss") ON $(get-date -f "dd/MM/yyyy")" -ForegroundColor Cyan
-    Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.RelativeURL)" -ForegroundColor Cyan
-    Write-Host ""
+    $field = Get-PnPField -Identity $fieldName -ErrorAction SilentlyContinue
 
-    $displayName = "Internal Comms Intranet Content Submissions"
-    $listURL = "Lists/ICICS"
-
-    $web = Get-PnPWeb
-    $list = Get-PnPList -Identity $listURL
-
-
-    if($null -ne $list)
+    if($null -ne $field)
     {
-        Remove-PnPList -Identity $listURL -Force
-        Write-Host "THE '$displayName' LIST HAS BEEN REMOVED" -ForegroundColor Yellow
+        Remove-PnPField -Identity $fieldName -Force
+        Write-Host "SITE COLUMN REMOVED: $fieldName" -ForegroundColor Yellow
     }
     else
     {
-        Write-Host "THE '$displayName' LIST DOES NOT EXIST IN THE SITE '$($web.Title)'" -ForegroundColor Green
+        Write-Host "THE FIELD '$fieldName' DOES NOT EXIST IN THE SITE '$($web.Title)'" -ForegroundColor Cyan
     }
-
-    Write-Host ""
 }
+
+Write-Host ""
 
 Write-Host "SCRIPT FINISHED" -ForegroundColor Yellow
 Stop-Transcript

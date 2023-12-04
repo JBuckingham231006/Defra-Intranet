@@ -1,6 +1,6 @@
 <#
     SCRIPT OVERVIEW:
-    This script creates our custom submission list
+    This script creates our custom lists in the Defra Intranet and the ALB sites
 
     SOFTWARE REQUIREMENTS:
     This script was developed on the following platform:
@@ -49,11 +49,10 @@ $sites = $global:sites | Where-Object { $_.SiteType -eq "ALB" -or $_.SiteType -e
 
 if($null -eq $sites)
 {
-    throw "An entry in the configuration could not be found for the 'Defra Intranet' or is not configured correctly"
+    throw "Entries could not be found in the configuration module that matches the requirements for this script to run. The Defra Intranet and all associated ALB intranets are required."
 }
 
-$listDetails = New-Object System.Collections.ArrayList
-    
+# LIST - Create the "Internal Comms Intranet Content Submissions" list in which of the Intranet sites
 
 foreach($site in $sites)
 {
@@ -470,18 +469,10 @@ foreach($site in $sites)
         Write-Host "'$($site.GroupPrefix) Visitors' given Contribute permissions to the list" -ForegroundColor Yellow
     }
 
-    $listDetails.Add(
-        [PSCustomObject]@{
-            'Site' = $site.RelativeURL.Split("/")[$site.RelativeURL.Split("/").Length-1]
-            'Id' = $list.Id
-        }
-    ) | Out-Null
-
     Write-Host ""
 }
 
 Write-Host "The following details are required for configuring the PowerAutomate workflow solution environmental variables:`n" -ForegroundColor Cyan
-$($listDetails | Select Site,Id | Format-Table)
 
 Write-Host "SCRIPT FINISHED" -ForegroundColor Yellow
 Stop-Transcript

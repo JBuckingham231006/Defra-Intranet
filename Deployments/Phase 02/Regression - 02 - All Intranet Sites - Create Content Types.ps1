@@ -50,7 +50,7 @@ $sites = $global:sites | Where-Object { $_.SiteType -eq "ALB" -or $_.SiteType -e
 
 if($null -eq $sites)
 {
-    throw "An entry in the configuration could not be found for the 'Defra Intranet' or is not configured correctly"
+    throw "Entries could not be found in the configuration module that matches the requirements for this script to run. The Defra Intranet and all associated ALB intranets are required."
 }
 
 $ctNames = @("Content Submission Request - Stage 2","Event Submission Request","Event Submission Request - Stage 2")

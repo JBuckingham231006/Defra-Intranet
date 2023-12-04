@@ -1,6 +1,6 @@
 <#
     SCRIPT OVERVIEW:
-    This script creates the site columns required by our custom list(s) and libraries within the Defra and ALB SharePoint sites
+    This script creates the site columns used by the lists and libraries within the Defra and ALB SharePoint sites.
 
     SOFTWARE REQUIREMENTS:
     This script was developed on the following platform:
@@ -49,7 +49,7 @@ $sites = $global:sites | Where-Object { $_.SiteType -eq "ALB" -or $_.SiteType -e
 
 if($null -eq $sites)
 {
-    throw "An entry in the configuration could not be found for the 'Defra Intranet' or is not configured correctly"
+    throw "Entries could not be found in the configuration module that matches the requirements for this script to run. The Defra Intranet and all associated ALB intranets are required."
 }
 
 foreach($site in $sites)
@@ -184,8 +184,7 @@ foreach($site in $sites)
 
     Write-Host ""
 
-    # EVENT CONTENT-TYPE FIELDS
-    
+    # EVENT CONTENT-TYPE FIELDS 
     # "Event Date/Time" column
     $displayName = "Event Date/Time"
     $field = Get-PnPField -Identity "EventDateTime" -ErrorAction SilentlyContinue
@@ -217,6 +216,37 @@ foreach($site in $sites)
     else
     {
         Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
+    }
+
+    # "Event Details" column
+    $displayName = "Details about the event"
+    $field = Get-PnPField -Identity "EventDetails" -ErrorAction SilentlyContinue
+
+    if($null -eq $field)
+    {
+        $field = Add-PnPField -Type "Note" -InternalName "EventDetails" -DisplayName $displayName -Required
+        Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
+    }
+    else
+    {
+        Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
+    }
+
+    # SITE PAGE FIELDS 
+    # "Organisation (Intranets)" column
+
+    $displayName = "Organisation (Intranets)"
+    $field = Get-PnPField | Where-Object { $_.InternalName -eq "OrganisationIntranetsContentEditorInput" }
+    $termSetPath = $global:termSetPath
+
+    if($null -eq $field)
+    {
+        $field = Add-PnPTaxonomyField -DisplayName $displayName -InternalName "OrganisationIntranetsContentEditorInput" -TermSetPath $termSetPath -MultiValue
+        Write-Host "SITE COLUMN INSTALLED: $($displayName)" -ForegroundColor Green
+    }
+    else
+    {
+        Write-Host "SITE COLUMN ALREADY INSTALLED: $($displayName)" -ForegroundColor Yellow
     }
 
     # "Event Details" column
