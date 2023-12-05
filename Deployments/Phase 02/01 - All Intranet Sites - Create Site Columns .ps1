@@ -232,37 +232,6 @@ foreach($site in $sites)
         Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
     }
 
-    # SITE PAGE FIELDS 
-    # "Organisation (Intranets)" column
-
-    $displayName = "Organisation (Intranets)"
-    $field = Get-PnPField | Where-Object { $_.InternalName -eq "OrganisationIntranetsContentEditorInput" }
-    $termSetPath = $global:termSetPath
-
-    if($null -eq $field)
-    {
-        $field = Add-PnPTaxonomyField -DisplayName $displayName -InternalName "OrganisationIntranetsContentEditorInput" -TermSetPath $termSetPath -MultiValue
-        Write-Host "SITE COLUMN INSTALLED: $($displayName)" -ForegroundColor Green
-    }
-    else
-    {
-        Write-Host "SITE COLUMN ALREADY INSTALLED: $($displayName)" -ForegroundColor Yellow
-    }
-
-    # "Event Details" column
-    $displayName = "Details about the event"
-    $field = Get-PnPField -Identity "EventDetails" -ErrorAction SilentlyContinue
-
-    if($null -eq $field)
-    {
-        $field = Add-PnPField -Type "Note" -InternalName "EventDetails" -DisplayName $displayName -Required
-        Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
-    }
-    else
-    {
-        Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
-    }
-
     Write-Host ""
 }
 

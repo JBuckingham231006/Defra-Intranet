@@ -84,7 +84,7 @@ foreach($fieldName in $fieldNames)
 
     if($null -eq $field)
     {
-        Add-PnPFieldToContentType -Field $fieldName -ContentType $ct
+        Add-PnPFieldToContentType -Field $fieldName -ContentType $ct -ErrorAction SilentlyContinue
         Write-Host "THE FIELD '$fieldName' HAS BEEN ADDED TO THE CONTENT TYPE: $CTName" -ForegroundColor Green 
     }
     else
