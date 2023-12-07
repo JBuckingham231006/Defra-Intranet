@@ -49,7 +49,7 @@ Invoke-Configuration
 $displayName = "News Article Approval Information"
 $listURL = "Lists/SPAI"
 
-$fieldNames = @("AssociatedSitePage","NewsArticleTitle","ContentSubmissionStatus","DateOfApprovalRequest")
+$fieldNames = @("AssociatedSitePage","NewsArticleTitle","ContentSubmissionStatus","DateOfApprovalRequest","OrganisationIntranets","SPVersionNumber")
 
 Write-Host "`nCREATING THE '$displayName' LIST" -ForegroundColor Green
 
@@ -91,19 +91,26 @@ foreach($fieldName in $fieldNames)
     }
 }
 
+# FIELD CUSTOMISATIONS
 Set-PnPField -List $list -Identity "Title" -Values @{
-    Title = "Approving ALB"
+    Hidden = $true
     Required = $false
+    Title = "Title"
 }
 
-Write-Host "CUSTOMISED THE 'Title' FIELD" -ForegroundColor Green
+Write-Host "`nDEFAULT FIELD 'Title' HIDDEN" -ForegroundColor Green
+
+Set-PnPField -List $list -Identity "OrganisationIntranets" -Values @{
+    Title = "Approving ALB"
+    AllowMultipleValues = $false
+}
 
 # UPDATE VIEW INFORMATION
 $view = Get-PnPView -List $list -Identity "All Items"
 
 if($null -ne $view)
 {
-    $view = Set-PnPView -List $list -Identity $view.Title -Fields @("AssociatedSitePage","NewsArticleTitle","Title","ContentSubmissionStatus","DateOfApprovalRequest")
+    $view = Set-PnPView -List $list -Identity $view.Title -Fields @("AssociatedSitePage","NewsArticleTitle","OrganisationIntranets","ContentSubmissionStatus","DateOfApprovalRequest","SPVersionNumber")
 
     $view.ViewQuery = '<GroupBy Collapse="FALSE" GroupLimit="30"><FieldRef Name="DateOfApprovalRequest" Ascending="FALSE" /></GroupBy><OrderBy><FieldRef Name="DateOfApprovalRequest" Ascending="FALSE" /></OrderBy>'
     $view.Update()
@@ -119,6 +126,11 @@ else
 # LIST SETTING AND PERMISSION UPDATES
 Set-PnPList -Identity $list -EnableAttachments 0
 Write-Host "LIST ATTACHMENTS DISABLED" -ForegroundColor Green
+
+$list.NoCrawl = $true
+$list.Update()
+$ctx.ExecuteQuery()
+Write-Host "LIST EXCLUDED FROM SEARCH INDEX. CHANGES TAKE EFFECT AFTER THE NEXT CRAWL" -ForegroundColor Green
 
 # Break Permission Inheritance of the List and set the new permissions for the members
 Set-PnPList -Identity $list -BreakRoleInheritance

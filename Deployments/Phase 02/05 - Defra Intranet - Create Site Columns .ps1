@@ -141,6 +141,20 @@ else
     Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
 }
 
+# "Version Number" column
+$displayName = "Version Number"
+$field = Get-PnPField -Identity "SPVersionNumber" -ErrorAction SilentlyContinue
+
+if($null -eq $field)
+{
+    $field = Add-PnPField -Type Number -InternalName "SPVersionNumber" -DisplayName $displayName
+    Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
+}
+else
+{
+    Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
+}
+
 Write-Host ""
 
 Write-Host "SCRIPT FINISHED" -ForegroundColor Yellow
