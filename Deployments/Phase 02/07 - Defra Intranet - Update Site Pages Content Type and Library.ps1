@@ -198,14 +198,14 @@ foreach($view in $views)
     $view = Set-PnPView -List $listName -Identity $view.Title -Fields $viewFieldNames
 }
 
-# LIST SETTINGS 
+# LIST SETTINGS AND PERMISSIONS
 
+<# Write-Host "`nCONFIGURING '$listName' LIBRARY SETTINGS" -ForegroundColor Green
 # Disable Quick Edit
-Write-Host "`nCONFIGURING '$listName' LIBRARY SETTINGS" -ForegroundColor Green
-$list.DisableGridEditing = $true
-$list.Update()
-Invoke-PnPQuery
-Write-Host "Quick Edit and Details Pane disabled" -ForegroundColor Green
+<#$list.DisableGridEditing = $true
+#$list.Update()
+#Invoke-PnPQuery
+Write-Host "Quick Edit and Details Pane disabled" -ForegroundColor Green #>
 
 Write-Host "Updating Permissions" -ForegroundColor Green
 

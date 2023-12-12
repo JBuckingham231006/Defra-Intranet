@@ -49,7 +49,7 @@ Invoke-Configuration
 $displayName = "News Article Approval Information"
 $listURL = "Lists/SPAI"
 
-$fieldNames = @("AssociatedSitePage","NewsArticleTitle","ContentSubmissionStatus","DateOfApprovalRequest","OrganisationIntranets","SPVersionNumber")
+$fieldNames = @("AssociatedSitePage","NewsArticleTitle","ContentSubmissionStatus","DateOfApprovalRequest","OrganisationIntranets","SPVersionNumber","DateTimeALBApprovalDecision")
 
 Write-Host "`nCREATING THE '$displayName' LIST" -ForegroundColor Green
 
@@ -105,14 +105,28 @@ Set-PnPField -List $list -Identity "OrganisationIntranets" -Values @{
     AllowMultipleValues = $false
 }
 
+$field = Get-PnPField -List $list -Identity "ContentSubmissionStatus"
+
+Set-PnPField -List $list -Identity $field.Id -Values @{
+    CustomFormatter = '{"elmType":"div","style":{"flex-wrap":"wrap","display":"flex"},"children":[{"elmType":"div","style":{"box-sizing":"border-box","padding":"4px 8px 5px 8px","overflow":"hidden","text-overflow":"ellipsis","display":"flex","border-radius":"16px","height":"24px","align-items":"center","white-space":"nowrap","margin":"4px 4px 4px 4px"},"attributes":{"class":{"operator":":","operands":[{"operator":"==","operands":["[$ContentSubmissionStatus]","Pending Approval"]},"sp-css-backgroundColor-BgGold sp-css-borderColor-GoldFont sp-field-fontSizeSmall sp-css-color-GoldFont",{"operator":":","operands":[{"operator":"==","operands":["[$ContentSubmissionStatus]","Approved"]},"sp-css-backgroundColor-BgMintGreen sp-field-fontSizeSmall sp-css-color-MintGreenFont",{"operator":":","operands":[{"operator":"==","operands":["[$ContentSubmissionStatus]","Approved (Automated)"]},"sp-css-backgroundColor-BgMintGreen sp-css-borderColor-MintGreenFont sp-field-fontSizeSmall sp-css-color-MintGreenFont",{"operator":":","operands":[{"operator":"==","operands":["[$ContentSubmissionStatus]","Cancelled Pending Approval"]},"sp-css-backgroundColor-BgLilac sp-css-borderColor-LilacFont sp-field-fontSizeSmall sp-css-color-LilacFont",{"operator":":","operands":[{"operator":"==","operands":["[$ContentSubmissionStatus]","Rejected"]},"sp-css-backgroundColor-BgCoral sp-css-borderColor-CoralFont sp-field-fontSizeSmall sp-css-color-CoralFont","sp-field-borderAllRegular sp-field-borderAllSolid sp-css-borderColor-neutralSecondary"]}]}]}]}]}},"txtContent":"[$ContentSubmissionStatus]"}]}'
+}
+
+# Cast the field to Choice Field
+$choiceField = New-Object Microsoft.SharePoint.Client.FieldChoice($ctx, $field.Path)
+$ctx.Load($choiceField)
+Invoke-PnPQuery
+
+$choiceField.Choices = "Pending Approval","Approved","Approved (Automated)","Cancelled Pending Approval","Rejected"
+$choiceField.UpdateAndPushChanges($false)
+Invoke-PnPQuery
+
 # UPDATE VIEW INFORMATION
 $view = Get-PnPView -List $list -Identity "All Items"
 
 if($null -ne $view)
 {
-    $view = Set-PnPView -List $list -Identity $view.Title -Fields @("AssociatedSitePage","NewsArticleTitle","OrganisationIntranets","ContentSubmissionStatus","DateOfApprovalRequest","SPVersionNumber")
-
-    $view.ViewQuery = '<GroupBy Collapse="FALSE" GroupLimit="30"><FieldRef Name="DateOfApprovalRequest" Ascending="FALSE" /></GroupBy><OrderBy><FieldRef Name="DateOfApprovalRequest" Ascending="FALSE" /></OrderBy>'
+    $view = Set-PnPView -List $list -Identity $view.Title -Fields @("AssociatedSitePage","NewsArticleTitle","OrganisationIntranets","ContentSubmissionStatus","DateOfApprovalRequest","DateTimeALBApprovalDecision")
+    $view.ViewQuery = '<GroupBy Collapse="FALSE" GroupLimit="30"><FieldRef Name="DateOfApprovalRequest" Ascending="FALSE" /><FieldRef Name="SPVersionNumber" Ascending="FALSE" /></GroupBy><OrderBy><FieldRef Name="DateOfApprovalRequest" Ascending="FALSE" /></OrderBy>'
     $view.Update()
     $ctx.ExecuteQuery()
 

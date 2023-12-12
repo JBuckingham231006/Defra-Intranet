@@ -130,6 +130,7 @@ $field = Get-PnPField -Identity "DateOfApprovalRequest" -ErrorAction SilentlyCon
 if($null -eq $field)
 {
     $field = Add-PnPField -Type "DateTime" -InternalName "DateOfApprovalRequest" -DisplayName $displayName
+
     Set-PnPField -Identity $field.Id -Values @{
         FriendlyDisplayFormat = [Microsoft.SharePoint.Client.DateTimeFieldFriendlyFormatType]::Disabled;
     }
@@ -148,6 +149,25 @@ $field = Get-PnPField -Identity "SPVersionNumber" -ErrorAction SilentlyContinue
 if($null -eq $field)
 {
     $field = Add-PnPField -Type Number -InternalName "SPVersionNumber" -DisplayName $displayName
+    Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
+}
+else
+{
+    Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
+}
+
+# "Approved/Rejected On" column
+$displayName = "Approved/Rejected On"
+$field = Get-PnPField -Identity "DateTimeALBApprovalDecision" -ErrorAction SilentlyContinue
+
+if($null -eq $field)
+{
+    $field = Add-PnPField -Type "DateTime" -InternalName "DateTimeALBApprovalDecision" -DisplayName $displayName
+
+    Set-PnPField -Identity $field.Id -Values @{
+        FriendlyDisplayFormat = [Microsoft.SharePoint.Client.DateTimeFieldFriendlyFormatType]::Disabled;
+    }
+
     Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
 }
 else

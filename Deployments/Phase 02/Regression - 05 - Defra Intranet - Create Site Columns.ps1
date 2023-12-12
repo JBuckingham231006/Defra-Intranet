@@ -59,7 +59,7 @@ Write-Host ""
 Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
 Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.RelativeURL)" -ForegroundColor Green
 
-$fieldNames = @("OrganisationIntranetsContentEditorInput","PageApprovalInfo","NewsArticleTitle","AssociatedSitePage","DateOfApprovalRequest","SPVersionNumber")
+$fieldNames = @("OrganisationIntranetsContentEditorInput","PageApprovalInfo","NewsArticleTitle","AssociatedSitePage","DateOfApprovalRequest","SPVersionNumber","DateTimeApprovedOn","DateTimeALBApprovalDecision")
 
 foreach($fieldName in $fieldNames)
 {
@@ -67,8 +67,16 @@ foreach($fieldName in $fieldNames)
 
     if($null -ne $field)
     {
-        Remove-PnPField -Identity $fieldName -Force
-        Write-Host "SITE COLUMN REMOVED: $fieldName" -ForegroundColor Yellow
+        $field = Remove-PnPField -Identity $fieldName -Force -ErrorAction SilentlyContinue
+
+        if($null -ne $field)
+        {
+            Write-Host "SITE COLUMN REMOVED: $fieldName" -ForegroundColor Yellow
+        }
+        else
+        {
+            Write-Host "UNABLE TO REMOVE THE COLUMN '$fieldName'. THIS BECAUSE BE BECAUSE IT'S INCLUDED IN A CONTENT TYPE OR LIST SO CANNOT BE DELETED" -ForegroundColor Red
+        }
     }
     else
     {
