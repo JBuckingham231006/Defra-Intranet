@@ -1,0 +1,99 @@
+{
+  "Settings": {
+    "Email": {
+      "CustomSubjectLabel": "" 
+    }
+  },
+  "Sites":[
+    {
+      "Abbreviation": "Core Defra",      
+      "ApprovalSettings":{
+        "AutoApprove": "false"
+      },
+      "EmailAddresses": {
+        "ALBNewsApprovers": "Internal.Comms@defra.gov.uk",
+        "ContentTeam": "contentteam@defra.gov.uk",
+        "InternalCommsTeam": "Internal.Comms@defra.gov.uk"
+      },
+      "SPPermissions": {
+        "GroupApproverID": "5",
+        "GroupSiteOwnerID": "3"
+      }
+    },
+    {
+      "Abbreviation": "APHA",
+      "ApprovalSettings":{
+        "AutoApprove": "false"
+      },      
+      "EmailAddresses": {
+        "ALBNewsApprovers": "internal.communications@apha.gov.uk",
+        "ContentTeam": "contentteam@defra.gov.uk ",
+        "InternalCommsTeam": "internal.communications@apha.gov.uk"
+      },
+      "SPPermissions": {
+        "GroupApproverID": "5",
+        "GroupSiteOwnerID": "3"
+      }
+    },
+    {
+      "Abbreviation": "EA",
+      "ApprovalSettings":{
+        "AutoApprove": "false"
+      },      
+      "EmailAddresses": {
+        "ALBNewsApprovers": "internal-communications@environment-agency.gov.uk",
+        "ContentTeam": "contentteam@defra.gov.uk ",
+        "InternalCommsTeam": "internal-communications@environment-agency.gov.uk"
+      },
+      "SPPermissions": {
+        "GroupApproverID": "5",
+        "GroupSiteOwnerID": "3"
+      }
+    },
+    {
+      "Abbreviation": "MMO",
+      "ApprovalSettings":{
+        "AutoApprove": "false"
+      },      
+      "EmailAddresses": {
+        "ALBNewsApprovers": "communications@marinemanagement.org.uk",
+        "ContentTeam": "communications@marinemanagement.org.uk",
+        "InternalCommsTeam": "communications@marinemanagement.org.uk"
+      },
+      "SPPermissions": {
+        "GroupApproverID": "5",
+        "GroupSiteOwnerID": "3"
+      }
+    },
+    {
+      "Abbreviation": "NE",
+      "ApprovalSettings":{
+        "AutoApprove": "false"
+      },
+      "EmailAddresses": {
+        "ALBNewsApprovers": "internal.communications@naturalengland.org.uk",
+        "ContentTeam": "contentteam@defra.gov.uk",
+        "InternalCommsTeam": "internal.communications@naturalengland.org.uk"
+      },
+      "SPPermissions": {
+        "GroupApproverID": "5",
+        "GroupSiteOwnerID": "3"
+      }
+    },
+    {
+      "Abbreviation": "RPA",
+      "ApprovalSettings":{
+        "AutoApprove": "false"
+      },      
+      "EmailAddresses": {
+        "ALBNewsApprovers": "Internal.Communications@rpa.gov.uk",
+        "ContentTeam": "Internal.Communications@rpa.gov.uk",
+        "InternalCommsTeam": "Internal.Communications@rpa.gov.uk"
+      },
+      "SPPermissions": {
+        "GroupApproverID": "5",
+        "GroupSiteOwnerID": "3"
+      }
+    }
+  ]
+}

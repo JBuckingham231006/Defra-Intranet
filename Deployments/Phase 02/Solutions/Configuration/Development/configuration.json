@@ -1,0 +1,99 @@
+{
+  "Settings": {
+    "Email": {
+      "CustomSubjectLabel": " **Development**" 
+    }
+  },
+  "Sites": [
+    {
+      "Abbreviation": "Core Defra",
+      "ApprovalSettings":{
+        "AutoApprove":"false"
+      },      
+      "EmailAddresses": {
+        "ALBNewsApprovers": "",
+        "ContentTeam": "ddtscontentteam@defradev.onmicrosoft.com",
+        "InternalCommsTeam": "defrainternalcommunications@defradev.onmicrosoft.com"
+      },
+      "SPPermissions": {
+        "GroupApproverID": "5",
+        "GroupSiteOwnerID": "3"
+      }
+    },
+    {
+      "Abbreviation": "APHA",
+      "ApprovalSettings":{
+        "AutoApprove":"false"
+      },      
+      "EmailAddresses": {
+        "ALBNewsApprovers": "aphainternalcommunications@defradev.onmicrosoft.com",
+        "ContentTeam": "ddtscontentteam@defradev.onmicrosoft.com",
+        "InternalCommsTeam": "aphainternalcommunications@defradev.onmicrosoft.com"
+      },
+      "SPPermissions": {
+        "GroupApproverID": "5",
+        "GroupSiteOwnerID": "3"
+      }
+    },
+    {
+      "Abbreviation": "EA",
+      "ApprovalSettings":{
+        "AutoApprove":"false"
+      },      
+      "EmailAddresses": {
+        "ALBNewsApprovers": "eainternalcommunications@defradev.onmicrosoft.com",
+        "ContentTeam": "eacontentteam@defradev.onmicrosoft.com",
+        "InternalCommsTeam": "eainternalcommunications@defradev.onmicrosoft.com"
+      },
+      "SPPermissions": {
+        "GroupApproverID": "5",
+        "GroupSiteOwnerID": "3"
+      }
+    },
+    {
+      "Abbreviation": "MMO",
+      "ApprovalSettings":{
+        "AutoApprove":"false"
+      },          
+      "EmailAddresses": {
+        "ALBNewsApprovers": "mmointernalcommunications@defradev.onmicrosoft.com",
+        "ContentTeam": "ddtscontentteam@defradev.onmicrosoft.com",
+        "InternalCommsTeam": "mmointernalcommunications@defradev.onmicrosoft.com"
+      },
+      "SPPermissions": {
+        "GroupApproverID": "5",
+        "GroupSiteOwnerID": "3"
+      }
+    },
+    {
+      "Abbreviation": "NE",
+      "ApprovalSettings":{
+        "AutoApprove":"false"
+      },          
+      "EmailAddresses": {
+        "ALBNewsApprovers": "neinternalcommunications@defradev.onmicrosoft.com",
+        "ContentTeam": "ddtscontentteam@defradev.onmicrosoft.com",
+        "InternalCommsTeam": "neinternalcommunications@defradev.onmicrosoft.com"
+      },
+      "SPPermissions": {
+        "GroupApproverID": "5",
+        "GroupSiteOwnerID": "3"
+      }
+    },
+    {
+      "Abbreviation": "RPA",
+      "ApprovalSettings":{
+        "AutoApprove":"false"
+      },          
+      "EmailAddresses": {
+        "ALBNewsApprovers": "RPAinternalcommunications@defradev.onmicrosoft.com",
+        "ContentTeam": "ddtscontentteam@defradev.onmicrosoft.com",
+        "InternalCommsTeam": "RPAinternalcommunications@defradev.onmicrosoft.com"
+      },
+      "SPPermissions": {
+        "GroupApproverID": "5",
+        "GroupSiteOwnerID": "3"
+      }
+    }
+  ]
+}
