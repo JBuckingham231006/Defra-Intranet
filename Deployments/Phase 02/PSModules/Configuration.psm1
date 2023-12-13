@@ -12,7 +12,7 @@
 #>
 
 # GLOBAL SETTINGS
-$global:environment = 'dev' # Which environment are we targetting?
+$global:environment = 'local001' # Which environment are we targetting?
 
 # GLOBAL VARIABLES
 
@@ -22,7 +22,7 @@ if($global:PSScriptRoot.Length -gt 0)
     New-Item -ItemType Directory -Force -Path "$global:PSScriptRoot\Logs" | Out-Null
 }
 else
-{
+{ 
     New-Item -ItemType Directory -Force -Path "./Logs" | Out-Null
 }
 
