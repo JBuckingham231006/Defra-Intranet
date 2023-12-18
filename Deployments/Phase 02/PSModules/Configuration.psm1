@@ -42,7 +42,6 @@ function Invoke-Configuration
             $global:sites = @(
                 [PSCustomObject]@{
                     'Abbreviation' = 'APHA'
-                    'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = 'Animal & Plant Health Agency'
                     'GroupPrefix' = 'APHAIntranet'
                     'RelativeURL' = 'sites/APHAIntranet'
@@ -50,7 +49,6 @@ function Invoke-Configuration
                 },
                 [PSCustomObject]@{
                     'Abbreviation' = 'Defra'
-                    'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = 'Defra Intranet'
                     'GroupPrefix' = 'DefraIntranet '
                     'RelativeURL' = 'sites/defraintranet'
@@ -58,7 +56,6 @@ function Invoke-Configuration
                 },
                 [PSCustomObject]@{
                     'Abbreviation' = 'EA'
-                    'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = 'Environment Agency'
                     'GroupPrefix' = 'EAIntranet'
                     'RelativeURL' = 'sites/EAIntranet'
@@ -66,7 +63,6 @@ function Invoke-Configuration
                 },
                 [PSCustomObject]@{
                     'Abbreviation' = 'MMO'
-                    'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = 'Marine Management Organisation'
                     'GroupPrefix' = 'MMOIntranet'
                     'RelativeURL' = 'sites/MMOIntranet'
@@ -74,10 +70,16 @@ function Invoke-Configuration
                 },
                 [PSCustomObject]@{
                     'Abbreviation' = 'NE'
-                    'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = 'Natural England Intranet'
                     'GroupPrefix' = 'NEIntranet'
                     'RelativeURL' = 'sites/NEIntranet'
+                    'SiteType' = 'ALB'
+                },
+                [PSCustomObject]@{
+                    'Abbreviation' = 'RPA'
+                    'DisplayName' = 'Rural Payments Agency'
+                    'GroupPrefix' = 'RPAIntranet'
+                    'RelativeURL' = 'sites/RPAIntranet'
                     'SiteType' = 'ALB'
                 }
             )
@@ -91,7 +93,6 @@ function Invoke-Configuration
             $global:sites = @(
                 [PSCustomObject]@{
                     'Abbreviation' = 'APHA'
-                    'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = 'Animal & Plant Health Agency'
                     'GroupPrefix' = ''
                     'RelativeURL' = '/sites/PPAPHAIntranet'
@@ -99,7 +100,6 @@ function Invoke-Configuration
                 },
                 [PSCustomObject]@{
                     'Abbreviation' = 'Defra'
-                    'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = 'Defra Intranet'
                     'GroupPrefix' = ''
                     'RelativeURL' = '/sites/PPDefraIntranet'
@@ -107,7 +107,6 @@ function Invoke-Configuration
                 },
                 [PSCustomObject]@{
                     'Abbreviation' = 'EA'
-                    'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = 'Environment Agency'
                     'GroupPrefix' = ''
                     'RelativeURL' = '/sites/PPEAIntranet'
@@ -115,7 +114,6 @@ function Invoke-Configuration
                 },
                 [PSCustomObject]@{
                     'Abbreviation' = 'MMO'
-                    'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = 'Marine Management Organisation'
                     'GroupPrefix' = ''
                     'RelativeURL' = '/sites/PPMMOIntranet'
@@ -123,10 +121,16 @@ function Invoke-Configuration
                 },
                 [PSCustomObject]@{
                     'Abbreviation' = 'NE'
-                    'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = 'Natural England Intranet'
                     'GroupPrefix' = ''
                     'RelativeURL' = '/sites/PPNEIntranet'
+                    'SiteType' = 'ALB'
+                },
+                [PSCustomObject]@{
+                    'Abbreviation' = 'RPA'
+                    'DisplayName' = 'Rural Payments Agency'
+                    'GroupPrefix' = 'RPAIntranet'
+                    'RelativeURL' = 'sites/RPAIntranet'
                     'SiteType' = 'ALB'
                 }
             )
@@ -140,7 +144,6 @@ function Invoke-Configuration
             $global:sites = @(
                 [PSCustomObject]@{
                     'Abbreviation' = 'APHA'
-                    'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = 'Animal & Plant Health Agency'
                     'GroupPrefix' = ''
                     'RelativeURL' = '/sites/APHAIntranet'
@@ -148,7 +151,6 @@ function Invoke-Configuration
                 },
                 [PSCustomObject]@{
                     'Abbreviation' = 'Defra'
-                    'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = 'Defra Intranet'
                     'GroupPrefix' = ''
                     'RelativeURL' = '/sites/DefraIntranet'
@@ -156,7 +158,6 @@ function Invoke-Configuration
                 },
                 [PSCustomObject]@{
                     'Abbreviation' = 'EA'
-                    'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = 'Environment Agency'
                     'GroupPrefix' = ''
                     'RelativeURL' = '/sites/EAIntranet'
@@ -164,7 +165,6 @@ function Invoke-Configuration
                 },
                 [PSCustomObject]@{
                     'Abbreviation' = 'MMO'
-                    'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = 'Marine Management Organisation'
                     'GroupPrefix' = ''
                     'RelativeURL' = '/sites/MMOIntranet'
@@ -172,10 +172,16 @@ function Invoke-Configuration
                 },
                 [PSCustomObject]@{
                     'Abbreviation' = 'NE'
-                    'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = 'Natural England Intranet'
                     'GroupPrefix' = ''
                     'RelativeURL' = '/sites/NEIntranet'
+                    'SiteType' = 'ALB'
+                },
+                [PSCustomObject]@{
+                    'Abbreviation' = 'RPA'
+                    'DisplayName' = 'Rural Payments Agency'
+                    'GroupPrefix' = 'RPAIntranet'
+                    'RelativeURL' = 'sites/RPAIntranet'
                     'SiteType' = 'ALB'
                 }
             )
@@ -190,7 +196,6 @@ function Invoke-Configuration
             $global:sites = @(
                 [PSCustomObject]@{
                     'Abbreviation' = 'APHA'
-                    'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = 'Animal & Plant Health Agency'
                     'GroupPrefix' = 'APHAIntranet'
                     'RelativeURL' = 'sites/APHAIntranet'
@@ -198,7 +203,6 @@ function Invoke-Configuration
                 },
                 [PSCustomObject]@{
                     'Abbreviation' = 'Defra'
-                    'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = 'Defra Intranet'
                     'GroupPrefix' = 'Defra Intranet'
                     'RelativeURL' = 'sites/DefraIntranet'
@@ -206,7 +210,6 @@ function Invoke-Configuration
                 },
                 [PSCustomObject]@{
                     'Abbreviation' = 'EA'
-                    'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = 'Environment Agency'
                     'GroupPrefix' = 'DEFRA001'
                     'RelativeURL' = 'sites/EAIntranet'
@@ -214,7 +217,6 @@ function Invoke-Configuration
                 },
                 [PSCustomObject]@{
                     'Abbreviation' = 'MMO'
-                    'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = 'Marine Management Organisation'
                     'GroupPrefix' = 'MMOIntranet'
                     'RelativeURL' = 'sites/MMOIntranet'
@@ -222,60 +224,16 @@ function Invoke-Configuration
                 },
                 [PSCustomObject]@{
                     'Abbreviation' = 'NE'
-                    'ApplyHubSiteNavigationChanges' = $true
                     'DisplayName' = 'Natural England Intranet'
                     'GroupPrefix' = 'NEIntranet'
                     'RelativeURL' = 'sites/NEIntranet'
                     'SiteType' = 'ALB'
-                }
-            )
-        }
-
-        # NM Development Environment
-        local002 {
-            $global:adminURL = 'https://nhmsolutions-admin.sharepoint.com'
-            $global:rootURL = 'https://nhmsolutions.sharepoint.com'
-            $global:termSetPath = 'DEFRA EDRM UAT|Organisational Unit|Defra Orgs'
-
-            $global:sites = @(
-                [PSCustomObject]@{
-                    'Abbreviation' = 'APHA'
-                    'ApplyHubSiteNavigationChanges' = $true
-                    'DisplayName' = 'Animal & Plant Health Agency'
-                    'GroupPrefix' = 'APHA'
-                    'RelativeURL' = 'sites/apha'
-                    'SiteType' = 'ALB'
                 },
                 [PSCustomObject]@{
-                    'Abbreviation' = 'Defra'
-                    'ApplyHubSiteNavigationChanges' = $true
-                    'DisplayName' = 'Defra Intranet'
-                    'GroupPrefix' = 'Defra Intranet'
-                    'RelativeURL' = 'sites/defraintranet'
-                    'SiteType' = 'Parent'
-                },
-                [PSCustomObject]@{
-                    'Abbreviation' = 'EA'
-                    'ApplyHubSiteNavigationChanges' = $true
-                    'DisplayName' = 'Environment Agency'
-                    'GroupPrefix' = 'EA Intranet'
-                    'RelativeURL' = 'sites/eaintranet'
-                    'SiteType' = 'ALB'
-                },
-                [PSCustomObject]@{
-                    'Abbreviation' = 'MMO'
-                    'ApplyHubSiteNavigationChanges' = $true
-                    'DisplayName' = 'Marine Management Organisation'
-                    'GroupPrefix' = 'MMO Intranet'
-                    'RelativeURL' = 'sites/mmointranet'
-                    'SiteType' = 'ALB'
-                },
-                [PSCustomObject]@{
-                    'Abbreviation' = 'NE'
-                    'ApplyHubSiteNavigationChanges' = $true
-                    'DisplayName' = 'Natural England Intranet'
-                    'GroupPrefix' = 'NE Intranet'
-                    'RelativeURL' = 'sites/neintranet'
+                    'Abbreviation' = 'RPA'
+                    'DisplayName' = 'Rural Payments Agency'
+                    'GroupPrefix' = 'DEFRA002'
+                    'RelativeURL' = 'sites/RPAIntranet'
                     'SiteType' = 'ALB'
                 }
             )
