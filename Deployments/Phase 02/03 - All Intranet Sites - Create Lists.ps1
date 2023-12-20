@@ -72,6 +72,7 @@ foreach($site in $sites)
         "Defra" { 
             $fieldNames = @("ContentTypes","OrganisationIntranets","PublishBy","LineManager","AltContact","ContentSubmissionStatus","ContentSubmissionDescription")
         }
+
         default { 
             $fieldNames = @("ContentTypes","LineManager","AltContact","PublishBy","ContentSubmissionStatus","ContentSubmissionDescription")
         }
@@ -355,17 +356,26 @@ foreach($site in $sites)
         "Defra" 
         {
             $viewFields = @{
-                'AllItemsAssigned' =  "Attachments","LinkTitle","ContentType","PublishBy","Author","OrganisationIntranets","ContentSubmissionStatus","AltContact"
+                'AllItemsAssigned' = "Attachments","LinkTitle","ContentType","PublishBy","Author","OrganisationIntranets","ContentSubmissionStatus","AltContact"
                 'Content' = "Attachments","LinkTitle","AssignedTo","OrganisationIntranets","ContentSubmissionDescription","Author","ContentSubmissionStatus","PublishBy","ContentTypes","AltContact","LineManager"
                 'Default' = "Attachments","LinkTitle","ContentType","PublishBy","AssignedTo","Author","OrganisationIntranets","ContentSubmissionStatus","AltContact"
                 'Events' = "Attachments","LinkTitle","AssignedTo","OrganisationIntranets","Author","PublishBy","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails"
             }
         }
 
+        "RPA" 
+        {
+            $viewFields = @{
+                'AllItemsAssigned' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails"
+                'Default' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails"
+                'Events' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails"
+            }
+        }
+
         default 
         {
             $viewFields = @{
-                'AllItemsAssigned' =  "Attachments","LinkTitle","ContentType","Author","ContentSubmissionStatus","AltContact"
+                'AllItemsAssigned' = "Attachments","LinkTitle","ContentType","Author","ContentSubmissionStatus","AltContact"
                 'Content' = "Attachments","LinkTitle","AssignedTo","Author","ContentSubmissionStatus","ContentSubmissionDescription","PublishBy","ContentTypes","AltContact","LineManager"
                 'Default' = "Attachments","LinkTitle","ContentType","AssignedTo","Author","ContentSubmissionStatus","AltContact"
                 'Events' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails"
@@ -378,6 +388,12 @@ foreach($site in $sites)
         "RPA" 
         {
             $viewConfiguration = @(
+                [PSCustomObject]@{
+                    'Query' = '<GroupBy Collapse="FALSE" GroupLimit="30"><FieldRef Name="AssignedTo" /></GroupBy><OrderBy><FieldRef Name="ID" Ascending="FALSE" /></OrderBy><Where><Eq><FieldRef Name="ContentSubmissionStatus" /><Value Type="Text">Pending Approval</Value></Eq></Where>'
+                    'TargetSite' = ''
+                    'Title' = 'Events - By Assigned To'
+                    'ViewFields' = $viewFields.AllItemsAssigned
+                },
                 [PSCustomObject]@{
                     'Query' = '<OrderBy><FieldRef Name="ID" Ascending="FALSE" /></OrderBy><Where><And><Eq><FieldRef Name="ContentSubmissionStatus" /><Value Type="Text">Pending Approval</Value></Eq><Or><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Event Submission Request</Value></Eq><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Event Submission Request - Stage 2</Value></Eq></Or></And></Where>'
                     'TargetSite' = ''
@@ -554,8 +570,6 @@ foreach($site in $sites)
 
     Write-Host ""
 }
-
-Write-Host "The following details are required for configuring the PowerAutomate workflow solution environmental variables:`n" -ForegroundColor Cyan
 
 Write-Host "SCRIPT FINISHED" -ForegroundColor Yellow
 Stop-Transcript
