@@ -1,6 +1,6 @@
 <#
     SCRIPT OVERVIEW:
-    This script creates the site columns used within the lists and libraries of the Defra Intranet sites.
+    This script creates the site columns used within the lists and libraries of the Defra Intranet site.
 
     SOFTWARE REQUIREMENTS:
     This script was developed on the following platform:
@@ -57,7 +57,7 @@ Write-Host "SCRIPT EXECUTED BY '$(Get-CurrentUser)' AT $(get-date -f "HH:mm:ss")
 Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.RelativeURL)" -ForegroundColor Cyan
 Write-Host ""
 
-# SITE PAGE FIELDS 
+# SITE PAGE COLUMNS 
 # "Organisation (Intranets)" column
 $displayName = "Organisation (Intranets)"
 $field = Get-PnPField | Where-Object { $_.InternalName -eq "OrganisationIntranetsContentEditorInput" }
@@ -73,6 +73,34 @@ if($null -eq $field)
 else
 {
     Write-Host "SITE COLUMN ALREADY INSTALLED: $($displayName)" -ForegroundColor Yellow
+}
+
+# "Workflow - Publish to ALB Intranets" column
+$displayName = "Workflow - Publish to ALB Intranets"
+$field = Get-PnPField -Identity "WorkflowPublishtoALBIntranets" -ErrorAction SilentlyContinue
+
+if($null -eq $field)
+{
+    $field = Add-PnPField -Type Text -InternalName "WorkflowPublishtoALBIntranets" -DisplayName $displayName
+    Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
+}
+else
+{
+    Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
+}
+
+# "Article Sent for ALB Approval" column
+$displayName = "Article Sent for ALB Approval"
+$field = Get-PnPField -Identity "WorkflowArticleSentForALBApproval" -ErrorAction SilentlyContinue
+
+if($null -eq $field)
+{
+    $field = Add-PnPField -Type Boolean -InternalName "WorkflowArticleSentForALBApproval" -DisplayName $displayName
+    Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
+}
+else
+{
+    Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
 }
 
 # "Approval Information" column

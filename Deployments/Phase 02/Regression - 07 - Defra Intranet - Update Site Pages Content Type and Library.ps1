@@ -60,7 +60,7 @@ $ctx = Get-PnPContext
 
 $ctDisplayName = "Site Page"
 $displayName = "Site Pages"
-$fieldNames = @("OrganisationIntranetsContentEditorInput","PageApprovalInfo")
+$fieldNames = @("OrganisationIntranetsContentEditorInput","PageApprovalInfo","WorkflowArticleSentForALBApproval","WorkflowPublishtoALBIntranets")
 
 $list = Get-PnPList -Identity $displayName
 

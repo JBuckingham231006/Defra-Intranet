@@ -126,7 +126,7 @@ $view = Get-PnPView -List $list -Identity "All Items"
 if($null -ne $view)
 {
     $view = Set-PnPView -List $list -Identity $view.Title -Fields @("AssociatedSitePage","NewsArticleTitle","OrganisationIntranets","ContentSubmissionStatus","DateOfApprovalRequest","DateTimeALBApprovalDecision")
-    $view.ViewQuery = '<GroupBy Collapse="FALSE" GroupLimit="30"><FieldRef Name="DateOfApprovalRequest" Ascending="FALSE" /><FieldRef Name="SPVersionNumber" Ascending="FALSE" /></GroupBy><OrderBy><FieldRef Name="DateOfApprovalRequest" Ascending="FALSE" /></OrderBy>'
+    $view.ViewQuery = '<GroupBy Collapse="FALSE" GroupLimit="30"><FieldRef Name="DateOfApprovalRequest" Ascending="FALSE" /></GroupBy><OrderBy><FieldRef Name="DateOfApprovalRequest" Ascending="FALSE" /><FieldRef Name="DateTimeALBApprovalDecision" /></OrderBy>'
     $view.Update()
     $ctx.ExecuteQuery()
 

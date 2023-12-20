@@ -73,7 +73,7 @@ $ctx.Load($ct.FieldLinks)
 $ctx.ExecuteQuery()
 
 # Site-specific variable configuration.
-$fieldNames = @("OrganisationIntranetsContentEditorInput","PageApprovalInfo")
+$fieldNames = @("OrganisationIntranetsContentEditorInput","PageApprovalInfo","WorkflowPublishtoALBIntranets","WorkflowArticleSentForALBApproval")
 
 # FIELDS - ADD FIELDS TO SITE PAGE LIBRARY
 Write-Host "`nADDING FIELDS TO THE CONTENT TYPE $CTName" -ForegroundColor Green
@@ -93,23 +93,6 @@ foreach($fieldName in $fieldNames)
     }
 }
 
-# Customise the new "PageApprovalInfo" column for this library.
-$fieldInternalName = $fieldNames[1]
-$field = Get-PnPField -List $list -Identity $fieldInternalName -ErrorAction SilentlyContinue
-
-if($null -ne $field)
-{
-    Set-PnPField -List $listName -Identity $field.Id -Values @{
-        Hidden = $true
-    }
-
-    Write-Host "FIELD '$fieldInternalName' UPDATED" -ForegroundColor Green
-}
-else
-{
-    Write-Host "THE FIELD '$fieldInternalName' DOES NOT EXIST IN THE LIBRARY '$listName'" -ForegroundColor Red
-}
-
 # Customise the existing "OrganisationIntranets" column for this library. The new "Organisation (Intranets)" column will be taking over user interaction.
 $fieldInternalName = "OrganisationIntranets"
 $field = Get-PnPField -List $list -Identity $fieldInternalName -ErrorAction SilentlyContinue
@@ -121,7 +104,7 @@ if($null -ne $field)
     }
 
     # Apply conditional formula
-    $formula = "=if([{0}]=='SystemColumns','true','false')" -f '$ContentType'
+    $formula = "=if([{0}] == 'Site Page', 'true', 'false')" -f '$ContentType'
     $field.ClientValidationFormula = $formula
     $field.Update()
     Invoke-PnPQuery
@@ -133,10 +116,47 @@ else
     Write-Host "THE FIELD '$fieldInternalName' DOES NOT EXIST IN THE LIBRARY '$listName'" -ForegroundColor Red
 }
 
+# Customise the existing "WorkflowPublishtoALBIntranets" column for this library.
+$fieldInternalName = "WorkflowPublishtoALBIntranets"
+$field = Get-PnPField -List $list -Identity $fieldInternalName -ErrorAction SilentlyContinue
+
+if($null -ne $field)
+{
+    $condition1 = "=if([{0}] != true, 'inherit','none')" -f '$WorkflowArticleSentForALBApproval'
+    $condition2 = "=if([{0}] == true, 'inherit','none')" -f '$WorkflowArticleSentForALBApproval'
+
+    Set-PnPField -List $listName -Identity $field.Id -Values @{
+        CustomFormatter = '{"elmType":"div","style":{"flex-directon":"row","justify-content":"left","align-items":"center","flex-wrap":"nowrap"},"children":[{"elmType":"div","style":{"display":"' + $condition1 + '","flex-directon":"row","justify-content":"left","align-items":"center","flex-wrap":"wrap"},"children":[{"elmType":"button","customRowAction":{"action":"setValue","actionInput":{"WorkflowArticleSentForALBApproval":"True"}},"attributes":{"class":"ms-fontColor-themePrimary ms-fontColor-themeDarker--hover"},"style":{"border":"1px solid","background-color":"transparent","cursor":"pointer","display":"flex","flex-directon":"row","justify-content":"left","align-items":"center","flex-wrap":"wrap","padding":"10px"},"children":[{"elmType":"span","attributes":{"iconName":"PublishContent"},"style":{"padding-right":"6px"}},{"elmType":"span","txtContent":"Publish to ALB Intranets","style":{"word-break":"keep-all"}}]}]},{"elmType":"div","style":{"border":"1px solid","background-color":"transparent","display":"' + $condition2 + '","flex-directon":"row","justify-content":"left","align-items":"center","flex-wrap":"wrap","padding":"10px","min-width":"159px","color":"#A0A0A0"},"attributes":{"class":"ms-fontColor-themePrimary ms-fontColor-themeDarker--hover"},"children":[{"elmType":"span","attributes":{"iconName":"PublishContent"},"style":{"padding-right":"6px"}},{"elmType":"span","txtContent":"Publish to ALB Intranets","style":{"word-break":"keep-all","font-size":"13.33px"}}]}]}'
+    }
+}
+
+# Hide the internal fields, which are managed by our workflows and not the users, from the site page property details panel
+$hiddenFieldNames = @("PageApprovalInfo","WorkflowPublishtoALBIntranets","WorkflowArticleSentForALBApproval")
+
+foreach($hiddenField in $hiddenFieldNames)
+{
+    $field = Get-PnPField -List $list -Identity $hiddenField -ErrorAction SilentlyContinue
+
+    if($null -ne $field)
+    {
+        Set-PnPField -List $listName -Identity $field.Id -Values @{
+            Hidden = $true
+        }
+
+        Write-Host "FIELD '$hiddenField' UPDATED" -ForegroundColor Green
+    }
+    else
+    {
+        Write-Host "THE FIELD '$hiddenField' DOES NOT EXIST IN THE LIBRARY '$listName'" -ForegroundColor Red
+    }
+}
+
 # VIEW UPDATES
 $views = Get-PnPView -List $list | Where-Object { $_.Title -ne "" }
 
 # Remove the old Organisation (Intranet) field. The reason for this is SharePoint is going to manage this away from the user now
+$fieldInternalName = "OrganisationIntranets"
+
 foreach($view in $views)
 {
     $ctx.Load($view.ViewFields)
@@ -199,14 +219,6 @@ foreach($view in $views)
 }
 
 # LIST SETTINGS AND PERMISSIONS
-
-<# Write-Host "`nCONFIGURING '$listName' LIBRARY SETTINGS" -ForegroundColor Green
-# Disable Quick Edit
-<#$list.DisableGridEditing = $true
-#$list.Update()
-#Invoke-PnPQuery
-Write-Host "Quick Edit and Details Pane disabled" -ForegroundColor Green #>
-
 Write-Host "Updating Permissions" -ForegroundColor Green
 
 # Break Permission Inheritance of the List and set the new permissions for the members
