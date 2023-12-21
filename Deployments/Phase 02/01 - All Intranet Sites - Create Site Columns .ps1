@@ -78,6 +78,7 @@ foreach($site in $sites)
     if($null -eq $field)
     {
         $field = Add-PnPField -Type "User" -InternalName "AltContact" -DisplayName $displayName
+
         Set-PnPField -Identity $field.Id -Values @{
             SelectionMode=0;
             Description = "Please provide the name of someone else we can contact about this request should you be out of the office."
@@ -116,6 +117,7 @@ foreach($site in $sites)
     if($null -eq $field)
     {
         $field = Add-PnPField -Type "User" -InternalName "LineManager" -DisplayName $displayName -Required
+
         Set-PnPField -Identity $field.Id -Values @{
             SelectionMode = 0;
             Description = "Please let us know which senior management provided the final sign-off on this content."
@@ -197,6 +199,25 @@ foreach($site in $sites)
         Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
     }
     else 
+    {
+        Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
+    }
+
+    # "Approved or Rejected By" column
+    $displayName = "Approved or Rejected By"
+    $field = Get-PnPField -Identity "ContentSubmissionApproveRejectBy" -ErrorAction SilentlyContinue
+
+    if($null -eq $field)
+    {
+        $field = Add-PnPField -Type User -InternalName "ContentSubmissionApproveRejectBy" -DisplayName $displayName
+
+        Set-PnPField -Identity $field.Id -Values @{
+            SelectionMode=0;           
+        }
+
+        Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
+    }
+    else
     {
         Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
     }

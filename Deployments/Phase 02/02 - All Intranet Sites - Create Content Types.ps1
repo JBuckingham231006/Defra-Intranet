@@ -80,10 +80,10 @@ foreach($site in $sites)
     switch ($site.Abbreviation)
     {
         "Defra" { 
-            $fieldNames = @("OrganisationIntranets","ContentTypes","PublishBy","LineManager","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionDescription","AssignedTo")
+            $fieldNames = @("OrganisationIntranets","ContentTypes","PublishBy","LineManager","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionDescription","AssignedTo","ContentSubmissionApproveRejectBy")
         }
         default { 
-            $fieldNames = @("ContentTypes","PublishBy","LineManager","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionDescription","AssignedTo")
+            $fieldNames = @("ContentTypes","PublishBy","LineManager","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionDescription","AssignedTo","ContentSubmissionApproveRejectBy")
         }
     }
 
@@ -132,10 +132,10 @@ foreach($site in $sites)
     switch ($site.Abbreviation)
     {
         "Defra" { 
-            $fieldNames = @("OrganisationIntranets","EventDateTime","EventDetails","EventVenueAndJoiningDetails","PublishBy","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus")
+            $fieldNames = @("OrganisationIntranets","EventDateTime","EventDetails","EventVenueAndJoiningDetails","PublishBy","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionApproveRejectBy")
         }
         default { 
-            $fieldNames = @("EventDateTime","EventDetails","EventVenueAndJoiningDetails","PublishBy","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus")
+            $fieldNames = @("EventDateTime","EventDetails","EventVenueAndJoiningDetails","PublishBy","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionApproveRejectBy")
         }
     }
 
@@ -184,10 +184,10 @@ foreach($site in $sites)
     switch ($site.Abbreviation)
     {
         "Defra" { 
-            $fieldNames = @("OrganisationIntranets","EventDateTime","EventDetails","EventVenueAndJoiningDetails","PublishBy","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","AssignedTo")
+            $fieldNames = @("OrganisationIntranets","EventDateTime","EventDetails","EventVenueAndJoiningDetails","PublishBy","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","AssignedTo","ContentSubmissionApproveRejectBy")
         }
         default { 
-            $fieldNames = @("EventDateTime","EventDetails","EventVenueAndJoiningDetails","PublishBy","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","AssignedTo")
+            $fieldNames = @("EventDateTime","EventDetails","EventVenueAndJoiningDetails","PublishBy","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","AssignedTo","ContentSubmissionApproveRejectBy")
         }
     }
 

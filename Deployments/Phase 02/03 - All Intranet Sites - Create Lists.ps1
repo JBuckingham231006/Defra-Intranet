@@ -53,7 +53,6 @@ if($null -eq $sites)
 }
 
 # LIST - Create the "Internal Comms Intranet Content Submissions" list in which of the Intranet sites
-
 foreach($site in $sites)
 {
     Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
@@ -70,11 +69,11 @@ foreach($site in $sites)
     switch ($site.Abbreviation)
     {
         "Defra" { 
-            $fieldNames = @("ContentTypes","OrganisationIntranets","PublishBy","LineManager","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionDescription")
+            $fieldNames = @("ContentTypes","OrganisationIntranets","PublishBy","LineManager","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionDescription","ContentSubmissionApproveRejectBy")
         }
 
         default { 
-            $fieldNames = @("ContentTypes","LineManager","AltContact","PublishBy","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionDescription")
+            $fieldNames = @("ContentTypes","LineManager","AltContact","PublishBy","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionDescription","ContentSubmissionApproveRejectBy")
         }
     }
 
@@ -136,7 +135,7 @@ foreach($site in $sites)
     # LIST-LEVEL FIELD CUSTOMISATION
     Write-Host "`nCUSTOMISING FIELDS" -ForegroundColor Green
 
-    # Customise the "" field for this list
+    # Customise the "Approval Options" field for this list
     $field = Get-PnPField -List $list -Identity "ContentSubmissionApprovalOptions" -ErrorAction SilentlyContinue
 
     if($null -ne $field)
@@ -153,7 +152,7 @@ foreach($site in $sites)
         Write-Host "THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE LIST '$displayName'" -ForegroundColor Red
     }
 
-    # Customise the "ContentSubmissionStatus" field for this list
+    # Customise the "Status" field for this list
     $field = Get-PnPField -List $list -Identity "ContentSubmissionStatus" -ErrorAction SilentlyContinue
 
     if($null -ne $field)
@@ -161,6 +160,22 @@ foreach($site in $sites)
         Set-PnPField -List $list -Identity $field.Id -Values @{
             Hidden = $true
             CustomFormatter = '{"elmType":"div","style":{"flex-wrap":"wrap","display":"flex"},"children":[{"elmType":"div","style":{"box-sizing":"border-box","padding":"4px 8px 5px 8px","overflow":"hidden","text-overflow":"ellipsis","display":"flex","border-radius":"16px","height":"24px","align-items":"center","white-space":"nowrap","margin":"4px 4px 4px 4px"},"attributes":{"class":{"operator":":","operands":[{"operator":"==","operands":["[$ContentSubmissionStatus]","Pending Approval"]},"sp-css-backgroundColor-BgGold sp-css-borderColor-GoldFont sp-field-fontSizeSmall sp-css-color-GoldFont",{"operator":":","operands":[{"operator":"==","operands":["[$ContentSubmissionStatus]","Approved"]},"sp-css-backgroundColor-BgMintGreen sp-field-fontSizeSmall sp-css-color-MintGreenFont",{"operator":":","operands":[{"operator":"==","operands":["[$ContentSubmissionStatus]","Rejected"]},"sp-css-backgroundColor-BgDustRose sp-css-borderColor-DustRoseFont sp-field-fontSizeSmall sp-css-color-DustRoseFont",""]}]}]}},"txtContent":"[$ContentSubmissionStatus]"}]}'
+        }
+
+        Write-Host "THE FIELD '$($field.Title)' HAS BEEN CUSTOMISED FOR THE LIST '$displayName'" -ForegroundColor Green
+    }
+    else
+    {
+        Write-Host "THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE LIST '$displayName'" -ForegroundColor Red
+    }
+
+    # Customise the "Approved or Rejected By" field for this list
+    $field = Get-PnPField -List $list -Identity "ContentSubmissionApproveRejectBy" -ErrorAction SilentlyContinue
+
+    if($null -ne $field)
+    {
+        Set-PnPField -List $list -Identity $field.Id -Values @{
+            Hidden = $true
         }
 
         Write-Host "THE FIELD '$($field.Title)' HAS BEEN CUSTOMISED FOR THE LIST '$displayName'" -ForegroundColor Green
@@ -373,29 +388,29 @@ foreach($site in $sites)
         "Defra" 
         {
             $viewFields = @{
-                'AllItemsAssigned' = "Attachments","LinkTitle","ContentType","PublishBy","Author","OrganisationIntranets","ContentSubmissionApprovalOptions","ContentSubmissionStatus","AltContact"
-                'Content' = "Attachments","LinkTitle","AssignedTo","OrganisationIntranets","ContentSubmissionDescription","Author","ContentSubmissionApprovalOptions","ContentSubmissionStatus","PublishBy","ContentTypes","AltContact","LineManager"
-                'Default' = "Attachments","LinkTitle","ContentType","PublishBy","AssignedTo","Author","OrganisationIntranets","ContentSubmissionApprovalOptions","ContentSubmissionStatus","AltContact"
-                'Events' = "Attachments","LinkTitle","AssignedTo","OrganisationIntranets","Author","PublishBy","ContentSubmissionApprovalOptions","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails"
+                'AllItemsAssigned' = "Attachments","LinkTitle","ContentType","PublishBy","Author","OrganisationIntranets","ContentSubmissionApprovalOptions","ContentSubmissionStatus","AltContact","ContentSubmissionApproveRejectBy"
+                'Content' = "Attachments","LinkTitle","AssignedTo","OrganisationIntranets","ContentSubmissionDescription","Author","ContentSubmissionApprovalOptions","ContentSubmissionStatus","PublishBy","ContentTypes","AltContact","LineManager","ContentSubmissionApproveRejectBy"
+                'Default' = "Attachments","LinkTitle","ContentType","PublishBy","AssignedTo","Author","OrganisationIntranets","ContentSubmissionApprovalOptions","ContentSubmissionStatus","AltContact","ContentSubmissionApproveRejectBy"
+                'Events' = "Attachments","LinkTitle","AssignedTo","OrganisationIntranets","Author","PublishBy","ContentSubmissionApprovalOptions","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails","ContentSubmissionApproveRejectBy"
             }
         }
 
         "RPA" 
         {
             $viewFields = @{
-                'AllItemsAssigned' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","ContentSubmissionApprovalOptions","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails"
-                'Default' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","ContentSubmissionApprovalOptions","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails"
-                'Events' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","ContentSubmissionApprovalOptions","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails"
+                'AllItemsAssigned' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","ContentSubmissionApprovalOptions","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails","ContentSubmissionApproveRejectBy"
+                'Default' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","ContentSubmissionApprovalOptions","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails","ContentSubmissionApproveRejectBy"
+                'Events' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","ContentSubmissionApprovalOptions","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails","ContentSubmissionApproveRejectBy"
             }
         }
 
         default 
         {
             $viewFields = @{
-                'AllItemsAssigned' = "Attachments","LinkTitle","ContentType","Author","ContentSubmissionApprovalOptions","ContentSubmissionStatus","AltContact"
-                'Content' = "Attachments","LinkTitle","AssignedTo","Author","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionDescription","PublishBy","ContentTypes","AltContact","LineManager"
-                'Default' = "Attachments","LinkTitle","ContentType","AssignedTo","Author","ContentSubmissionApprovalOptions","ContentSubmissionStatus","AltContact"
-                'Events' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","ContentSubmissionApprovalOptions","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails"
+                'AllItemsAssigned' = "Attachments","LinkTitle","ContentType","Author","ContentSubmissionApprovalOptions","ContentSubmissionStatus","AltContact","ContentSubmissionApproveRejectBy"
+                'Content' = "Attachments","LinkTitle","AssignedTo","Author","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionDescription","PublishBy","ContentTypes","AltContact","LineManager","ContentSubmissionApproveRejectBy"
+                'Default' = "Attachments","LinkTitle","ContentType","AssignedTo","Author","ContentSubmissionApprovalOptions","ContentSubmissionStatus","AltContact","ContentSubmissionApproveRejectBy"
+                'Events' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","ContentSubmissionApprovalOptions","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails","ContentSubmissionApproveRejectBy"
             }
         }
     }
@@ -540,6 +555,15 @@ foreach($site in $sites)
     if($null -ne $view)
     {
         $view = Set-PnPView -List $list -Identity $view.Title -Fields $viewFields.Default
+
+        $ctx.Load($view)
+        $ctx.ExecuteQuery()
+
+        $view.ViewQuery = '<OrderBy><FieldRef Name="ID" /></OrderBy><Where><And><Neq><FieldRef Name="ContentType" /><Value Type="Computed">Content Submission Request</Value></Neq><Neq><FieldRef Name="ContentType" /><Value Type="Computed">Event Submission Request</Value></Neq></And></Where>'
+        $view.Update()
+
+        $ctx.ExecuteQuery()
+
         Write-Host "`nLIST DEFAULT VIEW '$($view.Title)' UPDATED WITH NEW FIELDS" -ForegroundColor Green 
     }
 
