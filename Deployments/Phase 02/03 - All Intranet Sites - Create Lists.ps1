@@ -70,11 +70,11 @@ foreach($site in $sites)
     switch ($site.Abbreviation)
     {
         "Defra" { 
-            $fieldNames = @("ContentTypes","OrganisationIntranets","PublishBy","LineManager","AltContact","ContentSubmissionStatus","ContentSubmissionDescription")
+            $fieldNames = @("ContentTypes","OrganisationIntranets","PublishBy","LineManager","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionDescription")
         }
 
         default { 
-            $fieldNames = @("ContentTypes","LineManager","AltContact","PublishBy","ContentSubmissionStatus","ContentSubmissionDescription")
+            $fieldNames = @("ContentTypes","LineManager","AltContact","PublishBy","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionDescription")
         }
     }
 
@@ -136,6 +136,23 @@ foreach($site in $sites)
     # LIST-LEVEL FIELD CUSTOMISATION
     Write-Host "`nCUSTOMISING FIELDS" -ForegroundColor Green
 
+    # Customise the "" field for this list
+    $field = Get-PnPField -List $list -Identity "ContentSubmissionApprovalOptions" -ErrorAction SilentlyContinue
+
+    if($null -ne $field)
+    {
+        Set-PnPField -List $list -Identity $field.Id -Values @{
+            Hidden = $true
+            CustomFormatter = '{"elmType":"div","style":{"flex-directon":"row","justify-content":"left","align-items":"center","flex-wrap":"nowrap"},"children":[{"elmType":"div","txtContent":"N/A","style":{"visibility":"=if([$PermMask] < 0x7ffffffffffbffff, ''visible'',''hidden'')","width":"=if([$PermMask] < 0x7ffffffffffbffff, '' '',''0'')","height":"=if([$PermMask] < 0x7ffffffffffbffff, '' '',''0'')","word-break":"keep-all"}},{"elmType":"div","style":{"visibility":{"operator":"?","operands":[{"operator":"<","operands":["[$PermMask]","0x7ffffffffffbffff"]},"hidden","visible"]},"width":{"operator":"?","operands":[{"operator":"<","operands":["[$PermMask]","0x7ffffffffffbffff"]},"0",""]},"height":{"operator":"?","operands":[{"operator":"<","operands":["[$PermMask]","0x7ffffffffffbffff"]},"0",""]},"display":"=if(([$ContentSubmissionStatus] == ''Pending Approval''),''inherit'',''none'')","flex-directon":"row","justify-content":"left","align-items":"center","flex-wrap":"wrap"},"children":[{"elmType":"button","customRowAction":{"action":"setValue","actionInput":{"ContentSubmissionStatus":"Approved"}},"attributes":{"class":"ms-fontColor-themePrimary ms-fontColor-themeDarker--hover"},"style":{"border":"none","background-color":"transparent","cursor":"pointer","display":"flex","flex-directon":"row","justify-content":"left","align-items":"center","flex-wrap":"wrap"},"children":[{"elmType":"span","attributes":{"iconName":"SkypeCircleCheck"},"style":{"padding":"4px"}},{"elmType":"span","txtContent":"Approve","style":{"word-break":"keep-all"}}]},{"elmType":"button","customRowAction":{"action":"setValue","actionInput":{"ContentSubmissionStatus":"Rejected"}},"attributes":{"class":"ms-fontColor-themePrimary ms-fontColor-themeDarker--hover"},"style":{"border":"none","background-color":"transparent","cursor":"pointer","display":"flex","flex-directon":"row","justify-content":"left","align-items":"center","flex-wrap":"wrap"},"children":[{"elmType":"span","attributes":{"iconName":"Blocked"},"style":{"padding":"4px"}},{"elmType":"span","txtContent":"Reject","style":{"word-break":"keep-all"}}]}]}]}'
+        }
+
+        Write-Host "THE FIELD '$($field.Title)' HAS BEEN CUSTOMISED FOR THE LIST '$displayName'" -ForegroundColor Green
+    }
+    else
+    {
+        Write-Host "THE FIELD 'ContentSubmissionStatus' DOES NOT EXIST IN THE LIST '$displayName'" -ForegroundColor Red
+    }
+
     # Customise the "ContentSubmissionStatus" field for this list
     $field = Get-PnPField -List $list -Identity "ContentSubmissionStatus" -ErrorAction SilentlyContinue
 
@@ -146,7 +163,7 @@ foreach($site in $sites)
             CustomFormatter = '{"elmType":"div","style":{"flex-wrap":"wrap","display":"flex"},"children":[{"elmType":"div","style":{"box-sizing":"border-box","padding":"4px 8px 5px 8px","overflow":"hidden","text-overflow":"ellipsis","display":"flex","border-radius":"16px","height":"24px","align-items":"center","white-space":"nowrap","margin":"4px 4px 4px 4px"},"attributes":{"class":{"operator":":","operands":[{"operator":"==","operands":["[$ContentSubmissionStatus]","Pending Approval"]},"sp-css-backgroundColor-BgGold sp-css-borderColor-GoldFont sp-field-fontSizeSmall sp-css-color-GoldFont",{"operator":":","operands":[{"operator":"==","operands":["[$ContentSubmissionStatus]","Approved"]},"sp-css-backgroundColor-BgMintGreen sp-field-fontSizeSmall sp-css-color-MintGreenFont",{"operator":":","operands":[{"operator":"==","operands":["[$ContentSubmissionStatus]","Rejected"]},"sp-css-backgroundColor-BgDustRose sp-css-borderColor-DustRoseFont sp-field-fontSizeSmall sp-css-color-DustRoseFont",""]}]}]}},"txtContent":"[$ContentSubmissionStatus]"}]}'
         }
 
-        Write-Host "THE FIELD '$($field.Title)' HAS BEEN CUSTOMISED FOR THE LIST '$displayName'" -ForegroundColor Yellow
+        Write-Host "THE FIELD '$($field.Title)' HAS BEEN CUSTOMISED FOR THE LIST '$displayName'" -ForegroundColor Green
     }
     else
     {
@@ -161,8 +178,8 @@ foreach($site in $sites)
         Set-PnPField -List $list -Identity $field.Id -Values @{
             Description = "Please attach any content submission here and any associated imagery that you would like to appear on your page."
         }
-
-        Write-Host "THE FIELD '$($field.Title)' HAS BEEN CUSTOMISED FOR THE LIST '$displayName'" -ForegroundColor Yellow
+         
+        Write-Host "THE FIELD '$($field.Title)' HAS BEEN CUSTOMISED FOR THE LIST '$displayName'" -ForegroundColor Green
     }
     else
     {
@@ -344,7 +361,7 @@ foreach($site in $sites)
             $ct.Hidden = $true
             $ct.Update($false)
             $ctx.ExecuteQuery()
-            Write-Host "The original default '$ctName' has been hidden from the 'New' menu" -ForegroundColor Yellow
+            Write-Host "THE ORIGINAL DEFAULT '$ctName' HAS BEEN HIDDEN FROM THE 'NEW' MENU" -ForegroundColor Yellow
         }
     }
 
@@ -356,29 +373,29 @@ foreach($site in $sites)
         "Defra" 
         {
             $viewFields = @{
-                'AllItemsAssigned' = "Attachments","LinkTitle","ContentType","PublishBy","Author","OrganisationIntranets","ContentSubmissionStatus","AltContact"
-                'Content' = "Attachments","LinkTitle","AssignedTo","OrganisationIntranets","ContentSubmissionDescription","Author","ContentSubmissionStatus","PublishBy","ContentTypes","AltContact","LineManager"
-                'Default' = "Attachments","LinkTitle","ContentType","PublishBy","AssignedTo","Author","OrganisationIntranets","ContentSubmissionStatus","AltContact"
-                'Events' = "Attachments","LinkTitle","AssignedTo","OrganisationIntranets","Author","PublishBy","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails"
+                'AllItemsAssigned' = "Attachments","LinkTitle","ContentType","PublishBy","Author","OrganisationIntranets","ContentSubmissionApprovalOptions","ContentSubmissionStatus","AltContact"
+                'Content' = "Attachments","LinkTitle","AssignedTo","OrganisationIntranets","ContentSubmissionDescription","Author","ContentSubmissionApprovalOptions","ContentSubmissionStatus","PublishBy","ContentTypes","AltContact","LineManager"
+                'Default' = "Attachments","LinkTitle","ContentType","PublishBy","AssignedTo","Author","OrganisationIntranets","ContentSubmissionApprovalOptions","ContentSubmissionStatus","AltContact"
+                'Events' = "Attachments","LinkTitle","AssignedTo","OrganisationIntranets","Author","PublishBy","ContentSubmissionApprovalOptions","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails"
             }
         }
 
         "RPA" 
         {
             $viewFields = @{
-                'AllItemsAssigned' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails"
-                'Default' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails"
-                'Events' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails"
+                'AllItemsAssigned' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","ContentSubmissionApprovalOptions","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails"
+                'Default' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","ContentSubmissionApprovalOptions","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails"
+                'Events' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","ContentSubmissionApprovalOptions","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails"
             }
         }
 
         default 
         {
             $viewFields = @{
-                'AllItemsAssigned' = "Attachments","LinkTitle","ContentType","Author","ContentSubmissionStatus","AltContact"
-                'Content' = "Attachments","LinkTitle","AssignedTo","Author","ContentSubmissionStatus","ContentSubmissionDescription","PublishBy","ContentTypes","AltContact","LineManager"
-                'Default' = "Attachments","LinkTitle","ContentType","AssignedTo","Author","ContentSubmissionStatus","AltContact"
-                'Events' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails"
+                'AllItemsAssigned' = "Attachments","LinkTitle","ContentType","Author","ContentSubmissionApprovalOptions","ContentSubmissionStatus","AltContact"
+                'Content' = "Attachments","LinkTitle","AssignedTo","Author","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionDescription","PublishBy","ContentTypes","AltContact","LineManager"
+                'Default' = "Attachments","LinkTitle","ContentType","AssignedTo","Author","ContentSubmissionApprovalOptions","ContentSubmissionStatus","AltContact"
+                'Events' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","ContentSubmissionApprovalOptions","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails"
             }
         }
     }

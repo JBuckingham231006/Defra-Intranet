@@ -168,13 +168,32 @@ foreach($site in $sites)
         Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
     }
 
-    # "Text" column
-    $displayName = "Text"
+    # "Content Submission Summary" column
+    $displayName = "Content Submission Summary"
     $field = Get-PnPField -Identity "ContentSubmissionDescription" -ErrorAction SilentlyContinue
 
     if($null -eq $field)
     {
         $field = Add-PnPField -Type "Note" -InternalName "ContentSubmissionDescription" -DisplayName $displayName -Required
+        Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
+    }
+    else 
+    {
+        Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
+    }
+
+    # "Approval Options" column
+    $displayName = "Approval Options"
+    $field = Get-PnPField -Identity "ContentSubmissionApprovalOptions" -ErrorAction SilentlyContinue
+
+    if($null -eq $field)
+    {
+        $field = Add-PnPField -Type "Text" -InternalName "ContentSubmissionApprovalOptions" -DisplayName $displayName
+
+        Set-PnPField -Identity $field.Id -Values @{
+            CustomFormatter = '{"elmType":"div","style":{"flex-directon":"row","justify-content":"left","align-items":"center","flex-wrap":"nowrap"},"children":[{"elmType":"div","txtContent":"N/A","style":{"visibility":"=if([$PermMask] < 0x7ffffffffffbffff, ''visible'',''hidden'')","width":"=if([$PermMask] < 0x7ffffffffffbffff, '' '',''0'')","height":"=if([$PermMask] < 0x7ffffffffffbffff, '' '',''0'')","word-break":"keep-all"}},{"elmType":"div","style":{"visibility":{"operator":"?","operands":[{"operator":"<","operands":["[$PermMask]","0x7ffffffffffbffff"]},"hidden","visible"]},"width":{"operator":"?","operands":[{"operator":"<","operands":["[$PermMask]","0x7ffffffffffbffff"]},"0",""]},"height":{"operator":"?","operands":[{"operator":"<","operands":["[$PermMask]","0x7ffffffffffbffff"]},"0",""]},"display":"=if(([$ContentSubmissionStatus] == ''Pending Approval''),''inherit'',''none'')","flex-directon":"row","justify-content":"left","align-items":"center","flex-wrap":"wrap"},"children":[{"elmType":"button","customRowAction":{"action":"setValue","actionInput":{"ContentSubmissionStatus":"Approved"}},"attributes":{"class":"ms-fontColor-themePrimary ms-fontColor-themeDarker--hover"},"style":{"border":"none","background-color":"transparent","cursor":"pointer","display":"flex","flex-directon":"row","justify-content":"left","align-items":"center","flex-wrap":"wrap"},"children":[{"elmType":"span","attributes":{"iconName":"SkypeCircleCheck"},"style":{"padding":"4px"}},{"elmType":"span","txtContent":"Approve","style":{"word-break":"keep-all"}}]},{"elmType":"button","customRowAction":{"action":"setValue","actionInput":{"ContentSubmissionStatus":"Rejected"}},"attributes":{"class":"ms-fontColor-themePrimary ms-fontColor-themeDarker--hover"},"style":{"border":"none","background-color":"transparent","cursor":"pointer","display":"flex","flex-directon":"row","justify-content":"left","align-items":"center","flex-wrap":"wrap"},"children":[{"elmType":"span","attributes":{"iconName":"Blocked"},"style":{"padding":"4px"}},{"elmType":"span","txtContent":"Reject","style":{"word-break":"keep-all"}}]}]}]}'
+        }
+
         Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
     }
     else 

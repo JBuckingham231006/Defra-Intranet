@@ -80,10 +80,10 @@ foreach($site in $sites)
     switch ($site.Abbreviation)
     {
         "Defra" { 
-            $fieldNames = @("OrganisationIntranets","ContentTypes","PublishBy","LineManager","AltContact","ContentSubmissionStatus","ContentSubmissionDescription","AssignedTo")
+            $fieldNames = @("OrganisationIntranets","ContentTypes","PublishBy","LineManager","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionDescription","AssignedTo")
         }
         default { 
-            $fieldNames = @("ContentTypes","PublishBy","LineManager","AltContact","ContentSubmissionStatus","ContentSubmissionDescription","AssignedTo")
+            $fieldNames = @("ContentTypes","PublishBy","LineManager","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionDescription","AssignedTo")
         }
     }
 
@@ -132,10 +132,10 @@ foreach($site in $sites)
     switch ($site.Abbreviation)
     {
         "Defra" { 
-            $fieldNames = @("OrganisationIntranets","EventDateTime","EventDetails","EventVenueAndJoiningDetails","PublishBy","AltContact","ContentSubmissionStatus")
+            $fieldNames = @("OrganisationIntranets","EventDateTime","EventDetails","EventVenueAndJoiningDetails","PublishBy","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus")
         }
         default { 
-            $fieldNames = @("EventDateTime","EventDetails","EventVenueAndJoiningDetails","PublishBy","AltContact","ContentSubmissionStatus")
+            $fieldNames = @("EventDateTime","EventDetails","EventVenueAndJoiningDetails","PublishBy","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus")
         }
     }
 
@@ -184,10 +184,10 @@ foreach($site in $sites)
     switch ($site.Abbreviation)
     {
         "Defra" { 
-            $fieldNames = @("OrganisationIntranets","EventDateTime","EventDetails","EventVenueAndJoiningDetails","PublishBy","AltContact","ContentSubmissionStatus","AssignedTo")
+            $fieldNames = @("OrganisationIntranets","EventDateTime","EventDetails","EventVenueAndJoiningDetails","PublishBy","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","AssignedTo")
         }
         default { 
-            $fieldNames = @("EventDateTime","EventDetails","EventVenueAndJoiningDetails","PublishBy","AltContact","ContentSubmissionStatus","AssignedTo")
+            $fieldNames = @("EventDateTime","EventDetails","EventVenueAndJoiningDetails","PublishBy","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","AssignedTo")
         }
     }
 
