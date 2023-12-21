@@ -388,29 +388,29 @@ foreach($site in $sites)
         "Defra" 
         {
             $viewFields = @{
-                'AllItemsAssigned' = "Attachments","LinkTitle","ContentType","PublishBy","Author","OrganisationIntranets","ContentSubmissionApprovalOptions","ContentSubmissionStatus","AltContact","ContentSubmissionApproveRejectBy"
-                'Content' = "Attachments","LinkTitle","AssignedTo","OrganisationIntranets","ContentSubmissionDescription","Author","ContentSubmissionApprovalOptions","ContentSubmissionStatus","PublishBy","ContentTypes","AltContact","LineManager","ContentSubmissionApproveRejectBy"
-                'Default' = "Attachments","LinkTitle","ContentType","PublishBy","AssignedTo","Author","OrganisationIntranets","ContentSubmissionApprovalOptions","ContentSubmissionStatus","AltContact","ContentSubmissionApproveRejectBy"
-                'Events' = "Attachments","LinkTitle","AssignedTo","OrganisationIntranets","Author","PublishBy","ContentSubmissionApprovalOptions","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails","ContentSubmissionApproveRejectBy"
+                'AllItemsAssigned' = "Attachments","LinkTitle","ContentType","PublishBy","Author","OrganisationIntranets","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionApproveRejectBy"
+                'Content' = "Attachments","LinkTitle","AssignedTo","OrganisationIntranets","ContentSubmissionDescription","Author","PublishBy","ContentTypes","AltContact","LineManager","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionApproveRejectBy"
+                'Default' = "Attachments","LinkTitle","ContentType","PublishBy","AssignedTo","Author","OrganisationIntranets","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionApproveRejectBy"
+                'Events' = "Attachments","LinkTitle","AssignedTo","OrganisationIntranets","Author","PublishBy","EventDateTime","EventVenueAndJoiningDetails","EventDetails","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionApproveRejectBy"
             }
         }
 
         "RPA" 
         {
             $viewFields = @{
-                'AllItemsAssigned' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","ContentSubmissionApprovalOptions","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails","ContentSubmissionApproveRejectBy"
-                'Default' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","ContentSubmissionApprovalOptions","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails","ContentSubmissionApproveRejectBy"
-                'Events' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","ContentSubmissionApprovalOptions","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails","ContentSubmissionApproveRejectBy"
+                'AllItemsAssigned' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","EventDateTime","EventVenueAndJoiningDetails","EventDetails","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionApproveRejectBy"
+                'Default' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","EventDateTime","EventVenueAndJoiningDetails","EventDetails","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionApproveRejectBy"
+                'Events' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","EventDateTime","EventVenueAndJoiningDetails","EventDetails","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionApproveRejectBy"
             }
         }
 
         default 
         {
             $viewFields = @{
-                'AllItemsAssigned' = "Attachments","LinkTitle","ContentType","Author","ContentSubmissionApprovalOptions","ContentSubmissionStatus","AltContact","ContentSubmissionApproveRejectBy"
-                'Content' = "Attachments","LinkTitle","AssignedTo","Author","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionDescription","PublishBy","ContentTypes","AltContact","LineManager","ContentSubmissionApproveRejectBy"
-                'Default' = "Attachments","LinkTitle","ContentType","AssignedTo","Author","ContentSubmissionApprovalOptions","ContentSubmissionStatus","AltContact","ContentSubmissionApproveRejectBy"
-                'Events' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","ContentSubmissionApprovalOptions","ContentSubmissionStatus","EventDateTime","EventVenueAndJoiningDetails","EventDetails","ContentSubmissionApproveRejectBy"
+                'AllItemsAssigned' = "Attachments","LinkTitle","ContentType","Author","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionApproveRejectBy"
+                'Content' = "Attachments","LinkTitle","AssignedTo","Author","ContentSubmissionDescription","PublishBy","ContentTypes","AltContact","LineManager","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionApproveRejectBy"
+                'Default' = "Attachments","LinkTitle","ContentType","AssignedTo","Author","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionApproveRejectBy"
+                'Events' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","EventDateTime","EventVenueAndJoiningDetails","EventDetails","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionApproveRejectBy"
             }
         }
     }
@@ -586,6 +586,20 @@ foreach($site in $sites)
         elseif($null -eq $viewConfig.ViewFields)
         {
             Write-Host "THE VIEW FIELDS FOR '$($viewConfig.Title)' IS MISSING. SKIPPING THIS VIEW." -ForegroundColor Red
+        }
+        elseif($null -ne $view)
+        {
+            $view = Set-PnPView -List $list -Identity $view.Title -Fields $viewConfig.ViewFields
+
+            $ctx.Load($view)
+            $ctx.ExecuteQuery()
+
+            $view.ViewQuery = $viewConfig.Query
+            $view.Update()
+
+            $ctx.ExecuteQuery()
+
+            Write-Host "LIST DEFAULT VIEW '$($view.Title)' FIELDS AND FILTER REFRESHED" -ForegroundColor Yellow 
         }
         else
         {
