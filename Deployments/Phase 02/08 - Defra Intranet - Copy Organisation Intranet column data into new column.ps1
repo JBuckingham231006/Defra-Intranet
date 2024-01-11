@@ -64,17 +64,20 @@ foreach($item in $listItems)
 {  
     $termValues = @{}
     $currentVersionNumber = $item["_UIVersionString"]
+
+    $terms = $(Get-PnPTerm -TermSet "Organisational Unit" -TermGroup "DEFRA EDRM UAT" -Identity "Defra Orgs" -IncludeChildTerms).Terms
     
     foreach($term in $item["OrganisationIntranets"])
     {
-        $termValues.Add($term.TermGuid,$term.Label)
+        $termStoreTerm = $terms | Where-Object {$_.Name -eq $term.Label}
+        $termValues.Add($termStoreTerm.Id.ToString(),$term.Label)
     }
 
     Set-PnpTaxonomyFieldValue -ListItem $item -InternalFieldName "OrganisationIntranetsContentEditorInput" -Terms $termValues
 
     Write-Host "SITE PAGE '$($item["Title"])' COLUMN 'OrganisationIntranetsContentEditorInput' VALUE UPDATED TO BE: $(($termValues.GetEnumerator() | % { $($_.Value) }) -join ',')" -ForegroundColor Green
 
-    # Only publish the page again if it was a major version, otherwise a publish would realise a user's draft
+    # Only publish the page again if it was a major version, otherwise a publish would release a user's draft
     if($currentVersionNumber.Split('.')[1] -eq 0)
     {
         $item.File.Publish("Published")
