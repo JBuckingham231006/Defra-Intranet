@@ -72,8 +72,8 @@ if($null -eq $ct)
 $ctx.Load($ct.FieldLinks)
 $ctx.ExecuteQuery()
 
-# Site-specific variable configuration.
-$fieldNames = @("OrganisationIntranetsContentEditorInput","PageApprovalInfo","WorkflowPublishtoALBIntranets","WorkflowArticleSentForALBApproval")
+# Variable configuration.
+$fieldNames = @("OrganisationIntranetsContentEditorInput","PageApprovalInfo","WorkflowPublishtoALBIntranets","WorkflowArticleSentForALBApproval","WorkflowApprovalProgress")
 
 # FIELDS - ADD FIELDS TO SITE PAGE LIBRARY
 Write-Host "`nADDING FIELDS TO THE CONTENT TYPE $CTName" -ForegroundColor Green
@@ -122,16 +122,16 @@ $field = Get-PnPField -List $list -Identity $fieldInternalName -ErrorAction Sile
 
 if($null -ne $field)
 {
-    $condition1 = "=if([{0}] != true, 'inherit','none')" -f '$WorkflowArticleSentForALBApproval'
-    $condition2 = "=if([{0}] == true, 'inherit','none')" -f '$WorkflowArticleSentForALBApproval'
+    $condition1 = "=if([{0}] != 'Workflow is starting...', 'inherit','none')" -f '$WorkflowApprovalProgress'
+    $condition2 = "=if([{0}] == 'Workflow is starting...', 'inherit','none')" -f '$WorkflowApprovalProgress'
 
     Set-PnPField -List $listName -Identity $field.Id -Values @{
-        CustomFormatter = '{"elmType":"div","style":{"flex-directon":"row","justify-content":"left","align-items":"center","flex-wrap":"nowrap"},"children":[{"elmType":"div","style":{"display":"' + $condition1 + '","flex-directon":"row","justify-content":"left","align-items":"center","flex-wrap":"wrap"},"children":[{"elmType":"button","customRowAction":{"action":"setValue","actionInput":{"WorkflowArticleSentForALBApproval":"True"}},"attributes":{"class":"ms-fontColor-themePrimary ms-fontColor-themeDarker--hover"},"style":{"border":"1px solid","background-color":"transparent","cursor":"pointer","display":"flex","flex-directon":"row","justify-content":"left","align-items":"center","flex-wrap":"wrap","padding":"10px"},"children":[{"elmType":"span","attributes":{"iconName":"PublishContent"},"style":{"padding-right":"6px"}},{"elmType":"span","txtContent":"Publish to ALB Intranets","style":{"word-break":"keep-all"}}]}]},{"elmType":"div","style":{"border":"1px solid","background-color":"transparent","display":"' + $condition2 + '","flex-directon":"row","justify-content":"left","align-items":"center","flex-wrap":"wrap","padding":"10px","min-width":"159px","color":"#A0A0A0"},"attributes":{"class":"ms-fontColor-themePrimary ms-fontColor-themeDarker--hover"},"children":[{"elmType":"span","attributes":{"iconName":"PublishContent"},"style":{"padding-right":"6px"}},{"elmType":"span","txtContent":"Publish to ALB Intranets","style":{"word-break":"keep-all","font-size":"13.33px"}}]}]}'
+        CustomFormatter = '{"elmType":"div","style":{"flex-directon":"row","justify-content":"left","align-items":"center","flex-wrap":"nowrap"},"children":[{"elmType":"div","style":{"display":"' + $condition1 + '","flex-directon":"row","justify-content":"left","align-items":"center","flex-wrap":"wrap"},"children":[{"elmType":"button","customRowAction":{"action":"setValue","actionInput":{"WorkflowApprovalProgress":"Workflow is starting..."}},"attributes":{"class":"ms-fontColor-themePrimary ms-fontColor-themeDarker--hover"},"style":{"border":"1px solid","background-color":"transparent","cursor":"pointer","display":"flex","flex-directon":"row","justify-content":"left","align-items":"center","flex-wrap":"wrap","padding":"10px"},"children":[{"elmType":"span","attributes":{"iconName":"PublishContent"},"style":{"padding-right":"6px"}},{"elmType":"span","txtContent":"Publish to ALB Intranets","style":{"word-break":"keep-all"}}]}]},{"elmType":"div","style":{"border":"1px solid","background-color":"transparent","display":"' + $condition2 + '","flex-directon":"row","justify-content":"left","align-items":"center","flex-wrap":"wrap","padding":"10px","min-width":"159px","color":"#A0A0A0"},"attributes":{"class":"ms-fontColor-themePrimary ms-fontColor-themeDarker--hover"},"children":[{"elmType":"span","attributes":{"iconName":"PublishContent"},"style":{"padding-right":"6px"}},{"elmType":"span","txtContent":"Publish to ALB Intranets","style":{"word-break":"keep-all","font-size":"13.33px"}}]}]}'
     }
 }
 
 # Hide the internal fields, which are managed by our workflows and not the users, from the site page property details panel
-$hiddenFieldNames = @("PageApprovalInfo","WorkflowPublishtoALBIntranets","WorkflowArticleSentForALBApproval")
+$hiddenFieldNames = @("PageApprovalInfo","WorkflowPublishtoALBIntranets","WorkflowArticleSentForALBApproval","WorkflowApprovalProgress")
 
 foreach($hiddenField in $hiddenFieldNames)
 {
@@ -187,6 +187,8 @@ foreach($view in $views)
 
 Write-Host ""
 
+$fieldNames = @("OrganisationIntranetsContentEditorInput","PageApprovalInfo","WorkflowPublishtoALBIntranets","WorkflowApprovalProgress")
+
 foreach($view in $views)
 {
     $ctx.Load($view.ViewFields)
@@ -227,6 +229,11 @@ Set-PnPList -Identity $list -BreakRoleInheritance -CopyRoleAssignments
 $group = Get-PnPGroup | Where-Object { $_.Title -like "* Members"}
 
 Set-PnPListPermission -Identity $list -AddRole "Custom Permission - Contribute - For Site Page Library Only" -Group $group -RemoveRole "Edit"
+
+Write-Host "Disabled Edit in Grid View" -ForegroundColor Green
+$list.DisableGridEditing = $true
+$list.Update()
+Invoke-PnPQuery
 
 Write-Host ""
 Write-Host "SCRIPT FINISHED" -ForegroundColor Yellow

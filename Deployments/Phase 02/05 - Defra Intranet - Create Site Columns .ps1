@@ -100,7 +100,21 @@ if($null -eq $field)
 }
 else
 {
-    Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
+    Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow      
+}
+
+# "Approval Workflow Progress" column
+$displayName = "Approval Workflow Progress"
+$field = Get-PnPField -Identity "WorkflowApprovalProgress" -ErrorAction SilentlyContinue
+
+if($null -eq $field)
+{
+    $field = Add-PnPField -Type Text -InternalName "WorkflowApprovalProgress" -DisplayName $displayName
+    Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
+}
+else
+{
+    Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow
 }
 
 # "Approval Information" column
