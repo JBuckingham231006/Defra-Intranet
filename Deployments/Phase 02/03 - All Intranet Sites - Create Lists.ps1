@@ -445,12 +445,6 @@ foreach($site in $sites)
                     'ViewFields' = $viewFields.Events
                 },
                 [PSCustomObject]@{
-                    'Query' = '<GroupBy Collapse="FALSE" GroupLimit="30"><FieldRef Name="ContentTypes" /></GroupBy><Where><Or><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Event Submission Request</Value></Eq><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Event Submission Request - Stage 2</Value></Eq></Or></Where>'
-                    'TargetSite' = ''
-                    'Title' = 'Events - By Content Types'
-                    'ViewFields' = $viewFields.Events
-                },
-                [PSCustomObject]@{
                     'Query' = '<GroupBy Collapse="FALSE" GroupLimit="30"><FieldRef Name="AssignedTo" /></GroupBy><OrderBy><FieldRef Name="EventDateTime" /></OrderBy><Where><And><And><And><Or><And><And><And><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Event Submission Request</Value></Eq><Geq><FieldRef Name="EventDateTime" /><Value Type="DateTime"><Today /></Value></Geq></And><Leq><FieldRef Name="EventDateTime" /><Value Type="DateTime"><Today OffsetDays="7" /></Value></Leq></And><Neq><FieldRef Name="ContentSubmissionStatus" /><Value Type="Text">Rejected</Value></Neq></And><Eq><FieldRef Name="ContentType" /><Value Type="Computed">Event Submission Request - Stage 2</Value></Eq></Or><Geq><FieldRef Name="EventDateTime" /><Value Type="DateTime"><Today /></Value></Geq></And><Leq><FieldRef Name="EventDateTime" /><Value Type="DateTime"><Today OffsetDays="7" /></Value></Leq></And><Neq><FieldRef Name="ContentSubmissionStatus" /><Value Type="Text">Rejected</Value></Neq></And></Where>'
                     'TargetSite' = ''
                     'Title' = 'Events - Due in the Next 07 Days'
