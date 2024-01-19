@@ -63,7 +63,7 @@ foreach($site in $sites)
     Connect-PnPOnline -Url "$global:rootURL/$($site.RelativeURL)" -UseWebLogin
     Write-Host "ACCESSING SHAREPOINT SITE: $($global:rootURL)/$($global:site.RelativeURL)" -ForegroundColor Green
 
-    $fieldNames = @("AltContact","ContentTypes","LineManager","PublishBy","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionDescription","EventDateTime","EventVenueAndJoiningDetails","EventDetails","ContentSubmissionApproveRejectBy")
+    $fieldNames = @("AltContact","ContentTypes","LineManager","EventLink","PublishBy","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionDescription","EventDateTime","EventEndDateTime","EventVenueAndJoiningDetails","EventDetails","ContentSubmissionApproveRejectBy")
     $web = Get-PnPWeb
 
     foreach($fieldName in $fieldNames)

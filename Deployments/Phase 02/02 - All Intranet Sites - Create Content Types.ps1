@@ -132,10 +132,10 @@ foreach($site in $sites)
     switch ($site.Abbreviation)
     {
         "Defra" { 
-            $fieldNames = @("OrganisationIntranets","EventDateTime","EventDetails","EventVenueAndJoiningDetails","PublishBy","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionApproveRejectBy")
+            $fieldNames = @("OrganisationIntranets","EventDateTime","EventEndDateTime","EventDetails","EventVenueAndJoiningDetails","EventLink","PublishBy","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionApproveRejectBy")
         }
         default { 
-            $fieldNames = @("EventDateTime","EventDetails","EventVenueAndJoiningDetails","PublishBy","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionApproveRejectBy")
+            $fieldNames = @("EventDateTime","EventEndDateTime","EventDetails","EventVenueAndJoiningDetails","EventLink","PublishBy","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionApproveRejectBy")
         }
     }
 
@@ -184,10 +184,10 @@ foreach($site in $sites)
     switch ($site.Abbreviation)
     {
         "Defra" { 
-            $fieldNames = @("OrganisationIntranets","EventDateTime","EventDetails","EventVenueAndJoiningDetails","PublishBy","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","AssignedTo","ContentSubmissionApproveRejectBy")
+            $fieldNames = @("OrganisationIntranets","EventDateTime","EventEndDateTime","EventDetails","EventVenueAndJoiningDetails","EventLink","PublishBy","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","AssignedTo","ContentSubmissionApproveRejectBy")
         }
         default { 
-            $fieldNames = @("EventDateTime","EventDetails","EventVenueAndJoiningDetails","PublishBy","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","AssignedTo","ContentSubmissionApproveRejectBy")
+            $fieldNames = @("EventDateTime","EventEndDateTime","EventDetails","EventVenueAndJoiningDetails","EventLink","PublishBy","AltContact","ContentSubmissionApprovalOptions","ContentSubmissionStatus","AssignedTo","ContentSubmissionApproveRejectBy")
         }
     }
 

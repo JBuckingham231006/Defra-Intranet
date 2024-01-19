@@ -611,6 +611,14 @@ foreach($site in $sites)
         Write-Host "'$($site.GroupPrefix) Visitors' given Contribute permissions to the list" -ForegroundColor Yellow
     }
 
+    # Set the list's valiation formula and message
+    Write-Host "Setting the list's validation formula and message" -ForegroundColor Green
+    $list = Get-PnPList -Identity $list
+    $list.ValidationFormula = "[Event End Date/Time]>[Event Start Date/Time]"
+    $list.ValidationMessage = "The Event End Date/Time must be after the Event Start Date/Time."
+    $list.Update()
+    $ctx.ExecuteQuery()
+
     Write-Host ""
 }
 

@@ -63,7 +63,7 @@ foreach($site in $sites)
     switch ($site.Abbreviation)
     {
         "EA" {
-            $contentTypeOptions = "Alert","Blog or Online Diary", "Guidance Page","News Story - Highlight","News Story - Top Story"
+            $contentTypeOptions = "Alert","Guidance Page","News Story - Highlight","News Story - Top Story"
         }
 
         default {
@@ -225,8 +225,8 @@ foreach($site in $sites)
     Write-Host ""
 
     # EVENT CONTENT-TYPE FIELDS 
-    # "Event Date/Time" column
-    $displayName = "Event Date/Time"
+    # "Event Start Date/Time" column
+    $displayName = "Event Start Date/Time"
     $field = Get-PnPField -Identity "EventDateTime" -ErrorAction SilentlyContinue
 
     if($null -eq $field)
@@ -237,6 +237,38 @@ foreach($site in $sites)
             FriendlyDisplayFormat = [Microsoft.SharePoint.Client.DateTimeFieldFriendlyFormatType]::Disabled;
         }
 
+        Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
+    }
+    else
+    {
+        Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
+    }
+
+    $displayName = "Event End Date/Time"
+    $field = Get-PnPField -Identity "EventEndDateTime" -ErrorAction SilentlyContinue
+
+    if($null -eq $field)
+    {
+        $field = Add-PnPField -Type "DateTime" -InternalName "EventEndDateTime" -DisplayName $displayName -Required
+
+        Set-PnPField -Identity $field.Id -Values @{
+            FriendlyDisplayFormat = [Microsoft.SharePoint.Client.DateTimeFieldFriendlyFormatType]::Disabled;
+        }
+
+        Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
+    }
+    else
+    {
+        Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
+    }
+
+    # "Event Details" column
+    $displayName = "Details about the event"
+    $field = Get-PnPField -Identity "EventDetails" -ErrorAction SilentlyContinue
+
+    if($null -eq $field)
+    {
+        $field = Add-PnPField -Type "Note" -InternalName "EventDetails" -DisplayName $displayName -Required
         Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
     }
     else
@@ -270,6 +302,29 @@ foreach($site in $sites)
     else
     {
         Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
+    }
+
+    # "Supporting Link" column
+    $displayName = "Supporting Link"
+    $field = Get-PnPField -Identity "EventLink" -ErrorAction SilentlyContinue
+
+    if($null -eq $field)
+    {
+        $field = Add-PnPField -Type URL -InternalName "EventLink" -DisplayName $displayName
+
+        Set-PnPField -Identity $field.Id -Values @{
+            Description = "If this is a virtual event, please provide an invite link here."; 
+        }
+
+        Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
+    }
+    else
+    {
+        Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow
+        
+        Set-PnPField -Identity $field.Id -Values @{
+            Required = $false
+        }   
     }
 
     Write-Host ""
