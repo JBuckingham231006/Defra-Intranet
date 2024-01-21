@@ -546,8 +546,7 @@ foreach($site in $sites)
 
         $ctx.Load($view)
         $ctx.ExecuteQuery()
-
-        $view.ViewQuery = '<OrderBy><FieldRef Name="ID" /></OrderBy><Where><And><Neq><FieldRef Name="ContentType" /><Value Type="Computed">Content Submission Request</Value></Neq><Neq><FieldRef Name="ContentType" /><Value Type="Computed">Event Submission Request</Value></Neq></And></Where>'
+        $view.ViewQuery = '<OrderBy><FieldRef Name="ID" Ascending="FALSE" /></OrderBy><Where><And><Neq><FieldRef Name="ContentType" /><Value Type="Computed">Content Submission Request</Value></Neq><Neq><FieldRef Name="ContentType" /><Value Type="Computed">Event Submission Request</Value></Neq></And></Where>'
         $view.Update()
 
         $ctx.ExecuteQuery()
