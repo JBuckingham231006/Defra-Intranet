@@ -290,20 +290,6 @@ foreach($site in $sites)
         Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
     }
 
-    # "Event Details" column
-    $displayName = "Details about the event"
-    $field = Get-PnPField -Identity "EventDetails" -ErrorAction SilentlyContinue
-
-    if($null -eq $field)
-    {
-        $field = Add-PnPField -Type "Note" -InternalName "EventDetails" -DisplayName $displayName -Required
-        Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
-    }
-    else
-    {
-        Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
-    }
-
     # "Supporting Link" column
     $displayName = "Supporting Link"
     $field = Get-PnPField -Identity "EventLink" -ErrorAction SilentlyContinue
