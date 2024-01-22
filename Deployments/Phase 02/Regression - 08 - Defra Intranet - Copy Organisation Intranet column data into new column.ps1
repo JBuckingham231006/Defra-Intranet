@@ -68,7 +68,7 @@ foreach($item in $listItems)
 
     Write-Host "SITE PAGE '$($item["Title"])' COLUMN 'OrganisationIntranetsContentEditorInput' CLEARED" -ForegroundColor Green
 
-    # Only publish the page again if it was a major version, otherwise a publish would realise a user's draft
+    # Only publish the page again if it was a major version, otherwise a publish would release a user's draft
     if($currentVersionNumber.Split('.')[1] -eq 0)
     {
         $item.File.Publish("Published")
