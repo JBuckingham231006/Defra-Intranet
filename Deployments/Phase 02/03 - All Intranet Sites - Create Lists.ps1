@@ -380,6 +380,46 @@ foreach($site in $sites)
         }
     }
 
+    # CONTENT TYPE - CONFIGURE LAYOUT
+    Write-Host "CUSTOMISING CONTENT TYPE FORM LAYOUTS"
+    $cts = Get-PnPContentType -List $list | Where-Object {$_.Name -notlike "*Stage 2" -and $_.Name -ne "Folder"}
+    $ctIsReadOnly = $false
+
+    foreach($ct in $cts)
+    {
+        $ctx.Load($ct)
+        $ctx.ExecuteQuery()
+    
+        try
+        {
+            if($ct.ReadOnly -eq $true)
+            {
+                $ctIsReadOnly = $true
+
+                $ct.ReadOnly = $false
+                $ct.Update($false)
+                $ctx.ExecuteQuery()
+            }
+
+            $ct.ClientFormCustomFormatter = '{"headerJSONFormatter":{},"footerJSONFormatter":"","bodyJSONFormatter":""}'
+            $ct.Update($false)
+            $ctx.ExecuteQuery()
+
+            Write-Host "Applied custom form layout to the content type '$($ct.Name)'" -ForegroundColor Green
+        }
+        finally
+        {
+            if($ctIsReadOnly -eq $true)
+            {
+                $ct.ReadOnly = $false
+                $ct.Update($false)
+                $ctx.ExecuteQuery()
+
+                $ctIsReadOnly = $false
+            }
+        }
+    }
+
     # VIEWS - Setup custom list views
     Write-Host "`nCUSTOMISING LIST VIEWS" -ForegroundColor Green
 

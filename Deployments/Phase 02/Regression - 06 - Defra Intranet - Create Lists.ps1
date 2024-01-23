@@ -70,6 +70,7 @@ if($null -ne $list)
 }
 else
 {
+    $web = Get-PnPWeb
     Write-Host "THE '$displayName' LIST DOES NOT EXIST IN THE SITE '$($web.Title)'" -ForegroundColor Green
 }
 

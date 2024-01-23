@@ -69,7 +69,7 @@ foreach($item in $listItems)
     
     foreach($term in $item["OrganisationIntranets"])
     {
-        $termStoreTerm = $terms | Where-Object {$_.Name -eq $term.Label}
+        $termStoreTerm = $terms | Where-Object {$_.Name -eq $term.Label.Trim()}
         $termValues.Add($termStoreTerm.Id.ToString(),$term.Label)
     }
 
