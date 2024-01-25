@@ -653,7 +653,7 @@ foreach($site in $sites)
     # Set the list's valiation formula and message
     Write-Host "Setting the list's validation formula and message" -ForegroundColor Green
     $list = Get-PnPList -Identity $list
-    $list.ValidationFormula = "[Event End Date/Time]>[Event Start Date/Time]"
+    $list.ValidationFormula = "=IF(NOT(ISBLANK([Event Start Date/Time])),[Event End Date/Time]>[Event Start Date/Time],TRUE)"
     $list.ValidationMessage = "The Event End Date/Time must be after the Event Start Date/Time."
     $list.Update()
     $ctx.ExecuteQuery()
