@@ -209,9 +209,10 @@ foreach($site in $sites)
     # SITE-SPECIFIC FIELDS
     switch ($site.Abbreviation)
     {
-        # The Content Submission content types are to be hidden on the RPA site
-        "RPA" {
-            Write-Host "Skipping the content submission content types in the RPA site" -ForegroundColor Cyan
+        # The Content Submission content types are to be hidden on the APHA and RPA sites
+        { @("APHA","RPA") -contains $_ }  
+        {
+            Write-Host "Skipping the content submission content types in the $_ site" -ForegroundColor Cyan
         }
 
         default 
@@ -360,8 +361,8 @@ foreach($site in $sites)
     # SITE-SPECIFIC CUSTOM CONTENT TYPE CHANGES
     switch ($site.Abbreviation)
     {
-        # RPA only using the list for event submissions, so we change the default content type to events and hide the "Content" content type
-        "RPA" 
+        # APHA and RPA are only using the list for event submissions, so we change the default content type to events and hide the "Content" content type
+        { @("APHA","RPA") -contains $_ } 
         {
             # Set Event Submission Request as the default for this list.....
             $ctName = "Event Submission Request"           
@@ -435,7 +436,7 @@ foreach($site in $sites)
             }
         }
 
-        "RPA" 
+        { @("APHA","RPA") -contains $_ }  
         {
             $viewFields = @{
                 'AllItemsAssigned' = "Attachments","LinkTitle","AssignedTo","Author","PublishBy","EventDateTime","EventVenueAndJoiningDetails","EventDetails","ContentSubmissionApprovalOptions","ContentSubmissionStatus","ContentSubmissionApproveRejectBy"
@@ -457,7 +458,7 @@ foreach($site in $sites)
 
     switch ($site.Abbreviation)
     {
-        "RPA" 
+        { @("APHA","RPA") -contains $_ } 
         {
             $viewConfiguration = @(
                 [PSCustomObject]@{
