@@ -130,7 +130,7 @@ function Invoke-Configuration
                     'Abbreviation' = 'RPA'
                     'DisplayName' = 'Rural Payments Agency'
                     'GroupPrefix' = 'RPAIntranet'
-                    'RelativeURL' = 'sites/RPAIntranet'
+                    'RelativeURL' = 'sites/PPRPAIntranet'
                     'SiteType' = 'ALB'
                 }
             )
