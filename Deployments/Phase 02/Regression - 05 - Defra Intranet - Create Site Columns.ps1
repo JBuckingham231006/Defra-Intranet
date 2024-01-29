@@ -69,7 +69,7 @@ foreach($fieldName in $fieldNames)
     {
         $field = Remove-PnPField -Identity $fieldName -Force -ErrorAction SilentlyContinue
 
-        if($null -ne $field)
+        if($null -eq $field)
         {
             Write-Host "SITE COLUMN REMOVED: $fieldName" -ForegroundColor Yellow
         }
