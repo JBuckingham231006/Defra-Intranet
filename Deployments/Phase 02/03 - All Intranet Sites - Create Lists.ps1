@@ -382,7 +382,7 @@ foreach($site in $sites)
     }
 
     # CONTENT TYPE - CONFIGURE LAYOUT
-    Write-Host "CUSTOMISING CONTENT TYPE FORM LAYOUTS"
+    Write-Host "`nCUSTOMISING CONTENT TYPE FORM LAYOUTS" -ForegroundColor Green
     $cts = Get-PnPContentType -List $list | Where-Object {$_.Name -notlike "*Stage 2" -and $_.Name -ne "Folder"}
     $ctIsReadOnly = $false
 

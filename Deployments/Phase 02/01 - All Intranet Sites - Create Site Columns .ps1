@@ -110,8 +110,8 @@ foreach($site in $sites)
         Write-Host "SITE COLUMN ALREADY INSTALLED: $displayName" -ForegroundColor Yellow        
     }
 
-    # "Line Manager" column
-    $displayName = "Line Manager"
+    # "Approver" column
+    $displayName = "Approver"
     $field = Get-PnPField -Identity "LineManager" -ErrorAction SilentlyContinue
 
     if($null -eq $field)
@@ -120,7 +120,7 @@ foreach($site in $sites)
 
         Set-PnPField -Identity $field.Id -Values @{
             SelectionMode = 0;
-            Description = "Please let us know which senior management provided the final sign-off on this content."
+            Description = "Please let us know who provided the final sign-off on this content."
         }
 
         Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
@@ -131,7 +131,7 @@ foreach($site in $sites)
     }
 
     # "When do you need this published?" column
-    $displayName = "When do you need this published?"
+    $displayName = "When would you like this published?"
     $field = Get-PnPField -Identity "PublishBy" -ErrorAction SilentlyContinue
 
     if($null -eq $field)
@@ -139,7 +139,7 @@ foreach($site in $sites)
         $field = Add-PnPField -Type "DateTime" -InternalName "PublishBy" -DisplayName $displayName -Required
         Set-PnPField -Identity $field.Id -Values @{
             FriendlyDisplayFormat = [Microsoft.SharePoint.Client.DateTimeFieldFriendlyFormatType]::Disabled;
-            Description="Please let us know when you want your content published and any reason for that date e.g., a policy launch or awareness day. We aim to publish on the requested dates, but this may not be possible if it is short notice or there are competing internal announcements."
+            Description="Please let us know the reason you would like this content to be published and why you have selected the target date above. We aim to publish on the requested dates, but this may not be possible if it is short notice or there are competing internal announcements."
         }
 
         Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
@@ -177,6 +177,11 @@ foreach($site in $sites)
     if($null -eq $field)
     {
         $field = Add-PnPField -Type "Note" -InternalName "ContentSubmissionDescription" -DisplayName $displayName -Required
+
+        Set-PnPField -Identity $field.Id -Values @{
+            Description = "Please provide us with information about your submission. You will then have the chance to submit your content via an attachment, once your request has been approved by us. Please let us know the reason you would like this content to be published and why you have selected the target date above."; 
+        }
+
         Write-Host "SITE COLUMN INSTALLED: $displayName" -ForegroundColor Green
     }
     else 
@@ -310,7 +315,7 @@ foreach($site in $sites)
         
         Set-PnPField -Identity $field.Id -Values @{
             Required = $false
-        }   
+        }
     }
 
     Write-Host ""
