@@ -66,6 +66,10 @@ foreach($site in $sites)
             $contentTypeOptions = "Alert","Guidance Page","News Story - Highlight","News Story - Top Story"
         }
 
+        "NE" {
+            $contentTypeOptions = "Blog or Online Diary","Form","Guidance Page","News Story"
+        }
+
         default {
             $contentTypeOptions = "Blog or Online Diary","Form","Guidance Page","News Story","Office Notice"
         }
