@@ -63,7 +63,7 @@ foreach($site in $sites)
     switch ($site.Abbreviation)
     {
         "EA" {
-            $contentTypeOptions = "Alert","Guidance Page","News Story - Highlight","News Story - Top Story"
+            $contentTypeOptions = "Alert","News Story - Highlight","News Story - Top Story"
         }
 
         "NE" {
