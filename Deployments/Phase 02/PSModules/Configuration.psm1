@@ -12,7 +12,7 @@
 #>
 
 # GLOBAL SETTINGS
-$global:environment = 'preprod' # Which environment are we targetting?
+$global:environment = 'prod' # Which environment are we targetting?
 
 # GLOBAL VARIABLES
 
